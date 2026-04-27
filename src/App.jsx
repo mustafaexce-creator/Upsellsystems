@@ -1,7 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import WhatsAppFloat from './components/WhatsAppFloat'
 import HomePage from './pages/HomePage'
 import PortfolioPage from './pages/PortfolioPage'
 import ContactPage from './pages/ContactPage'
@@ -21,7 +20,6 @@ function App() {
         </Routes>
       </main>
       <Footer />
-      <WhatsAppFloat />
     </>
   )
 }

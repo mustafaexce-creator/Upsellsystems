@@ -79,9 +79,9 @@ export default function PortfolioPage() {
               Want your project here?
             </h3>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '32px', fontSize: '1rem' }}>Let's make it happen — starting today.</p>
-            <a href="https://wa.me/201234567890" target="_blank" rel="noopener noreferrer" className="cta-button">
-              <span><MessageCircle size={17} /> Start on WhatsApp <ArrowRight size={15} /></span>
-            </a>
+            <Link to="/contact" className="cta-button">
+              <span><MessageCircle size={17} /> Get in Touch <ArrowRight size={15} /></span>
+            </Link>
           </div>
         </div>
       </section>

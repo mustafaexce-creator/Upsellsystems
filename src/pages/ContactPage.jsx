@@ -97,7 +97,6 @@ export default function ContactPage() {
                 Prefer a quick chat? Pick the channel that works best for you.
               </p>
               {[
-                { icon: Phone, label: 'WhatsApp', value: 'Chat with us now', href: 'https://wa.me/201234567890', color: '#25D366' },
                 { icon: Mail, label: 'Email', value: 'contact@upsellsystems.com', href: 'mailto:contact@upsellsystems.com', color: '#6366F1' },
                 { icon: ExternalLink, label: 'Facebook', value: 'UpsellSystems', href: 'https://facebook.com/UpsellSystems', color: '#1877F2' },
               ].map((item, i) => (

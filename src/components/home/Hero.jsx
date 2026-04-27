@@ -53,9 +53,9 @@ export default function Hero() {
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px', alignItems: 'center' }}>
-            <a href="https://wa.me/201234567890" target="_blank" rel="noopener noreferrer" className="cta-button">
+            <Link to="/contact" className="cta-button">
               <span>Start Your Project <ArrowRight size={17} /></span>
-            </a>
+            </Link>
             <Link to="/portfolio" className="cta-secondary">
               <Play size={16} /> See Our Work
             </Link>

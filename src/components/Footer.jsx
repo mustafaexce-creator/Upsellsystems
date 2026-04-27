@@ -32,9 +32,9 @@ export default function Footer() {
         <div>
           <h4 style={{ fontWeight: 700, fontSize: '0.95rem', marginBottom: '20px', color: 'white', letterSpacing: '-0.01em' }}>Get in Touch</h4>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-            <a href="https://wa.me/201234567890" target="_blank" rel="noopener noreferrer" className="nav-link" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Phone size={15} /> WhatsApp
-            </a>
+            <Link to="/contact" className="nav-link" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <Phone size={15} /> Contact Us
+            </Link>
             <a href="mailto:contact@upsellsystems.com" className="nav-link" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Mail size={15} /> contact@upsellsystems.com
             </a>

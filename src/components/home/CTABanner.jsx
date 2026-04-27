@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import useInView from '../../hooks/useInView'
-import { ArrowRight, MessageCircle } from 'lucide-react'
+import { ArrowRight, Send } from 'lucide-react'
 
 export default function CTABanner() {
   const [ref, visible] = useInView()
@@ -19,18 +19,10 @@ export default function CTABanner() {
           Your first consultation is completely free. No pressure, no obligation — just a conversation about what's possible.
         </p>
         <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '16px' }}>
-          <a href="https://wa.me/201234567890" target="_blank" rel="noopener noreferrer" className="cta-button" style={{ padding: '16px 36px', fontSize: '1rem' }}>
-            <span><MessageCircle size={18} /> Chat on WhatsApp <ArrowRight size={16} /></span>
-          </a>
+          <Link to="/contact" className="cta-button" style={{ padding: '16px 36px', fontSize: '1rem' }}>
+            <span><Send size={18} /> Get in Touch <ArrowRight size={16} /></span>
+          </Link>
         </div>
-        <Link to="/contact" style={{
-          color: 'var(--text-muted)', marginTop: '20px', display: 'inline-block', fontSize: '0.9rem',
-          textDecoration: 'none', transition: 'color 0.3s',
-        }}
-          onMouseEnter={e => e.currentTarget.style.color = '#A78BFA'}
-          onMouseLeave={e => e.currentTarget.style.color = 'var(--text-muted)'}>
-          Or fill out our contact form →
-        </Link>
       </div>
     </section>
   )
