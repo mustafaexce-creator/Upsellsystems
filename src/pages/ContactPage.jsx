@@ -3,7 +3,7 @@ import useInView from '../hooks/useInView'
 import { Send, Mail, Zap, Lock, MessageCircle, CheckCircle, Loader2 } from 'lucide-react'
 
 // Replace this with your deployed Google Apps Script Web App URL
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/a/macros/upsellsystems.com/s/AKfycbynM2Q5Jpkg9wtIasRnLpPhBRABndLpkzyq7kLB7vov6R0nozaLtmsEz3HxwKZJmSuOXw/exec'
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxEwOwWyiwYkWZq3C44mm2g0AKoax3TJ6qnXlULsACgZiaL9xR6nrA5fJcSMgg1o28/exec'
 
 export default function ContactPage() {
   const [heroRef, heroVisible] = useInView()
