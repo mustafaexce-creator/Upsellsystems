@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Mail, Phone, ExternalLink } from 'lucide-react'
+import { Mail, Phone } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -35,11 +35,8 @@ export default function Footer() {
             <Link to="/contact" className="nav-link" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Phone size={15} /> Contact Us
             </Link>
-            <a href="mailto:contact@upsellsystems.com" className="nav-link" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Mail size={15} /> contact@upsellsystems.com
-            </a>
-            <a href="https://facebook.com/UpsellSystems" target="_blank" rel="noopener noreferrer" className="nav-link" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <ExternalLink size={15} /> Facebook
+            <a href="mailto:mo@upsellsystems.com" className="nav-link" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <Mail size={15} /> mo@upsellsystems.com
             </a>
           </div>
         </div>
@@ -51,7 +48,7 @@ export default function Footer() {
         display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '12px',
       }}>
         <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>© 2025 UpsellSystems. All rights reserved.</p>
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>Made with ❤️ in Egypt</p>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>Made with ❤️</p>
       </div>
     </footer>
   )
