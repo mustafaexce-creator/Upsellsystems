@@ -57,7 +57,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .glass-card:hover {
-  border-color: var(--border-hover);
+  border-color: var(--hover-color, var(--border-hover));
   box-shadow: 0 0 40px var(--glow-1), 0 20px 60px rgba(0,0,0,0.4);
   transform: translateY(-6px);
 }
@@ -418,7 +418,7 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   inset: -1px;
   border-radius: 21px;
-  background: linear-gradient(135deg, var(--accent-1), transparent, var(--accent-2), transparent);
+  background: linear-gradient(135deg, var(--hover-color, var(--accent-1)), transparent, var(--hover-color, var(--accent-2)), transparent);
   z-index: -1;
   opacity: 0;
   transition: opacity 0.5s ease;

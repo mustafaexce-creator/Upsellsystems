@@ -28,7 +28,12 @@ export default function Services() {
             const Icon = s.icon
             return (
               <div key={i} className={`glass-card animated-border fade-in-up ${visible ? 'visible' : ''}`}
-                style={{ padding: '36px 30px', transitionDelay: `${i * 0.08}s`, cursor: 'default' }}>
+                style={{ 
+                  padding: '36px 30px', 
+                  transitionDelay: `${i * 0.08}s`, 
+                  cursor: 'default',
+                  '--hover-color': s.color
+                }}>
                 <div style={{
                   width: '52px', height: '52px', borderRadius: '14px',
                   background: `${s.color}12`, border: `1px solid ${s.color}20`,

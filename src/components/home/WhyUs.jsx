@@ -28,6 +28,7 @@ export default function WhyUs() {
                   display: 'flex', gap: '20px', padding: '28px 26px', borderRadius: '18px',
                   background: 'rgba(12,17,32,0.3)',
                   transitionDelay: `${i * 0.08}s`, cursor: 'default',
+                  '--hover-color': r.color
                 }}>
                 <div style={{
                   minWidth: '46px', height: '46px', borderRadius: '12px',
