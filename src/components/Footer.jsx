@@ -47,7 +47,10 @@ export default function Footer() {
         borderTop: '1px solid rgba(99,102,241,0.06)',
         display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '12px',
       }}>
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>© 2025 UpsellSystems. All rights reserved.</p>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>© 2026 UpsellSystems. All rights reserved.</p>
+          <Link to="/privacy" style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={(e) => e.target.style.color = 'white'} onMouseOut={(e) => e.target.style.color = 'var(--text-muted)'}>Privacy Policy</Link>
+        </div>
         <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>Made with ❤️</p>
       </div>
     </footer>
