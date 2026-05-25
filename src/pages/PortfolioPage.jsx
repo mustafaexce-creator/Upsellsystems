@@ -212,7 +212,7 @@ export default function PortfolioPage() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '36px' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
                     <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '6px', letterSpacing: '0.05em' }}>
-                      <Laptop size={14} /> LIVE INTERACTIVE WEBPAGE
+                      <Laptop size={14} /> LIVE INTERACTIVE DESKTOP VIEW
                     </span>
                     <a 
                       href={selectedProject.link} 
@@ -280,16 +280,21 @@ export default function PortfolioPage() {
                       </div>
                     </div>
                     
-                    {/* Embedded live iframe visual layout */}
+                    {/* Embedded live iframe with desktop resolution scale trick */}
                     <div style={{ flex: 1, overflow: 'hidden', background: 'white', position: 'relative' }}>
                       <iframe 
                         src={selectedProject.link} 
                         title={`${selectedProject.name} Live Preview`} 
                         style={{ 
-                          width: '100%', 
-                          height: '100%', 
+                          width: '166.66%', 
+                          height: '166.66%', 
                           border: 'none', 
-                          background: 'white' 
+                          background: 'white',
+                          transform: 'scale(0.6)',
+                          transformOrigin: 'top left',
+                          position: 'absolute',
+                          top: 0,
+                          left: 0
                         }} 
                       />
                     </div>
