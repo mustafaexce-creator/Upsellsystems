@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import useInView from '../hooks/useInView'
-import { ArrowRight, MessageCircle, X, ExternalLink, Globe, Laptop, Cpu, CheckCircle } from 'lucide-react'
+import { ArrowRight, MessageCircle, X, ExternalLink, Laptop, CheckCircle } from 'lucide-react'
 
 const projects = [
   { 
@@ -14,8 +14,7 @@ const projects = [
     desc: 'We designed and developed a high-converting, single-page website for Remedi-X, an American agency specializing in custom AI chatbots. The goal was to create a world-class digital identity that matches the caliber of their services in a hyper-competitive market.', 
     result: 'A site that precisely reflects the brand and speaks directly to their American audience.', 
     techs: ['React', 'Tailwind CSS', 'Vite', 'Responsive Design'],
-    link: 'https://remedixsolutions.com',
-    mockupType: 'ai'
+    link: 'https://remedixsolutions.com'
   },
   { 
     name: 'Red Crescent Volunteer System', 
@@ -27,8 +26,7 @@ const projects = [
     desc: 'We built an end-to-end system that logs volunteer mission details in Google Sheets, automatically calculates hours, and generates professional certificates of appreciation for volunteers exceeding 200 annual hours — complete with mission names, dates, and durations.', 
     result: 'Eliminated hours of manual work and brought a professional, official feel to the volunteering process.', 
     techs: ['React', 'Google Apps Script', 'Google Sheets', 'PDF Generation'],
-    link: 'https://ercmissions.vercel.app',
-    mockupType: 'dashboard'
+    link: 'https://ercmissions.vercel.app'
   },
   { 
     name: 'Prismark Agency', 
@@ -40,8 +38,7 @@ const projects = [
     desc: 'A multi-page website for a creative agency that balances striking visual design with professional functionality — built to represent their brand with pixel-perfect accuracy.', 
     result: '"Exceeded our expectations" — direct quote from the client.', 
     techs: ['React', 'CSS Animations', 'Responsive Design'],
-    link: 'https://unreal-view-319458.framer.app/',
-    mockupType: 'creative'
+    link: 'https://unreal-view-319458.framer.app/'
   },
   { 
     name: 'Everlast Fences', 
@@ -53,8 +50,7 @@ const projects = [
     desc: 'A three-page website designed for Everlast Fences, with a sharp focus on local SEO and organic customer acquisition — no paid ads needed.', 
     result: 'The site still generates free leads today through organic search (SEO).', 
     techs: ['HTML', 'CSS', 'JavaScript', 'Local SEO'],
-    link: 'https://everlastfences.com',
-    mockupType: 'business'
+    link: 'https://everlastfences.com'
   },
   { 
     name: 'Buffalo Bargains / Bins & Retail Store', 
@@ -66,8 +62,7 @@ const projects = [
     desc: 'A 4-page retail website with an integrated database and an intuitive admin dashboard that lets the business owner add, edit, and delete products independently — zero technical knowledge required.', 
     result: 'Complete independence for the client to manage their own content.', 
     techs: ['React', 'Node.js', 'Database', 'Admin Panel'],
-    link: 'https://www.buffalobargains.com',
-    mockupType: 'store'
+    link: 'https://www.buffalobargains.com'
   },
 ]
 
@@ -91,135 +86,6 @@ export default function PortfolioPage() {
   }, [selectedProject])
 
   const filtered = activeFilter === 'All' ? projects : projects.filter(p => p.type === activeFilter)
-
-  // Render a gorgeous simulated high-fidelity visual interface mockup
-  const renderSimulatedPreview = (type) => {
-    switch (type) {
-      case 'ai':
-        return (
-          <div style={{
-            background: '#090D1A', height: '100%', padding: '20px', color: 'white',
-            display: 'flex', flexDirection: 'column', gap: '12px', justifyContent: 'center'
-          }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '8px' }}>
-              <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--accent-3)' }}>REMEDI-X.AGENCY</span>
-              <span style={{ padding: '2px 8px', borderRadius: '100px', fontSize: '0.6rem', background: 'rgba(99,102,241,0.2)', color: '#A78BFA' }}>AI ACTIVE</span>
-            </div>
-            <div style={{ background: '#0C1120', borderRadius: '10px', padding: '12px', border: '1px solid rgba(99,102,241,0.15)' }}>
-              <p style={{ fontSize: '0.7rem', color: '#94A3B8' }}>Visitor: "How do I automate my client intake?"</p>
-            </div>
-            <div style={{ background: 'linear-gradient(135deg, rgba(99,102,241,0.15), rgba(139,92,246,0.1))', borderRadius: '10px', padding: '12px', border: '1px solid rgba(139,92,246,0.2)', marginLeft: '12px' }}>
-              <p style={{ fontSize: '0.7rem', color: 'white', lineHeight: 1.4 }}>🤖 "I can deploy a custom intake chatbot connected directly to your CRM. Let's schedule a call."</p>
-            </div>
-            <div style={{ display: 'flex', gap: '6px', marginTop: '4px' }}>
-              <div style={{ flex: 1, height: '4px', background: 'var(--accent-1)', borderRadius: '2px' }} />
-              <div style={{ flex: 1, height: '4px', background: 'var(--accent-2)', borderRadius: '2px' }} />
-              <div style={{ flex: 1, height: '4px', background: 'var(--accent-3)', borderRadius: '2px' }} />
-            </div>
-          </div>
-        )
-      case 'dashboard':
-        return (
-          <div style={{
-            background: '#F8FAFC', height: '100%', padding: '20px', color: '#1E293B',
-            display: 'flex', flexDirection: 'column', gap: '12px', fontFamily: '-apple-system, BlinkMacSystemFont, sans-serif'
-          }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #E2E8F0', paddingBottom: '8px' }}>
-              <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#DC2626', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                🔴 ERC Menoufia
-              </span>
-              <span style={{ fontSize: '0.65rem', background: '#DC2626', color: 'white', padding: '2px 6px', borderRadius: '4px' }}>ADMIN PANEL</span>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
-              <div style={{ background: 'white', border: '1px solid #E2E8F0', borderRadius: '6px', padding: '8px' }}>
-                <span style={{ fontSize: '0.55rem', color: '#64748B' }}>Total Volunteers</span>
-                <p style={{ fontSize: '1rem', fontWeight: 800, color: '#0F172A' }}>1,248</p>
-              </div>
-              <div style={{ background: 'white', border: '1px solid #E2E8F0', borderRadius: '6px', padding: '8px' }}>
-                <span style={{ fontSize: '0.55rem', color: '#64748B' }}>Mission Hours Logged</span>
-                <p style={{ fontSize: '1rem', fontWeight: 800, color: '#16A34A' }}>12,450h</p>
-              </div>
-            </div>
-            <div style={{ background: 'white', border: '1px solid #E2E8F0', borderRadius: '6px', padding: '8px', flex: 1, display: 'flex', flexDirection: 'column', gap: '4px' }}>
-              <span style={{ fontSize: '0.55rem', fontWeight: 700, color: '#475569' }}>Active Volunteer Missions</span>
-              <div style={{ height: '3px', background: '#E2E8F0', borderRadius: '2px' }} />
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.55rem', color: '#64748B' }}>
-                <span>Menoufia Convoy</span>
-                <span style={{ color: '#16A34A', fontWeight: 700 }}>Active</span>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.55rem', color: '#64748B' }}>
-                <span>First Aid Training</span>
-                <span style={{ color: '#64748B' }}>Completed</span>
-              </div>
-            </div>
-          </div>
-        )
-      case 'creative':
-        return (
-          <div style={{
-            background: '#050505', height: '100%', padding: '24px', color: 'white',
-            display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '16px', position: 'relative', overflow: 'hidden'
-          }}>
-            <div style={{ position: 'absolute', top: -20, right: -20, width: '100px', height: '100px', borderRadius: '50%', background: 'rgba(236,72,153,0.15)', filter: 'blur(30px)' }} />
-            <div style={{ position: 'absolute', bottom: -20, left: -20, width: '100px', height: '100px', borderRadius: '50%', background: 'rgba(99,102,241,0.15)', filter: 'blur(30px)' }} />
-            
-            <span style={{ fontSize: '0.65rem', letterSpacing: '0.2em', color: '#E2E8F0', fontWeight: 800 }}>PRISMARK AGENCY</span>
-            <h4 style={{ fontSize: '1.2rem', fontWeight: 900, lineHeight: 1.2, margin: 0 }}>
-              We build brands <span style={{ background: 'linear-gradient(90deg, #EC4899, #8B5CF6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>that echo.</span>
-            </h4>
-            <div style={{ display: 'flex', gap: '8px' }}>
-              <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', padding: '6px 12px', borderRadius: '100px', fontSize: '0.6rem' }}>Websites</div>
-              <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', padding: '6px 12px', borderRadius: '100px', fontSize: '0.6rem' }}>Creative</div>
-            </div>
-          </div>
-        )
-      case 'business':
-        return (
-          <div style={{
-            background: '#111317', height: '100%', padding: '20px', color: 'white',
-            display: 'flex', flexDirection: 'column', justify: 'space-between', gap: '12px'
-          }}>
-            <div style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ fontWeight: 800, fontSize: '0.75rem', color: '#F59E0B' }}>⚔️ EVERLAST FENCES</span>
-              <span style={{ fontSize: '0.55rem', color: '#9CA3AF' }}>Call: (555) 0199</span>
-            </div>
-            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '6px', justifyContent: 'center' }}>
-              <h5 style={{ fontSize: '0.9rem', fontWeight: 700, color: 'white', margin: 0 }}>Top-Tier Security Fences</h5>
-              <p style={{ fontSize: '0.6rem', color: '#9CA3AF', lineHeight: 1.4 }}>Professional wood, aluminum, and chain-link fences installed by certified local experts.</p>
-              <div style={{ background: '#F59E0B', color: 'black', padding: '6px', borderRadius: '4px', textAlign: 'center', fontSize: '0.6rem', fontWeight: 800, marginTop: '4px' }}>
-                GET FREE ESTIMATE
-              </div>
-            </div>
-          </div>
-        )
-      case 'store':
-        return (
-          <div style={{
-            background: '#0B0F19', height: '100%', padding: '16px', color: 'white',
-            display: 'flex', flexDirection: 'column', gap: '8px'
-          }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '6px' }}>
-              <span style={{ fontSize: '0.65rem', fontWeight: 700, color: '#10B981' }}>🛍️ BUFFALO BARGAINS</span>
-              <span style={{ fontSize: '0.6rem', background: '#10B981', color: 'black', padding: '1px 5px', borderRadius: '3px', fontWeight: 700 }}>2 NEW ORDERS</span>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', flex: 1 }}>
-              <div style={{ background: '#121824', borderRadius: '6px', padding: '6px', display: 'flex', flexDirection: 'column', justify: 'space-between' }}>
-                <div style={{ height: '32px', background: 'rgba(255,255,255,0.03)', borderRadius: '4px' }} />
-                <span style={{ fontSize: '0.55rem', fontWeight: 700 }}>Leather Jacket</span>
-                <span style={{ fontSize: '0.5rem', color: '#10B981' }}>$129.99</span>
-              </div>
-              <div style={{ background: '#121824', borderRadius: '6px', padding: '6px', display: 'flex', flexDirection: 'column', justify: 'space-between' }}>
-                <div style={{ height: '32px', background: 'rgba(255,255,255,0.03)', borderRadius: '4px' }} />
-                <span style={{ fontSize: '0.55rem', fontWeight: 700 }}>Designer Shoes</span>
-                <span style={{ fontSize: '0.5rem', color: '#10B981' }}>$89.99</span>
-              </div>
-            </div>
-          </div>
-        )
-      default:
-        return null
-    }
-  }
 
   return (
     <>
@@ -387,9 +253,9 @@ export default function PortfolioPage() {
                 }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                     <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '6px' }}>
-                      <Laptop size={14} /> LIVE INTERACTIVE PREVIEW
+                      <Laptop size={14} /> LIVE INTERACTIVE WEBPAGE
                     </span>
-                    <h4 style={{ fontSize: '1.1rem', fontWeight: 800, color: 'white' }}>Mock Workspace Interface</h4>
+                    <h4 style={{ fontSize: '1.1rem', fontWeight: 800, color: 'white' }}>Live Preview Frame</h4>
                   </div>
 
                   {/* Browser Mockup Frame */}
@@ -437,9 +303,18 @@ export default function PortfolioPage() {
                       </div>
                     </div>
                     
-                    {/* Simulated visual layout */}
-                    <div style={{ flex: 1, overflow: 'hidden' }}>
-                      {renderSimulatedPreview(selectedProject.mockupType)}
+                    {/* Embedded live iframe visual layout */}
+                    <div style={{ flex: 1, overflow: 'hidden', background: 'white', position: 'relative' }}>
+                      <iframe 
+                        src={selectedProject.link} 
+                        title={`${selectedProject.name} Live Preview`} 
+                        style={{ 
+                          width: '100%', 
+                          height: '100%', 
+                          border: 'none', 
+                          background: 'white' 
+                        }} 
+                      />
                     </div>
                   </div>
 
