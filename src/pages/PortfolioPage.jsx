@@ -155,16 +155,18 @@ export default function PortfolioPage() {
             }} onClick={() => setSelectedProject(null)}>
               <div className="glass-card" style={{
                 width: '100%',
-                maxWidth: '920px',
-                background: 'linear-gradient(135deg, rgba(12, 17, 32, 0.95), rgba(8, 11, 22, 0.95))',
-                border: '1px solid rgba(99,102,241,0.18)',
+                maxWidth: '880px',
+                maxHeight: '90vh',
+                background: 'linear-gradient(135deg, rgba(12, 17, 32, 0.98), rgba(8, 11, 22, 0.98))',
+                border: '1px solid rgba(99,102,241,0.2)',
                 borderRadius: '24px',
-                overflow: 'hidden',
+                overflowY: 'auto',
                 position: 'relative',
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                display: 'flex',
+                flexDirection: 'column',
                 boxShadow: '0 24px 60px rgba(0, 0, 0, 0.8)',
-                animation: 'scaleUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)'
+                animation: 'scaleUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                padding: '40px'
               }} onClick={(e) => e.stopPropagation()}>
                 
                 {/* Close Button */}
@@ -172,8 +174,8 @@ export default function PortfolioPage() {
                   onClick={() => setSelectedProject(null)}
                   style={{
                     position: 'absolute',
-                    top: '20px',
-                    right: '20px',
+                    top: '24px',
+                    right: '24px',
                     background: 'rgba(255,255,255,0.03)',
                     border: '1px solid rgba(99,102,241,0.1)',
                     color: 'white',
@@ -193,79 +195,53 @@ export default function PortfolioPage() {
                   <X size={18} />
                 </button>
 
-                {/* Left Side: Details */}
-                <div style={{ padding: '40px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                  <div>
-                    <div style={{ display: 'flex', gap: '8px', marginBottom: '12px' }}>
-                      <span className="badge">{selectedProject.category}</span>
-                      <span style={{
-                        padding: '4px 12px', borderRadius: '100px', fontSize: '0.75rem', fontWeight: 600,
-                        background: 'rgba(52, 211, 153, 0.1)', color: '#34D399', border: '1px solid rgba(52, 211, 153, 0.2)'
-                      }}>{selectedProject.client}</span>
-                    </div>
-                    <h2 style={{ fontSize: '1.75rem', fontWeight: 800, color: 'white', marginBottom: '4px' }}>{selectedProject.name}</h2>
-                    <p style={{ fontFamily: "'Space Grotesk'", color: 'var(--text-muted)', fontSize: '0.85rem' }}>{selectedProject.nameEn}</p>
+                {/* Header Section */}
+                <div style={{ marginBottom: '32px', paddingRight: '48px' }}>
+                  <div style={{ display: 'flex', gap: '8px', marginBottom: '12px', flexWrap: 'wrap' }}>
+                    <span className="badge">{selectedProject.category}</span>
+                    <span style={{
+                      padding: '4px 12px', borderRadius: '100px', fontSize: '0.75rem', fontWeight: 600,
+                      background: 'rgba(52, 211, 153, 0.1)', color: '#34D399', border: '1px solid rgba(52, 211, 153, 0.2)'
+                    }}>{selectedProject.client}</span>
                   </div>
-
-                  <div style={{ borderTop: '1px solid rgba(99,102,241,0.08)', paddingTop: '16px' }}>
-                    <h4 style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-muted)', marginBottom: '8px' }}>Project Overview</h4>
-                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', lineHeight: 1.8 }}>{selectedProject.desc}</p>
-                  </div>
-
-                  <div>
-                    <h4 style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-muted)', marginBottom: '10px' }}>Tech Stack</h4>
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                      {selectedProject.techs.map((t, j) => (
-                        <span key={j} style={{
-                          padding: '4px 12px', borderRadius: '100px', fontSize: '0.75rem', fontWeight: 500,
-                          background: 'var(--glow-1)', color: 'var(--text-secondary)', border: '1px solid var(--border)'
-                        }}>{t}</span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div style={{ 
-                    background: 'rgba(52, 211, 153, 0.05)', 
-                    border: '1px solid rgba(52, 211, 153, 0.12)', 
-                    padding: '16px 20px', 
-                    borderRadius: '16px',
-                    display: 'flex',
-                    gap: '12px',
-                    alignItems: 'flex-start'
-                  }}>
-                    <CheckCircle size={18} style={{ color: '#34D399', flexShrink: 0, marginTop: '2px' }} />
-                    <div>
-                      <h5 style={{ fontSize: '0.85rem', fontWeight: 700, color: '#34D399', marginBottom: '2px' }}>Outcome & Impact</h5>
-                      <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', lineHeight: 1.6 }}>{selectedProject.result}</p>
-                    </div>
-                  </div>
+                  <h2 style={{ fontSize: '2rem', fontWeight: 900, color: 'white', marginBottom: '4px', letterSpacing: '-0.02em' }}>{selectedProject.name}</h2>
+                  <p style={{ fontFamily: "'Space Grotesk'", color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{selectedProject.nameEn}</p>
                 </div>
 
-                {/* Right Side: Device Frame Web Preview */}
-                <div style={{ 
-                  background: 'rgba(3, 5, 8, 0.4)', 
-                  borderLeft: '1px solid rgba(99,102,241,0.08)', 
-                  padding: '40px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '24px',
-                  justifyContent: 'center'
-                }}>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                    <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '6px' }}>
+                {/* Live Device Frame Preview (Stacked & Large) */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '36px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
+                    <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '6px', letterSpacing: '0.05em' }}>
                       <Laptop size={14} /> LIVE INTERACTIVE WEBPAGE
                     </span>
-                    <h4 style={{ fontSize: '1.1rem', fontWeight: 800, color: 'white' }}>Live Preview Frame</h4>
+                    <a 
+                      href={selectedProject.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      style={{ 
+                        color: 'var(--accent-3)', 
+                        textDecoration: 'none', 
+                        fontSize: '0.85rem', 
+                        fontWeight: 600,
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '6px'
+                      }}
+                      onMouseOver={(e) => e.currentTarget.style.color = 'white'}
+                      onMouseOut={(e) => e.currentTarget.style.color = 'var(--accent-3)'}
+                    >
+                      Open Live Site <ExternalLink size={14} />
+                    </a>
                   </div>
 
                   {/* Browser Mockup Frame */}
                   <div style={{
                     width: '100%',
-                    height: '240px',
+                    height: '420px',
                     borderRadius: '16px',
                     overflow: 'hidden',
-                    border: '1px solid rgba(99,102,241,0.18)',
-                    boxShadow: '0 12px 30px rgba(0,0,0,0.5)',
+                    border: '1px solid rgba(99,102,241,0.2)',
+                    boxShadow: '0 12px 40px rgba(0,0,0,0.6)',
                     display: 'flex',
                     flexDirection: 'column',
                     background: '#070A13'
@@ -274,30 +250,31 @@ export default function PortfolioPage() {
                     <div style={{
                       background: 'rgba(255,255,255,0.03)',
                       borderBottom: '1px solid rgba(99,102,241,0.1)',
-                      height: '32px',
+                      height: '36px',
                       display: 'flex',
                       alignItems: 'center',
-                      padding: '0 12px',
-                      gap: '8px',
+                      padding: '0 16px',
+                      gap: '12px',
                       flexShrink: 0
                     }}>
-                      <div style={{ display: 'flex', gap: '4px' }}>
-                        <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#EF4444' }} />
-                        <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#F59E0B' }} />
-                        <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#10B981' }} />
+                      <div style={{ display: 'flex', gap: '6px' }}>
+                        <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#EF4444' }} />
+                        <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#F59E0B' }} />
+                        <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#10B981' }} />
                       </div>
                       <div style={{
-                        background: 'rgba(0,0,0,0.3)',
-                        borderRadius: '6px',
+                        background: 'rgba(0,0,0,0.4)',
+                        borderRadius: '8px',
                         flex: 1,
-                        height: '20px',
+                        height: '24px',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        fontSize: '0.62rem',
+                        fontSize: '0.72rem',
                         color: 'var(--text-muted)',
                         fontFamily: 'monospace',
-                        letterSpacing: '0.02em'
+                        letterSpacing: '0.02em',
+                        border: '1px solid rgba(255,255,255,0.02)'
                       }}>
                         {selectedProject.link}
                       </div>
@@ -317,22 +294,52 @@ export default function PortfolioPage() {
                       />
                     </div>
                   </div>
+                </div>
 
-                  <a 
-                    href={selectedProject.link} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="cta-button"
-                    style={{ 
-                      textDecoration: 'none', 
-                      display: 'flex', 
-                      justifyContent: 'center', 
-                      alignItems: 'center',
-                      padding: '14px' 
-                    }}
-                  >
-                    <span>Visit Live Website <ExternalLink size={15} /></span>
-                  </a>
+                {/* Details Content Grid (Flows Naturally Below Preview) */}
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                  gap: '36px',
+                  borderTop: '1px solid rgba(99,102,241,0.08)',
+                  paddingTop: '32px'
+                }}>
+                  {/* Left Column: Project Overview */}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                    <h4 style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-muted)', fontWeight: 700 }}>Project Overview</h4>
+                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.8 }}>{selectedProject.desc}</p>
+                  </div>
+
+                  {/* Right Column: Tech & Outcome */}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                    <div>
+                      <h4 style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-muted)', fontWeight: 700, marginBottom: '12px' }}>Tech Stack</h4>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                        {selectedProject.techs.map((t, j) => (
+                          <span key={j} style={{
+                            padding: '4px 12px', borderRadius: '100px', fontSize: '0.75rem', fontWeight: 500,
+                            background: 'var(--glow-1)', color: 'var(--text-secondary)', border: '1px solid var(--border)'
+                          }}>{t}</span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div style={{ 
+                      background: 'rgba(52, 211, 153, 0.04)', 
+                      border: '1px solid rgba(52, 211, 153, 0.12)', 
+                      padding: '20px', 
+                      borderRadius: '16px',
+                      display: 'flex',
+                      gap: '14px',
+                      alignItems: 'flex-start'
+                    }}>
+                      <CheckCircle size={20} style={{ color: '#34D399', flexShrink: 0, marginTop: '2px' }} />
+                      <div>
+                        <h5 style={{ fontSize: '0.9rem', fontWeight: 800, color: '#34D399', marginBottom: '4px' }}>Outcome & Impact</h5>
+                        <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', lineHeight: 1.6 }}>{selectedProject.result}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
               </div>
