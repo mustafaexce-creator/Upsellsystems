@@ -49,7 +49,10 @@ export default function Footer() {
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>© 2026 UpsellSystems. All rights reserved.</p>
+          <span style={{ color: 'rgba(99,102,241,0.2)', fontSize: '0.8rem' }}>•</span>
           <Link to="/privacy" style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={(e) => e.target.style.color = 'white'} onMouseOut={(e) => e.target.style.color = 'var(--text-muted)'}>Privacy Policy</Link>
+          <span style={{ color: 'rgba(99,102,241,0.2)', fontSize: '0.8rem' }}>•</span>
+          <Link to="/terms" style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={(e) => e.target.style.color = 'white'} onMouseOut={(e) => e.target.style.color = 'var(--text-muted)'}>Terms of Service</Link>
         </div>
         <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>Made with ❤️</p>
       </div>
