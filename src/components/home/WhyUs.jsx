@@ -23,23 +23,21 @@ export default function WhyUs() {
           {reasons.map((r, i) => {
             const Icon = r.icon
             return (
-              <div key={i} className={`fade-in-up ${visible ? 'visible' : ''}`}
+              <div key={i} className={`glass-card animated-border fade-in-up ${visible ? 'visible' : ''}`}
                 style={{
                   display: 'flex', gap: '20px', padding: '28px 26px', borderRadius: '18px',
-                  border: '1px solid var(--border)', background: 'rgba(12,17,32,0.3)',
-                  transition: 'all 0.4s ease', transitionDelay: `${i * 0.08}s`, cursor: 'default',
-                }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = `${r.color}30`; e.currentTarget.style.background = 'rgba(12,17,32,0.6)' }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.background = 'rgba(12,17,32,0.3)' }}>
+                  background: 'rgba(12,17,32,0.3)',
+                  transitionDelay: `${i * 0.08}s`, cursor: 'default',
+                }}>
                 <div style={{
                   minWidth: '46px', height: '46px', borderRadius: '12px',
                   background: `${r.color}12`, border: `1px solid ${r.color}20`,
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0
                 }}>
                   <Icon size={21} color={r.color} />
                 </div>
                 <div>
-                  <h3 style={{ fontSize: '1.05rem', fontWeight: 700, marginBottom: '6px', letterSpacing: '-0.01em' }}>{r.title}</h3>
+                  <h3 style={{ fontSize: '1.05rem', fontWeight: 700, marginBottom: '6px', letterSpacing: '-0.01em', color: 'white' }}>{r.title}</h3>
                   <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.8 }}>{r.desc}</p>
                 </div>
               </div>

@@ -21,7 +21,7 @@ export default function Testimonials() {
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '20px' }}>
           {testimonials.map((t, i) => (
-            <div key={i} className={`testimonial-card fade-in-up ${visible ? 'visible' : ''}`} style={{ transitionDelay: `${i * 0.08}s` }}>
+            <div key={i} className={`testimonial-card animated-border fade-in-up ${visible ? 'visible' : ''}`} style={{ transitionDelay: `${i * 0.08}s` }}>
               <Quote size={24} color="var(--accent-1)" style={{ opacity: 0.3, marginBottom: '16px' }} />
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', lineHeight: 1.95, marginBottom: '22px' }}>"{t.text}"</p>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '8px' }}>

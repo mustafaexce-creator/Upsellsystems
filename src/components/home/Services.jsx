@@ -27,7 +27,7 @@ export default function Services() {
           {services.map((s, i) => {
             const Icon = s.icon
             return (
-              <div key={i} className={`glass-card fade-in-up ${visible ? 'visible' : ''}`}
+              <div key={i} className={`glass-card animated-border fade-in-up ${visible ? 'visible' : ''}`}
                 style={{ padding: '36px 30px', transitionDelay: `${i * 0.08}s`, cursor: 'default' }}>
                 <div style={{
                   width: '52px', height: '52px', borderRadius: '14px',
@@ -36,7 +36,7 @@ export default function Services() {
                 }}>
                   <Icon size={24} color={s.color} />
                 </div>
-                <h3 style={{ fontSize: '1.15rem', fontWeight: 700, marginBottom: '10px', letterSpacing: '-0.01em' }}>{s.title}</h3>
+                <h3 style={{ fontSize: '1.15rem', fontWeight: 700, marginBottom: '10px', letterSpacing: '-0.01em', color: 'white' }}>{s.title}</h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', lineHeight: 1.8 }}>{s.desc}</p>
               </div>
             )
