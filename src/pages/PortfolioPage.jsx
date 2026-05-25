@@ -5,16 +5,16 @@ import { ArrowRight, MessageCircle, X, ExternalLink, Globe, Laptop, Cpu, CheckCi
 
 const projects = [
   { 
-    name: 'Mamoon AI Agency', 
-    nameEn: 'Mamoon AI Agency Website', 
+    name: 'Remedi-X Agency', 
+    nameEn: 'Remedi-X Agency Website', 
     type: 'Websites', 
     category: 'Single-Page Website', 
     client: 'US AI Agency', 
     summary: 'A world-class single-page digital identity for an American AI agency.',
-    desc: 'We designed and developed a high-converting, single-page website for Mamoon, an American agency specializing in custom AI chatbots. The goal was to create a world-class digital identity that matches the caliber of their services in a hyper-competitive market.', 
+    desc: 'We designed and developed a high-converting, single-page website for Remedi-X, an American agency specializing in custom AI chatbots. The goal was to create a world-class digital identity that matches the caliber of their services in a hyper-competitive market.', 
     result: 'A site that precisely reflects the brand and speaks directly to their American audience.', 
     techs: ['React', 'Tailwind CSS', 'Vite', 'Responsive Design'],
-    link: 'https://mamoon.ai',
+    link: 'https://remedixsolutions.com',
     mockupType: 'ai'
   },
   { 
@@ -27,7 +27,7 @@ const projects = [
     desc: 'We built an end-to-end system that logs volunteer mission details in Google Sheets, automatically calculates hours, and generates professional certificates of appreciation for volunteers exceeding 200 annual hours — complete with mission names, dates, and durations.', 
     result: 'Eliminated hours of manual work and brought a professional, official feel to the volunteering process.', 
     techs: ['React', 'Google Apps Script', 'Google Sheets', 'PDF Generation'],
-    link: 'https://redcrescent-menoufia.org',
+    link: 'https://ercmissions.vercel.app',
     mockupType: 'dashboard'
   },
   { 
@@ -40,24 +40,24 @@ const projects = [
     desc: 'A multi-page website for a creative agency that balances striking visual design with professional functionality — built to represent their brand with pixel-perfect accuracy.', 
     result: '"Exceeded our expectations" — direct quote from the client.', 
     techs: ['React', 'CSS Animations', 'Responsive Design'],
-    link: 'https://prismark.agency',
+    link: 'https://unreal-view-319458.framer.app/',
     mockupType: 'creative'
   },
   { 
-    name: 'Fencing Company', 
-    nameEn: 'Fencing Business Website', 
+    name: 'Everlast Fences', 
+    nameEn: 'Everlast Fences Website', 
     type: 'Websites', 
     category: '3-Page Website', 
     client: 'Local Business', 
     summary: 'A local business lead-generation engine with organic SEO positioning.',
-    desc: 'A three-page website designed for a fencing company, with a sharp focus on local SEO and organic customer acquisition — no paid ads needed.', 
+    desc: 'A three-page website designed for Everlast Fences, with a sharp focus on local SEO and organic customer acquisition — no paid ads needed.', 
     result: 'The site still generates free leads today through organic search (SEO).', 
     techs: ['HTML', 'CSS', 'JavaScript', 'Local SEO'],
-    link: 'https://premiumfencinglocal.com',
+    link: 'https://everlastfences.com',
     mockupType: 'business'
   },
   { 
-    name: 'Retail Store + Dashboard', 
+    name: 'Buffalo Bargains / Bins & Retail Store', 
     nameEn: 'Retail Store with Admin Panel', 
     type: 'Systems', 
     category: 'Website + Admin System', 
@@ -66,7 +66,7 @@ const projects = [
     desc: 'A 4-page retail website with an integrated database and an intuitive admin dashboard that lets the business owner add, edit, and delete products independently — zero technical knowledge required.', 
     result: 'Complete independence for the client to manage their own content.', 
     techs: ['React', 'Node.js', 'Database', 'Admin Panel'],
-    link: 'https://shopup-retail.com',
+    link: 'https://www.buffalobargains.com',
     mockupType: 'store'
   },
 ]
@@ -102,8 +102,8 @@ export default function PortfolioPage() {
             display: 'flex', flexDirection: 'column', gap: '12px', justifyContent: 'center'
           }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '8px' }}>
-              <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--accent-3)' }}>MAMOON.AI</span>
-              <span style={{ padding: '2px 8px', borderRadius: '100px', fontSize: '0.6rem', background: 'rgba(99,102,241,0.2)', color: '#A78BFA' }}>AI AGENT ACTIVE</span>
+              <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--accent-3)' }}>REMEDI-X.AGENCY</span>
+              <span style={{ padding: '2px 8px', borderRadius: '100px', fontSize: '0.6rem', background: 'rgba(99,102,241,0.2)', color: '#A78BFA' }}>AI ACTIVE</span>
             </div>
             <div style={{ background: '#0C1120', borderRadius: '10px', padding: '12px', border: '1px solid rgba(99,102,241,0.15)' }}>
               <p style={{ fontSize: '0.7rem', color: '#94A3B8' }}>Visitor: "How do I automate my client intake?"</p>
@@ -180,7 +180,7 @@ export default function PortfolioPage() {
             display: 'flex', flexDirection: 'column', justify: 'space-between', gap: '12px'
           }}>
             <div style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ fontWeight: 800, fontSize: '0.75rem', color: '#F59E0B' }}>⚔️ PREMIUM FENCING</span>
+              <span style={{ fontWeight: 800, fontSize: '0.75rem', color: '#F59E0B' }}>⚔️ EVERLAST FENCES</span>
               <span style={{ fontSize: '0.55rem', color: '#9CA3AF' }}>Call: (555) 0199</span>
             </div>
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '6px', justifyContent: 'center' }}>
@@ -199,7 +199,7 @@ export default function PortfolioPage() {
             display: 'flex', flexDirection: 'column', gap: '8px'
           }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '6px' }}>
-              <span style={{ fontSize: '0.7rem', fontWeight: 700, color: '#10B981' }}>🛍️ SHOPUP RETAIL</span>
+              <span style={{ fontSize: '0.65rem', fontWeight: 700, color: '#10B981' }}>🛍️ BUFFALO BARGAINS</span>
               <span style={{ fontSize: '0.6rem', background: '#10B981', color: 'black', padding: '1px 5px', borderRadius: '3px', fontWeight: 700 }}>2 NEW ORDERS</span>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', flex: 1 }}>

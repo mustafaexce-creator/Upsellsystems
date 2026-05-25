@@ -3,10 +3,10 @@ import useInView from '../../hooks/useInView'
 import { ArrowRight, ExternalLink } from 'lucide-react'
 
 const projects = [
-  { name: 'Mamoon AI Agency', flag: '🇺🇸', category: 'Website · US Client', desc: 'A world-class single-page site for an American AI chatbot agency — designed to establish instant credibility in a crowded market.', result: 'Launched in days. Client was blown away on first look.' },
-  { name: 'Egyptian Red Crescent System', flag: '🏥', category: 'Custom System · Nonprofit', desc: 'A full volunteer mission tracking system with automatic hour calculations and printable certificates of appreciation.', result: 'Eliminated hours of manual work. Made the process official.' },
-  { name: 'Prismark Agency Website', flag: '🎨', category: 'Website · Creative Agency', desc: 'A multi-page website that captures the spirit of a creative agency — professional, attractive, and perfectly on-brand.', result: '"Exceeded our expectations" — direct client feedback.' },
-  { name: 'Retail Store + Admin Dashboard', flag: '🛒', category: 'Website + System · Retail', desc: 'A 4-page retail site with a full database and an admin panel that lets the owner manage products without any technical skill.', result: 'Total independence for the client to run their own site.' },
+  { name: 'Remedi-X Agency', flag: '🇺🇸', category: 'Website · US Client', desc: 'A world-class single-page site for an American AI chatbot agency — designed to establish instant credibility in a crowded market.', result: 'Launched in days. Client was blown away on first look.' },
+  { name: 'Red Crescent Volunteer System', flag: '🏥', category: 'Custom System · Nonprofit', desc: 'A full volunteer mission tracking system with automatic hour calculations and printable certificates of appreciation.', result: 'Eliminated hours of manual work. Made the process official.' },
+  { name: 'Prismark Agency', flag: '🎨', category: 'Website · Creative Agency', desc: 'A multi-page website that captures the spirit of a creative agency — professional, attractive, and perfectly on-brand.', result: '"Exceeded our expectations" — direct client feedback.' },
+  { name: 'Buffalo Bargains / Bins & Retail', flag: '🛒', category: 'Website + System · Retail', desc: 'A 4-page retail site with a full database and an admin panel that lets the owner manage products without any technical skill.', result: 'Total independence for the client to run their own site.' },
 ]
 
 export default function PortfolioPreview() {
