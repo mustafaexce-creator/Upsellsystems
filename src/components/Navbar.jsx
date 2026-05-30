@@ -30,18 +30,43 @@ export default function Navbar() {
       borderBottom: scrolled ? '1px solid rgba(99,102,241,0.08)' : '1px solid transparent',
     }}>
       <nav style={{ maxWidth: '1200px', margin: '0 auto', padding: '18px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <div style={{
-            width: '38px', height: '38px', borderRadius: '10px',
-            background: 'linear-gradient(135deg, #6366F1, #8B5CF6)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: '1.1rem', color: 'white',
-            boxShadow: '0 0 20px rgba(99,102,241,0.3)',
-          }}>U</div>
-          <span style={{
-            fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: '1.15rem',
-            color: 'white', letterSpacing: '-0.5px',
-          }}>UpsellSystems</span>
+        <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" style={{ height: '50px', width: 'auto' }}>
+            <defs>
+              <linearGradient id="upsellGradNav" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#6366F1" />
+                <stop offset="50%" stopColor="#8B5CF6" />
+                <stop offset="100%" stopColor="#22D3EE" />
+              </linearGradient>
+            </defs>
+            <g transform="translate(10, 5) scale(0.7)">
+              <path 
+                d="M 32 30 
+                   L 32 58 
+                   C 32 70, 44 72, 50 72 
+                   C 56 72, 68 70, 68 58 
+                   L 68 26 
+                   M 58 36 
+                   L 68 26 
+                   L 78 36" 
+                fill="none" 
+                stroke="url(#upsellGradNav)" 
+                strokeWidth="8.5" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+              />
+              <circle cx="68" cy="13" r="4" fill="#22D3EE" />
+            </g>
+            <text 
+              x="80" 
+              y="49" 
+              fontFamily="'Space Grotesk', 'Inter', -apple-system, sans-serif" 
+              fontWeight="800" 
+              fontSize="28" 
+              letterSpacing="-0.03em"
+              fill="#FFFFFF"
+            >Upsell<tspan fill="url(#upsellGradNav)">Systems</tspan></text>
+          </svg>
         </Link>
 
         <div className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '40px' }}>

@@ -1,201 +1,260 @@
 import { useEffect, useState } from 'react'
+import { ArrowUpRight, ShieldCheck, Zap, Users, TrendingUp } from 'lucide-react'
 
-const codeLines = [
-  { indent: 0, tokens: [{ text: 'const', color: '#C792EA' }, { text: ' website', color: '#82AAFF' }, { text: ' = ', color: '#89DDFF' }, { text: 'await', color: '#C792EA' }, { text: ' build', color: '#82AAFF' }, { text: '({', color: '#89DDFF' }] },
-  { indent: 1, tokens: [{ text: 'client', color: '#F07178' }, { text: ': ', color: '#89DDFF' }, { text: '"you"', color: '#C3E88D' }, { text: ',', color: '#89DDFF' }] },
-  { indent: 1, tokens: [{ text: 'speed', color: '#F07178' }, { text: ': ', color: '#89DDFF' }, { text: '"2-5 days"', color: '#C3E88D' }, { text: ',', color: '#89DDFF' }] },
-  { indent: 1, tokens: [{ text: 'quality', color: '#F07178' }, { text: ': ', color: '#89DDFF' }, { text: '"world-class"', color: '#C3E88D' }, { text: ',', color: '#89DDFF' }] },
-  { indent: 1, tokens: [{ text: 'price', color: '#F07178' }, { text: ': ', color: '#89DDFF' }, { text: '"unmatched"', color: '#C3E88D' }] },
-  { indent: 0, tokens: [{ text: '});', color: '#89DDFF' }] },
-  { indent: 0, tokens: [] },
-  { indent: 0, tokens: [{ text: 'await', color: '#C792EA' }, { text: ' deploy', color: '#82AAFF' }, { text: '(', color: '#89DDFF' }, { text: 'website', color: '#82AAFF' }, { text: ');', color: '#89DDFF' }] },
-  { indent: 0, tokens: [{ text: '// ', color: '#546E7A' }, { text: '✓ Live in production', color: '#546E7A' }] },
+// A mock stream of real-time leads to simulate customer acquisition
+const mockLeads = [
+  { name: 'Sarah K.', project: 'E-Commerce Store', budget: '$4,500', time: 'Just now' },
+  { name: 'Alex M.', project: 'Custom CRM System', budget: '$8,200', time: '2 min ago' },
+  { name: 'David L.', project: 'Real Estate Landing', budget: '$3,500', time: '5 min ago' },
+  { name: 'Sophia R.', project: 'SaaS Platform', budget: '$12,000', time: '12 min ago' }
 ]
 
-function TypewriterLine({ line, delay, onDone }) {
-  const [visibleChars, setVisibleChars] = useState(0)
-  const fullText = line.tokens.map(t => t.text).join('')
+export default function HeroVisual() {
+  const [activeLeadIdx, setActiveLeadIdx] = useState(0)
+  const [pulse, setPulse] = useState(false)
 
+  // Rotate leads automatically to simulate a live active funnel
   useEffect(() => {
-    const timer = setTimeout(() => {
-      const interval = setInterval(() => {
-        setVisibleChars(prev => {
-          if (prev >= fullText.length) { clearInterval(interval); onDone && onDone(); return prev }
-          return prev + 1
-        })
-      }, 30 + Math.random() * 20)
-      return () => clearInterval(interval)
-    }, delay)
-    return () => clearTimeout(timer)
+    const interval = setInterval(() => {
+      setPulse(true)
+      setTimeout(() => setPulse(false), 800)
+      setActiveLeadIdx(prev => (prev + 1) % mockLeads.length)
+    }, 4500)
+    return () => clearInterval(interval)
   }, [])
 
-  let charCount = 0
-  return (
-    <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', lineHeight: '2', paddingLeft: `${line.indent * 20}px`, minHeight: '1.6em', whiteSpace: 'pre' }}>
-      {line.tokens.map((token, ti) => {
-        const tokenStart = charCount
-        charCount += token.text.length
-        const visiblePart = token.text.slice(0, Math.max(0, visibleChars - tokenStart))
-        return <span key={ti} style={{ color: token.color }}>{visiblePart}</span>
-      })}
-      {visibleChars < fullText.length && visibleChars > 0 && (
-        <span style={{ display: 'inline-block', width: '8px', height: '15px', background: '#6366F1', marginLeft: '1px', animation: 'blink 1s step-end infinite', verticalAlign: 'middle' }} />
-      )}
-    </div>
-  )
-}
-
-export default function HeroVisual() {
-  const [startedLines, setStartedLines] = useState(1)
-
-  const handleLineDone = (lineIdx) => {
-    if (lineIdx + 1 < codeLines.length) {
-      setTimeout(() => setStartedLines(prev => Math.max(prev, lineIdx + 2)), 100)
-    }
-  }
+  const currentLead = mockLeads[activeLeadIdx]
 
   return (
-    <div style={{ position: 'relative', width: '100%', maxWidth: '460px' }}>
-      {/* Orbital rings */}
+    <div style={{ position: 'relative', width: '100%', maxWidth: '440px', height: '440px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      
+      {/* Dynamic Background Glows */}
       <div style={{
-        position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
-        width: '420px', height: '420px', borderRadius: '50%',
-        border: '1px solid rgba(99,102,241,0.08)',
-        animation: 'spin-slow 30s linear infinite',
-      }}>
-        <div style={{
-          position: 'absolute', top: '-5px', left: '50%',
-          width: '10px', height: '10px', borderRadius: '50%',
-          background: '#6366F1', boxShadow: '0 0 15px rgba(99,102,241,0.6)',
-        }} />
-        <div style={{
-          position: 'absolute', bottom: '20%', right: '-5px',
-          width: '7px', height: '7px', borderRadius: '50%',
-          background: '#22D3EE', boxShadow: '0 0 12px rgba(34,211,238,0.6)',
-        }} />
-      </div>
+        position: 'absolute', width: '320px', height: '320px', borderRadius: '50%',
+        background: 'radial-gradient(circle, rgba(99,102,241,0.2) 0%, transparent 70%)',
+        filter: 'blur(30px)', zIndex: 0, pointerEvents: 'none'
+      }} />
       <div style={{
-        position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
-        width: '340px', height: '340px', borderRadius: '50%',
-        border: '1px solid rgba(139,92,246,0.06)',
-        animation: 'spin-slow 22s linear infinite reverse',
-      }}>
-        <div style={{
-          position: 'absolute', top: '10%', right: '-4px',
-          width: '8px', height: '8px', borderRadius: '50%',
-          background: '#8B5CF6', boxShadow: '0 0 12px rgba(139,92,246,0.5)',
-        }} />
-      </div>
+        position: 'absolute', width: '280px', height: '280px', borderRadius: '50%',
+        background: 'radial-gradient(circle, rgba(34,211,238,0.12) 0%, transparent 70%)',
+        filter: 'blur(40px)', zIndex: 0, pointerEvents: 'none', top: '10%', left: '10%'
+      }} />
 
-      {/* Floating badge — top right */}
+      {/* Orbiting Tech Rings */}
+      <svg style={{ position: 'absolute', width: '450px', height: '450px', zIndex: 1, pointerEvents: 'none' }} viewBox="0 0 440 440">
+        <defs>
+          <linearGradient id="orbitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="rgba(99,102,241,0.6)" />
+            <stop offset="50%" stopColor="rgba(34,211,238,0.1)" />
+            <stop offset="100%" stopColor="rgba(139,92,246,0.6)" />
+          </linearGradient>
+        </defs>
+        <circle cx="220" cy="220" r="200" fill="none" stroke="url(#orbitGrad)" strokeWidth="1.5" strokeDasharray="5 15" style={{ animation: 'spin-slow 50s linear infinite' }} />
+        <circle cx="220" cy="220" r="160" fill="none" stroke="rgba(99,102,241,0.12)" strokeWidth="1" strokeDasharray="40 180" style={{ animation: 'spin-slow 30s linear infinite reverse' }} />
+      </svg>
+
+      {/* High-Contrast Marketing Badges */}
+      
+      {/* Badge 1: Production Speed */}
       <div style={{
-        position: 'absolute', top: '-10px', right: '-10px', zIndex: 5,
-        background: 'linear-gradient(135deg, rgba(52,211,153,0.15), rgba(52,211,153,0.05))',
-        border: '1px solid rgba(52,211,153,0.2)', borderRadius: '12px',
-        padding: '10px 16px', backdropFilter: 'blur(12px)',
+        position: 'absolute', top: '10px', right: '-20px', zIndex: 5,
+        background: 'rgba(5, 7, 14, 0.95)',
+        border: '2px solid #8B5CF6', borderRadius: '12px',
+        padding: '10px 14px', backdropFilter: 'blur(16px)',
+        boxShadow: '0 8px 24px rgba(139,92,246,0.3), inset 0 0 10px rgba(139,92,246,0.15)',
         animation: 'float-badge 4s ease-in-out infinite',
       }}>
-        <p style={{ fontSize: '0.7rem', color: '#34D399', fontWeight: 600, fontFamily: "'Space Grotesk'" }}>● Deployed</p>
-        <p style={{ fontSize: '0.62rem', color: 'var(--text-muted)', marginTop: '2px' }}>upsellsystems.com</p>
+        <p style={{ fontSize: '0.7rem', color: '#C084FC', fontWeight: 800, fontFamily: "'Space Grotesk', sans-serif", letterSpacing: '0.02em', display: 'flex', alignItems: 'center', gap: '4px' }}>
+          <Zap size={12} fill="#C084FC" /> 2-5 DAYS LAUNCH
+        </p>
+        <p style={{ fontSize: '0.6rem', color: '#94A3B8', marginTop: '2px', fontWeight: 600 }}>Unmatched agency speed</p>
       </div>
 
-      {/* Floating badge — bottom left */}
+      {/* Badge 2: Conversion Boost */}
       <div style={{
-        position: 'absolute', bottom: '20px', left: '-20px', zIndex: 5,
-        background: 'linear-gradient(135deg, rgba(99,102,241,0.15), rgba(99,102,241,0.05))',
-        border: '1px solid rgba(99,102,241,0.2)', borderRadius: '12px',
-        padding: '10px 16px', backdropFilter: 'blur(12px)',
-        animation: 'float-badge 5s ease-in-out infinite 1s',
+        position: 'absolute', bottom: '70px', left: '-25px', zIndex: 5,
+        background: 'rgba(5, 7, 14, 0.95)',
+        border: '2px solid #10B981', borderRadius: '12px',
+        padding: '10px 14px', backdropFilter: 'blur(16px)',
+        boxShadow: '0 8px 24px rgba(16,185,129,0.3), inset 0 0 10px rgba(16,185,129,0.15)',
+        animation: 'float-badge 4.5s ease-in-out infinite 1s',
       }}>
-        <p style={{ fontSize: '0.7rem', color: '#A78BFA', fontWeight: 600, fontFamily: "'Space Grotesk'" }}>⚡ 2.4 days avg</p>
-        <p style={{ fontSize: '0.62rem', color: 'var(--text-muted)', marginTop: '2px' }}>delivery time</p>
+        <p style={{ fontSize: '0.7rem', color: '#34D399', fontWeight: 800, fontFamily: "'Space Grotesk', sans-serif", display: 'flex', alignItems: 'center', gap: '4px' }}>
+          <TrendingUp size={12} /> +42% CONVERSION
+        </p>
+        <p style={{ fontSize: '0.6rem', color: '#94A3B8', marginTop: '2px', fontWeight: 600 }}>Engineered to drive sales</p>
       </div>
 
-      {/* Performance badge — bottom right */}
+      {/* Badge 3: Ultra Fast Loading */}
       <div style={{
-        position: 'absolute', bottom: '-5px', right: '20px', zIndex: 5,
-        background: 'linear-gradient(135deg, rgba(245,158,11,0.12), rgba(245,158,11,0.04))',
-        border: '1px solid rgba(245,158,11,0.2)', borderRadius: '12px',
-        padding: '10px 16px', backdropFilter: 'blur(12px)',
-        animation: 'float-badge 4.5s ease-in-out infinite 2s',
+        position: 'absolute', bottom: '15px', right: '10px', zIndex: 5,
+        background: 'rgba(5, 7, 14, 0.95)',
+        border: '2px solid #22D3EE', borderRadius: '12px',
+        padding: '10px 14px', backdropFilter: 'blur(16px)',
+        boxShadow: '0 8px 24px rgba(34,211,238,0.3), inset 0 0 10px rgba(34,211,238,0.15)',
+        animation: 'float-badge 5s ease-in-out infinite 2s',
       }}>
-        <p style={{ fontSize: '0.7rem', color: '#F59E0B', fontWeight: 600, fontFamily: "'Space Grotesk'" }}>100/100</p>
-        <p style={{ fontSize: '0.62rem', color: 'var(--text-muted)', marginTop: '2px' }}>Lighthouse score</p>
+        <p style={{ fontSize: '0.7rem', color: '#22D3EE', fontWeight: 800, fontFamily: "'Space Grotesk', sans-serif", display: 'flex', alignItems: 'center', gap: '4px' }}>
+          🚀 0.4s PAGE LOAD
+        </p>
+        <p style={{ fontSize: '0.6rem', color: '#94A3B8', marginTop: '2px', fontWeight: 600 }}>Lighthouse score 100/100</p>
       </div>
 
-      {/* Code Editor */}
+      {/* The Conversion Engine Dashboard Window */}
       <div style={{
-        position: 'relative', zIndex: 3,
-        background: 'linear-gradient(135deg, rgba(12,17,32,0.95), rgba(8,11,22,0.9))',
-        border: '1px solid rgba(99,102,241,0.15)',
-        borderRadius: '16px',
+        position: 'relative', zIndex: 3, width: '100%', maxWidth: '370px',
+        background: 'linear-gradient(135deg, rgba(12, 17, 32, 0.96), rgba(8, 11, 22, 0.94))',
+        border: '1.5px solid rgba(99,102,241,0.3)',
+        borderRadius: '24px',
         overflow: 'hidden',
-        boxShadow: '0 0 60px rgba(99,102,241,0.08), 0 30px 80px rgba(0,0,0,0.5)',
-        backdropFilter: 'blur(20px)',
+        boxShadow: '0 0 50px rgba(99,102,241,0.12), 0 30px 80px rgba(0,0,0,0.6)',
+        backdropFilter: 'blur(30px)',
         animation: 'float-editor 6s ease-in-out infinite',
       }}>
-        {/* Title bar */}
+        
+        {/* Header Bar */}
         <div style={{
           display: 'flex', alignItems: 'center', gap: '8px',
           padding: '14px 18px',
-          borderBottom: '1px solid rgba(99,102,241,0.08)',
-          background: 'rgba(5,7,14,0.6)',
+          borderBottom: '1px solid rgba(99,102,241,0.15)',
+          background: 'rgba(5, 7, 14, 0.6)',
         }}>
           <div style={{ display: 'flex', gap: '6px' }}>
-            <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#FF5F57' }} />
-            <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#FEBC2E' }} />
-            <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#28C840' }} />
+            <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#EF4444' }} />
+            <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#F59E0B' }} />
+            <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#10B981' }} />
           </div>
-          <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginLeft: '12px', fontFamily: "'JetBrains Mono'" }}>build.js</span>
-          <div style={{ marginLeft: 'auto', fontSize: '0.6rem', color: 'var(--text-muted)', display: 'flex', gap: '12px' }}>
-            <span>UTF-8</span>
-            <span>JavaScript</span>
+          <span style={{ fontSize: '0.7rem', color: '#94A3B8', marginLeft: '12px', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, letterSpacing: '0.02em' }}>
+            yourbusiness.com/analytics
+          </span>
+          <div style={{ marginLeft: 'auto', background: 'rgba(16,185,129,0.15)', color: '#34D399', padding: '2px 8px', borderRadius: '100px', fontSize: '0.55rem', fontWeight: 800, letterSpacing: '0.05em' }}>
+            SECURE Funnel
           </div>
         </div>
 
-        {/* Code content */}
-        <div style={{ padding: '20px 22px', minHeight: '220px' }}>
-          {codeLines.map((line, i) => (
-            i < startedLines ? (
-              <div key={i} style={{ display: 'flex', gap: '16px' }}>
-                <span style={{ color: 'rgba(100,116,139,0.4)', fontSize: '0.7rem', fontFamily: "'JetBrains Mono'", minWidth: '18px', textAlign: 'right', lineHeight: '2', userSelect: 'none' }}>{i + 1}</span>
-                <TypewriterLine line={line} delay={0} onDone={() => handleLineDone(i)} />
+        {/* Live funnel metrics panel */}
+        <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          
+          {/* Top funnel metrics */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+            
+            {/* Left box: active traffic */}
+            <div style={{ background: 'rgba(99,102,241,0.03)', border: '1px solid rgba(99,102,241,0.12)', borderRadius: '14px', padding: '12px 14px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
+                <span style={{ fontSize: '0.62rem', color: 'var(--text-muted)', fontWeight: 600 }}>Active Funnel Traffic</span>
+                <Users size={12} color="#6366F1" />
               </div>
-            ) : (
-              <div key={i} style={{ display: 'flex', gap: '16px' }}>
-                <span style={{ color: 'rgba(100,116,139,0.4)', fontSize: '0.7rem', fontFamily: "'JetBrains Mono'", minWidth: '18px', textAlign: 'right', lineHeight: '2', userSelect: 'none' }}>{i + 1}</span>
-                <div style={{ minHeight: '1.6em', lineHeight: '2' }} />
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
+                <span style={{ fontSize: '1.25rem', fontWeight: 800, color: 'white', fontFamily: "'Space Grotesk'" }}>2,482</span>
+                <span style={{ fontSize: '0.62rem', color: '#34D399', fontWeight: 700, display: 'flex', alignItems: 'center' }}>
+                  <ArrowUpRight size={10} /> +18%
+                </span>
               </div>
-            )
-          ))}
+            </div>
+
+            {/* Right box: conversion machine */}
+            <div style={{ background: 'rgba(34,211,238,0.03)', border: '1px solid rgba(34,211,238,0.12)', borderRadius: '14px', padding: '12px 14px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
+                <span style={{ fontSize: '0.62rem', color: 'var(--text-muted)', fontWeight: 600 }}>Conversion Rate</span>
+                <ShieldCheck size={12} color="#22D3EE" />
+              </div>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
+                <span style={{ fontSize: '1.25rem', fontWeight: 800, color: 'white', fontFamily: "'Space Grotesk'" }}>4.82%</span>
+                <span style={{ fontSize: '0.62rem', color: '#22D3EE', fontWeight: 700 }}>Excellent</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Animated Funnel Conversion Flow Graph (Lightweight glowing visual) */}
+          <div style={{ position: 'relative', height: '64px', background: 'rgba(5, 7, 14, 0.4)', border: '1px solid rgba(99,102,241,0.08)', borderRadius: '14px', overflow: 'hidden', padding: '10px 14px' }}>
+            <span style={{ fontSize: '0.58rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em' }}>Customer Growth Curve</span>
+            <svg style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '40px', overflow: 'visible' }} viewBox="0 0 100 40" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="chartGlow" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#6366F1" stopOpacity="0.4" />
+                  <stop offset="100%" stopColor="#6366F1" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+              <path d="M 0,38 Q 15,35 30,28 T 60,18 T 90,4 T 100,2 L 100,40 L 0,40 Z" fill="url(#chartGlow)" />
+              <path d="M 0,38 Q 15,35 30,28 T 60,18 T 90,4 T 100,2" fill="none" stroke="#22D3EE" strokeWidth="2" style={{ strokeDasharray: '200', strokeDashoffset: '200', animation: 'drawChart 3s forwards' }} />
+              <circle cx="100" cy="2" r="3" fill="#22D3EE" style={{ animation: 'blink 1s infinite' }} />
+            </svg>
+          </div>
+
+          {/* Dynamic funnel lead capture card (Glows & slides dynamically) */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <span style={{ fontSize: '0.6rem', color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', display: 'flex', justify: 'space-between' }}>
+              <span>Live Inbound Leads Funnel</span>
+              <span style={{ color: '#34D399', animation: 'blink 1.5s infinite' }}>● ACTIVE</span>
+            </span>
+
+            <div style={{
+              background: 'linear-gradient(135deg, rgba(99,102,241,0.08), rgba(12,17,32,0.95))',
+              border: pulse ? '1.5px solid #22D3EE' : '1.5px solid rgba(99,102,241,0.2)',
+              borderRadius: '16px',
+              padding: '16px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              transition: 'all 0.5s ease',
+              boxShadow: pulse ? '0 0 15px rgba(34,211,238,0.2)' : 'none',
+              transform: pulse ? 'scale(1.02)' : 'scale(1)'
+            }}>
+              <div>
+                <p style={{ fontSize: '0.62rem', color: '#A78BFA', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '2px' }}>
+                  🎉 Lead Captured
+                </p>
+                <h5 style={{ fontSize: '0.85rem', fontWeight: 800, color: 'white', marginBottom: '4px' }}>
+                  {currentLead.name} <span style={{ fontSize: '0.75rem', fontWeight: 400, color: 'var(--text-secondary)' }}>interested in {currentLead.project}</span>
+                </h5>
+                <p style={{ fontSize: '0.62rem', color: 'var(--text-muted)' }}>Funnel source: Organic Google Search (SEO)</p>
+              </div>
+              <div style={{ textAlign: 'right' }}>
+                <span style={{
+                  background: 'rgba(52,211,153,0.1)', color: '#34D399', border: '1px solid rgba(52,211,153,0.2)',
+                  padding: '4px 10px', borderRadius: '100px', fontSize: '0.68rem', fontWeight: 800
+                }}>
+                  {currentLead.budget}
+                </span>
+                <p style={{ fontSize: '0.55rem', color: 'var(--text-muted)', marginTop: '6px' }}>{currentLead.time}</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Status bar */}
         <div style={{
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          padding: '6px 18px',
-          borderTop: '1px solid rgba(99,102,241,0.08)',
-          background: 'rgba(99,102,241,0.06)',
-          fontSize: '0.6rem', color: 'var(--text-muted)',
-          fontFamily: "'JetBrains Mono'",
+          padding: '10px 18px',
+          borderTop: '1px solid rgba(99,102,241,0.15)',
+          background: 'rgba(16,185,129,0.06)',
+          fontSize: '0.62rem', color: '#34D399',
+          fontFamily: "'Space Grotesk', sans-serif",
+          fontWeight: 700
         }}>
-          <span>✓ Build successful</span>
-          <span>Ln 9, Col 28</span>
+          <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#34D399', display: 'inline-block' }} />
+            System fully optimized
+          </span>
+          <span style={{ color: 'var(--text-muted)' }}>Launch Speed: 10x</span>
         </div>
       </div>
 
       <style>{`
         @keyframes spin-slow {
-          from { transform: translate(-50%, -50%) rotate(0deg); }
-          to { transform: translate(-50%, -50%) rotate(360deg); }
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        @keyframes drawChart {
+          to { strokeDashoffset: 0; }
         }
         @keyframes float-editor {
           0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-12px); }
+          50% { transform: translateY(-10px); }
         }
         @keyframes float-badge {
           0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-8px); }
+          50% { transform: translateY(-6px); }
         }
         @keyframes blink {
           0%, 100% { opacity: 1; }

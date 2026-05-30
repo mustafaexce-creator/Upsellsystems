@@ -1,10 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
   <defs>
-    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#4F6EF7"/>
-      <stop offset="100%" stop-color="#00D4FF"/>
+    <!-- Brand Gradient: Indigo to Violet to Cyan -->
+    <linearGradient id="upsellGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366F1" />
+      <stop offset="50%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#22D3EE" />
     </linearGradient>
   </defs>
-  <rect width="100" height="100" rx="20" fill="url(#g)"/>
-  <text x="50" y="68" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-weight="bold" font-size="52">U</text>
+
+  <!-- Clean, razor-sharp logo mark (no shadows, no background lines) -->
+  <path 
+    d="M 32 30 
+       L 32 58 
+       C 32 70, 44 72, 50 72 
+       C 56 72, 68 70, 68 58 
+       L 68 26 
+       M 58 36 
+       L 68 26 
+       L 78 36" 
+    fill="none" 
+    stroke="url(#upsellGrad)" 
+    stroke-width="8.5" 
+    stroke-linecap="round" 
+    stroke-linejoin="round"
+  />
+
+  <!-- Floating Accent Dot above the arrow tip (restored & sharp) -->
+  <circle 
+    cx="68" 
+    cy="13" 
+    r="4" 
+    fill="#22D3EE" 
+  />
 </svg>

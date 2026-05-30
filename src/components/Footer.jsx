@@ -6,14 +6,43 @@ export default function Footer() {
     <footer style={{ background: '#030508', borderTop: '1px solid rgba(99,102,241,0.06)', padding: '72px 24px 32px' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '48px' }}>
         <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '18px' }}>
-            <div style={{
-              width: '34px', height: '34px', borderRadius: '8px',
-              background: 'linear-gradient(135deg, #6366F1, #8B5CF6)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              fontFamily: "'Space Grotesk'", fontWeight: 700, fontSize: '0.95rem', color: 'white',
-            }}>U</div>
-            <span style={{ fontFamily: "'Space Grotesk'", fontWeight: 700, fontSize: '1.05rem', color: 'white' }}>UpsellSystems</span>
+          <div style={{ marginBottom: '18px' }}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" style={{ height: '44px', width: 'auto' }}>
+              <defs>
+                <linearGradient id="upsellGradFooter" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#6366F1" />
+                  <stop offset="50%" stopColor="#8B5CF6" />
+                  <stop offset="100%" stopColor="#22D3EE" />
+                </linearGradient>
+              </defs>
+              <g transform="translate(10, 5) scale(0.7)">
+                <path 
+                  d="M 32 30 
+                     L 32 58 
+                     C 32 70, 44 72, 50 72 
+                     C 56 72, 68 70, 68 58 
+                     L 68 26 
+                     M 58 36 
+                     L 68 26 
+                     L 78 36" 
+                  fill="none" 
+                  stroke="url(#upsellGradFooter)" 
+                  strokeWidth="8.5" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                />
+                <circle cx="68" cy="13" r="4" fill="#22D3EE" />
+              </g>
+              <text 
+                x="80" 
+                y="49" 
+                fontFamily="'Space Grotesk', 'Inter', -apple-system, sans-serif" 
+                fontWeight="800" 
+                fontSize="28" 
+                letterSpacing="-0.03em"
+                fill="#FFFFFF"
+              >Upsell<tspan fill="url(#upsellGradFooter)">Systems</tspan></text>
+            </svg>
           </div>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.9, maxWidth: '300px' }}>
             We turn ambitious ideas into digital products that convert. Fast delivery. Stunning design. Unmatched value.
