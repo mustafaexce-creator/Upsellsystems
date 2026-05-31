@@ -26,12 +26,12 @@ export default function Testimonials() {
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', lineHeight: 1.95, marginBottom: '22px' }}>"{t.text}"</p>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '8px' }}>
                 <div>
-                  <p style={{ fontWeight: 700, fontSize: '0.9rem', color: 'white', marginBottom: '2px' }}>{t.name}</p>
+                  <p style={{ fontWeight: 700, fontSize: '0.9rem', color: '#0F172A', marginBottom: '2px' }}>{t.name}</p>
                   <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{t.role}</p>
                 </div>
                 <div style={{ display: 'flex', gap: '2px' }}>
                   {Array.from({ length: t.stars }).map((_, j) => (
-                    <Star key={j} size={14} color="#F59E0B" fill="#F59E0B" />
+                    <Star key={j} size={14} color="#D97706" fill="#D97706" />
                   ))}
                 </div>
               </div>

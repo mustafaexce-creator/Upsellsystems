@@ -28,10 +28,10 @@ export default function StatsBar() {
     <section style={{ background: 'var(--bg-secondary)', position: 'relative', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
       <div ref={ref} className={`fade-in-up ${visible ? 'visible' : ''}`} style={{ maxWidth: '1100px', margin: '0 auto', padding: '16px 24px' }}>
         <div className="glass-card" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', padding: '12px 0' }}>
-          <StatItem icon={Rocket} value={10} prefix="" suffix="+" label="Projects Delivered" color="#6366F1" />
-          <StatItem icon={Clock} value={5} prefix="" suffix=" Days" label="Average Delivery" color="#8B5CF6" />
-          <StatItem icon={Smile} value={100} prefix="" suffix="%" label="Client Satisfaction" color="#22D3EE" />
-          <StatItem icon={Zap} value={2} prefix="<" suffix=" Weeks" label="For Custom Software" color="#34D399" />
+          <StatItem icon={Rocket} value={10} prefix="" suffix="+" label="Projects Delivered" color="#6d28d9" />
+          <StatItem icon={Clock} value={5} prefix="" suffix=" Days" label="Average Delivery" color="#2563eb" />
+          <StatItem icon={Smile} value={100} prefix="" suffix="%" label="Client Satisfaction" color="#0891b2" />
+          <StatItem icon={Zap} value={2} prefix="<" suffix=" Weeks" label="For Custom Software" color="#059669" />
         </div>
       </div>
     </section>

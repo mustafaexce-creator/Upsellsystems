@@ -3,16 +3,16 @@ import { Mail, Phone } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer style={{ background: '#030508', borderTop: '1px solid rgba(99,102,241,0.06)', padding: '72px 24px 32px' }}>
+    <footer style={{ background: '#F8FAFC', borderTop: '1px solid rgba(109,40,217,0.06)', padding: '72px 24px 32px' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '48px' }}>
         <div>
           <div style={{ marginBottom: '18px' }}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" style={{ height: '44px', width: 'auto' }}>
               <defs>
                 <linearGradient id="upsellGradFooter" x1="0%" y1="100%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#6366F1" />
-                  <stop offset="50%" stopColor="#8B5CF6" />
-                  <stop offset="100%" stopColor="#22D3EE" />
+                  <stop offset="0%" stopColor="#6d28d9" />
+                  <stop offset="50%" stopColor="#2563eb" />
+                  <stop offset="100%" stopColor="#0891b2" />
                 </linearGradient>
               </defs>
               <g transform="translate(10, 5) scale(0.7)">
@@ -31,7 +31,7 @@ export default function Footer() {
                   strokeLinecap="round" 
                   strokeLinejoin="round"
                 />
-                <circle cx="68" cy="13" r="4" fill="#22D3EE" />
+                <circle cx="68" cy="13" r="4" fill="#0891b2" />
               </g>
               <text 
                 x="80" 
@@ -40,7 +40,7 @@ export default function Footer() {
                 fontWeight="800" 
                 fontSize="28" 
                 letterSpacing="-0.03em"
-                fill="#FFFFFF"
+                fill="#0F172A"
               >Upsell<tspan fill="url(#upsellGradFooter)">Systems</tspan></text>
             </svg>
           </div>
@@ -50,7 +50,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 style={{ fontWeight: 700, fontSize: '0.95rem', marginBottom: '20px', color: 'white', letterSpacing: '-0.01em' }}>Navigate</h4>
+          <h4 style={{ fontWeight: 700, fontSize: '0.95rem', marginBottom: '20px', color: '#0F172A', letterSpacing: '-0.01em' }}>Navigate</h4>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
             <Link to="/" className="nav-link">Home</Link>
             <Link to="/portfolio" className="nav-link">Our Work</Link>
@@ -59,7 +59,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 style={{ fontWeight: 700, fontSize: '0.95rem', marginBottom: '20px', color: 'white', letterSpacing: '-0.01em' }}>Get in Touch</h4>
+          <h4 style={{ fontWeight: 700, fontSize: '0.95rem', marginBottom: '20px', color: '#0F172A', letterSpacing: '-0.01em' }}>Get in Touch</h4>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
             <Link to="/contact" className="nav-link" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Phone size={15} /> Contact Us
@@ -73,15 +73,15 @@ export default function Footer() {
 
       <div style={{
         maxWidth: '1200px', margin: '48px auto 0', paddingTop: '24px',
-        borderTop: '1px solid rgba(99,102,241,0.06)',
+        borderTop: '1px solid rgba(109,40,217,0.06)',
         display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '12px',
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>© 2026 UpsellSystems. All rights reserved.</p>
-          <span style={{ color: 'rgba(99,102,241,0.2)', fontSize: '0.8rem' }}>•</span>
-          <Link to="/privacy" style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={(e) => e.target.style.color = 'white'} onMouseOut={(e) => e.target.style.color = 'var(--text-muted)'}>Privacy Policy</Link>
-          <span style={{ color: 'rgba(99,102,241,0.2)', fontSize: '0.8rem' }}>•</span>
-          <Link to="/terms" style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={(e) => e.target.style.color = 'white'} onMouseOut={(e) => e.target.style.color = 'var(--text-muted)'}>Terms of Service</Link>
+          <span style={{ color: 'rgba(109,40,217,0.2)', fontSize: '0.8rem' }}>•</span>
+          <Link to="/privacy" style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={(e) => e.target.style.color = '#0F172A'} onMouseOut={(e) => e.target.style.color = 'var(--text-muted)'}>Privacy Policy</Link>
+          <span style={{ color: 'rgba(109,40,217,0.2)', fontSize: '0.8rem' }}>•</span>
+          <Link to="/terms" style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={(e) => e.target.style.color = '#0F172A'} onMouseOut={(e) => e.target.style.color = 'var(--text-muted)'}>Terms of Service</Link>
         </div>
         <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>Made with ❤️</p>
       </div>

@@ -7,9 +7,9 @@ export default function CTABanner() {
   return (
     <section style={{
       position: 'relative', overflow: 'hidden',
-      background: 'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(99,102,241,0.08), transparent), linear-gradient(180deg, var(--bg-primary), var(--bg-secondary))',
+      background: 'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(109,40,217,0.05), transparent), linear-gradient(180deg, var(--bg-primary), var(--bg-secondary))',
     }}>
-      <div className="glow-orb" style={{ width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(139,92,246,0.1), transparent)', top: '-200px', left: '50%', transform: 'translateX(-50%)' }} />
+      <div className="glow-orb" style={{ width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(37,99,235,0.06), transparent)', top: '-200px', left: '50%', transform: 'translateX(-50%)' }} />
       <div ref={ref} className={`section-container fade-in-up ${visible ? 'visible' : ''}`} style={{ textAlign: 'center', padding: '120px 24px' }}>
         <div className="section-label" style={{ margin: '0 auto 24px' }}>Ready to Start?</div>
         <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 800, marginBottom: '18px', letterSpacing: '-0.03em' }}>

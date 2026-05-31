@@ -2,12 +2,12 @@ import useInView from '../../hooks/useInView'
 import { Globe, Settings, Bot, Cloud, ShoppingCart, Palette } from 'lucide-react'
 
 const services = [
-  { icon: Globe, title: 'Website Design & Development', desc: 'High-converting sites that look incredible and load fast — designed, built, and launched in as few as 2 days.', color: '#6366F1' },
-  { icon: Settings, title: 'Custom Software & Systems', desc: 'Bespoke tools built to your exact workflow. CRMs, dashboards, admin panels — whatever you need, in under 2 weeks.', color: '#8B5CF6' },
-  { icon: Bot, title: 'AI Integration', desc: 'We embed the latest AI into your business — from chatbots to automation — so you save hours every single week.', color: '#22D3EE' },
-  { icon: Cloud, title: 'SaaS Development', desc: 'We take your software idea from napkin sketch to market-ready product. Full-stack, scalable, and subscription-ready.', color: '#34D399' },
-  { icon: ShoppingCart, title: 'E-Commerce Stores', desc: 'Beautiful storefronts with frictionless checkout, inventory management, and analytics built right in.', color: '#F59E0B' },
-  { icon: Palette, title: 'Digital Brand Identity', desc: 'Logos, color systems, and visual identities that make your brand impossible to forget.', color: '#EC4899' },
+  { icon: Globe, title: 'Website Design & Development', desc: 'High-converting sites that look incredible and load fast — designed, built, and launched in as few as 2 days.', color: '#6d28d9' },
+  { icon: Settings, title: 'Custom Software & Systems', desc: 'Bespoke tools built to your exact workflow. CRMs, dashboards, admin panels — whatever you need, in under 2 weeks.', color: '#2563eb' },
+  { icon: Bot, title: 'AI Integration', desc: 'We embed the latest AI into your business — from chatbots to automation — so you save hours every single week.', color: '#0891b2' },
+  { icon: Cloud, title: 'SaaS Development', desc: 'We take your software idea from napkin sketch to market-ready product. Full-stack, scalable, and subscription-ready.', color: '#059669' },
+  { icon: ShoppingCart, title: 'E-Commerce Stores', desc: 'Beautiful storefronts with frictionless checkout, inventory management, and analytics built right in.', color: '#D97706' },
+  { icon: Palette, title: 'Digital Brand Identity', desc: 'Logos, color systems, and visual identities that make your brand impossible to forget.', color: '#DB2777' },
 ]
 
 export default function Services() {
@@ -41,7 +41,7 @@ export default function Services() {
                 }}>
                   <Icon size={24} color={s.color} />
                 </div>
-                <h3 style={{ fontSize: '1.15rem', fontWeight: 700, marginBottom: '10px', letterSpacing: '-0.01em', color: 'white' }}>{s.title}</h3>
+                <h3 style={{ fontSize: '1.15rem', fontWeight: 700, marginBottom: '10px', letterSpacing: '-0.01em', color: '#0F172A' }}>{s.title}</h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', lineHeight: 1.8 }}>{s.desc}</p>
               </div>
             )

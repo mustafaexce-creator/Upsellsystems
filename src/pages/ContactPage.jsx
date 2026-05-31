@@ -44,7 +44,7 @@ export default function ContactPage() {
   return (
     <>
       <section style={{
-        background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(99,102,241,0.1), transparent), linear-gradient(180deg, #05070E, #080B16)',
+        background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(109,40,217,0.06), transparent), linear-gradient(180deg, #FFFFFF, #F8FAFC)',
         paddingTop: '150px', paddingBottom: '60px', position: 'relative',
       }}>
         <div className="bg-grid" />
@@ -66,7 +66,7 @@ export default function ContactPage() {
             <div className="glass-card" style={{ padding: '40px 34px' }}>
               {status === 'success' ? (
                 <div style={{ textAlign: 'center', padding: '48px 0' }}>
-                  <CheckCircle size={56} color="#34D399" style={{ marginBottom: '22px' }} />
+                  <CheckCircle size={56} color="#059669" style={{ marginBottom: '22px' }} />
                   <h3 style={{ fontSize: '1.4rem', marginBottom: '10px', letterSpacing: '-0.01em' }}>Message sent!</h3>
                   <p style={{ color: 'var(--text-secondary)', marginBottom: '24px' }}>We'll get back to you as soon as possible.</p>
                   <button onClick={() => setStatus('idle')} className="cta-secondary" style={{ margin: '0 auto' }}>
@@ -146,13 +146,13 @@ export default function ContactPage() {
                 Prefer email? Send us a message and we'll get right back to you.
               </p>
               <a href="mailto:mo@upsellsystems.com" className="glass-card"
-                style={{ padding: '22px 24px', display: 'flex', alignItems: 'center', gap: '18px', textDecoration: 'none', color: 'white' }}>
+                style={{ padding: '22px 24px', display: 'flex', alignItems: 'center', gap: '18px', textDecoration: 'none', color: '#0F172A' }}>
                 <div style={{
                   width: '46px', height: '46px', borderRadius: '12px',
-                  background: 'rgba(99,102,241,0.12)', border: '1px solid rgba(99,102,241,0.2)',
+                  background: 'rgba(109,40,217,0.08)', border: '1px solid rgba(109,40,217,0.15)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
                 }}>
-                  <Mail size={20} color="#6366F1" />
+                  <Mail size={20} color="#6d28d9" />
                 </div>
                 <div>
                   <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '2px' }}>Email</p>
@@ -181,7 +181,7 @@ export default function ContactPage() {
               <div key={i} style={{
                 display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px',
                 padding: '18px 14px', borderRadius: '14px',
-                background: 'rgba(12,17,32,0.4)', border: '1px solid var(--border)',
+                background: 'rgba(255,255,255,0.6)', border: '1px solid var(--border)',
               }}>
                 <b.icon size={17} color="var(--accent-1)" />
                 <span style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', fontWeight: 600 }}>{b.label}</span>
