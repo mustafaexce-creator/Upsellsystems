@@ -121,14 +121,16 @@ export default function PortfolioPreview() {
             background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.98))',
             border: '1px solid rgba(109,40,217,0.15)',
             borderRadius: '24px',
-            overflowY: 'auto',
+            overflow: 'hidden',
             position: 'relative',
             display: 'flex',
             flexDirection: 'column',
             boxShadow: '0 24px 60px rgba(0, 0, 0, 0.15)',
             animation: 'scaleUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
-            padding: '40px'
+            padding: '8px'
           }} onClick={(e) => e.stopPropagation()}>
+            
+            <div style={{ overflowY: 'auto', padding: '32px', height: '100%', display: 'flex', flexDirection: 'column' }}>
             
             {/* Close Button */}
             <button 
@@ -308,6 +310,7 @@ export default function PortfolioPreview() {
               </div>
             </div>
 
+            </div>
           </div>
         </div>
       )}
