@@ -143,8 +143,22 @@ export default function ContactPage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               <h3 style={{ fontSize: '1.25rem', fontWeight: 700, letterSpacing: '-0.01em', marginBottom: '4px' }}>Or reach out directly</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '8px', lineHeight: 1.7 }}>
-                Prefer email? Send us a message and we'll get right back to you.
+                Prefer email or WhatsApp? Send us a message and we'll get right back to you.
               </p>
+              <a href="https://wa.me/201286960710" target="_blank" rel="noopener noreferrer" className="glass-card"
+                style={{ padding: '22px 24px', display: 'flex', alignItems: 'center', gap: '18px', textDecoration: 'none', color: '#0F172A' }}>
+                <div style={{
+                  width: '46px', height: '46px', borderRadius: '12px',
+                  background: 'rgba(37,211,102,0.08)', border: '1px solid rgba(37,211,102,0.15)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+                }}>
+                  <MessageCircle size={20} color="#25D366" />
+                </div>
+                <div>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '2px' }}>WhatsApp</p>
+                  <p style={{ fontWeight: 600, fontSize: '0.92rem' }}>+20 128 696 0710</p>
+                </div>
+              </a>
               <a href="mailto:mo@upsellsystems.com" className="glass-card"
                 style={{ padding: '22px 24px', display: 'flex', alignItems: 'center', gap: '18px', textDecoration: 'none', color: '#0F172A' }}>
                 <div style={{

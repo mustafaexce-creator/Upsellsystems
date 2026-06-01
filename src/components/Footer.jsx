@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Mail, Phone } from 'lucide-react'
+import { Mail, Phone, MessageCircle } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -64,6 +64,9 @@ export default function Footer() {
             <Link to="/contact" className="nav-link" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Phone size={15} /> Contact Us
             </Link>
+            <a href="https://wa.me/201286960710" target="_blank" rel="noopener noreferrer" className="nav-link" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <MessageCircle size={15} /> WhatsApp
+            </a>
             <a href="mailto:mo@upsellsystems.com" className="nav-link" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Mail size={15} /> mo@upsellsystems.com
             </a>

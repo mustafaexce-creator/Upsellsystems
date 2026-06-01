@@ -7,12 +7,14 @@ import ContactPage from './pages/ContactPage'
 import PrivacyPage from './pages/PrivacyPage'
 import TermsPage from './pages/TermsPage'
 import ScrollToTop from './components/ScrollToTop'
+import WhatsAppFloat from './components/WhatsAppFloat'
 
 function App() {
   return (
     <>
       <div className="noise-overlay" />
       <ScrollToTop />
+      <WhatsAppFloat />
       <Navbar />
       <main>
         <Routes>
