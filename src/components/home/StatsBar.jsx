@@ -16,7 +16,7 @@ function StatItem({ icon: Icon, value, suffix, prefix, label, color }) {
           <Icon size={20} color={color} />
         </div>
       </div>
-      <div className="stat-number" style={{ color }}>{prefix}{visible ? count : 0}{suffix}</div>
+      <div className="stat-number" style={{ color }}>{prefix}{visible ? count : value}{suffix}</div>
       <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginTop: '6px', fontWeight: 500 }}>{label}</p>
     </div>
   )

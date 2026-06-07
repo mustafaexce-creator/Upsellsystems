@@ -115,9 +115,9 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== SECONDARY CTA ===== */
 .cta-secondary {
   background: transparent;
-  border: 1px solid var(--border-hover);
+  border: 1px solid transparent;
   color: var(--text-secondary);
-  padding: 15px 32px;
+  padding: 15px 24px;
   border-radius: 14px;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
@@ -130,9 +130,8 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
 }
 .cta-secondary:hover {
-  border-color: var(--accent-1);
   color: var(--text-primary);
-  background: var(--glow-1);
+  background: rgba(109, 40, 217, 0.05);
   transform: translateY(-2px);
 }
 
