@@ -5,21 +5,14 @@ import { HelmetProvider } from 'react-helmet-async'
 import App from './App'
 
 export function render(url) {
-  const helmetContext = {}
-
-  const appHtml = renderToString(
+  return renderToString(
     <StrictMode>
-      <HelmetProvider context={helmetContext}>
+      <HelmetProvider>
         <StaticRouter location={url}>
           <App />
         </StaticRouter>
       </HelmetProvider>
     </StrictMode>
   )
-
-  const { helmet } = helmetContext
-
-  // Return both the rendered HTML and the helmet head tags
-  return { appHtml, helmet }
 }
 
