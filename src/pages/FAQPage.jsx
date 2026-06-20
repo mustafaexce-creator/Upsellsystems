@@ -1,7 +1,56 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { ChevronDown, ArrowRight, MessageCircle } from 'lucide-react'
 import useInView from '../hooks/useInView'
+
+// Block 3 — FAQPage schema (loads ONLY on /faq)
+const faqPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is UpsellSystems?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'UpsellSystems is a web and software agency based in Cairo, Egypt. The agency builds websites, custom software, AI integrations, SaaS products, and e-commerce stores for small businesses and startups in MENA and the United States. UpsellSystems is known for delivering websites in 2\u20135 days and custom systems in under two weeks.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Where is UpsellSystems located?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'UpsellSystems is based in Cairo, Egypt. The agency works entirely remotely and serves clients across Egypt, the broader MENA region, and the United States. All communication is handled via WhatsApp and email, making it easy to work with clients regardless of time zone.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does it take UpsellSystems to build a website?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'UpsellSystems builds most websites in 2\u20135 business days. Simple single-page websites can be delivered in as little as 2 days. Multi-page websites with advanced functionality typically take 3\u20135 days. Custom software and SaaS products are delivered in under two weeks.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I work with UpsellSystems if I am based in the US?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. UpsellSystems works with clients in the United States and handles all international projects fully remotely. The agency accepts international payments and communicates asynchronously to accommodate time zone differences. Several portfolio projects have been delivered for US-based businesses.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What makes UpsellSystems different from other web agencies?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'UpsellSystems delivers websites in 2\u20135 days, significantly faster than the industry average of 4\u20138 weeks. The agency is run by a senior developer who works directly on every project, meaning clients never deal with account managers or handoff delays. Pricing is transparent, communication is direct, and the quality is consistent across every delivery.',
+      },
+    },
+  ],
+}
 
 const faqs = [
   {
@@ -162,6 +211,13 @@ export default function FAQPage() {
 
   return (
     <>
+      {/* Block 3 — FAQPage schema: loads ONLY on this route */}
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(faqPageSchema)}
+        </script>
+      </Helmet>
+
       {/* ===== HEADER ===== */}
       <section style={{
         position: 'relative', paddingTop: '160px', paddingBottom: '80px',

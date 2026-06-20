@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import SiteSchemas from './components/SiteSchemas'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import PortfolioPage from './pages/PortfolioPage'
@@ -14,6 +15,7 @@ import WhatsAppFloat from './components/WhatsAppFloat'
 function App() {
   return (
     <>
+      <SiteSchemas />
       <div className="noise-overlay" />
       <ScrollToTop />
       <WhatsAppFloat />
