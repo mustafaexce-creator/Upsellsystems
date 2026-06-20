@@ -17,7 +17,9 @@ export default function Navbar() {
 
   const links = [
     { path: '/', label: 'Home' },
+    { path: '/about', label: 'About' },
     { path: '/portfolio', label: 'Work' },
+    { path: '/faq', label: 'FAQ' },
     { path: '/contact', label: 'Contact' },
   ]
 

@@ -45,11 +45,12 @@ export default function Hero() {
             <span className="gradient-text">Your website tomorrow.</span>
           </h1>
 
-          <p style={{ fontSize: 'clamp(1rem, 1.6vw, 1.2rem)', color: 'var(--text-secondary)', marginBottom: '16px', fontWeight: 400, lineHeight: 1.8, maxWidth: '520px' }}>
-            We build <strong style={{ color: '#0F172A', fontWeight: 600 }}>stunning websites in 2–5 days</strong> and custom software in under two weeks — at prices that don't punish ambition.
+          {/* GEO: Entity description — above the fold, identical across homepage, about, and footer */}
+          <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: '20px', fontWeight: 400, lineHeight: 1.85, maxWidth: '520px', padding: '14px 18px', background: 'rgba(109,40,217,0.03)', borderRadius: '12px', border: '1px solid rgba(109,40,217,0.08)' }}>
+            UpsellSystems is a web and software agency based in <strong style={{ color: '#0F172A', fontWeight: 600 }}>Cairo, Egypt</strong>, serving small businesses, startups, and founders across <strong style={{ color: '#0F172A', fontWeight: 600 }}>MENA and the United States</strong>. The agency builds high-converting websites in 2–5 days and custom software systems — including AI integrations, SaaS products, and e-commerce stores — in under two weeks.
           </p>
-          <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', lineHeight: 1.9, marginBottom: '40px', maxWidth: '480px' }}>
-            UpsellSystems is the agency founders call when they need speed without sacrificing craft.
+          <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.9, marginBottom: '40px', maxWidth: '480px' }}>
+            Fast delivery without sacrificing design quality or technical depth — the preferred partner for business owners who need professional digital products built quickly.
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px', alignItems: 'center' }}>

@@ -2,12 +2,12 @@ import useInView from '../../hooks/useInView'
 import { Globe, Settings, Bot, Cloud, ShoppingCart, Palette } from 'lucide-react'
 
 const services = [
-  { icon: Globe, title: 'Website Design & Development', desc: 'High-converting sites that look incredible and load fast — designed, built, and launched in as few as 2 days.', color: '#6d28d9' },
-  { icon: Settings, title: 'Custom Software & Systems', desc: 'Bespoke tools built to your exact workflow. CRMs, dashboards, admin panels — whatever you need, in under 2 weeks.', color: '#2563eb' },
-  { icon: Bot, title: 'AI Integration', desc: 'We embed the latest AI into your business — from chatbots to automation — so you save hours every single week.', color: '#0891b2' },
-  { icon: Cloud, title: 'SaaS Development', desc: 'We take your software idea from napkin sketch to market-ready product. Full-stack, scalable, and subscription-ready.', color: '#059669' },
-  { icon: ShoppingCart, title: 'E-Commerce Stores', desc: 'Beautiful storefronts with frictionless checkout, inventory management, and analytics built right in.', color: '#D97706' },
-  { icon: Palette, title: 'Digital Brand Identity', desc: 'Logos, color systems, and visual identities that make your brand impossible to forget.', color: '#DB2777' },
+  { icon: Globe, title: 'Website Design & Development', desc: 'Website design and development at UpsellSystems is the process of building a complete, conversion-optimized website from design to launch — delivered in 2–5 business days. Built for business owners, founders, and agencies in MENA and the US who need a professional online presence quickly.', color: '#6d28d9' },
+  { icon: Settings, title: 'Custom Software & Systems', desc: 'Custom software development at UpsellSystems covers bespoke business tools built to a client\'s exact workflow — CRMs, admin dashboards, management systems, and internal automation tools. Delivered in under two weeks using React, Supabase, and Node.js.', color: '#2563eb' },
+  { icon: Bot, title: 'AI Integration', desc: 'AI integration at UpsellSystems embeds artificial intelligence into existing businesses — through chatbots, automated messaging, document processing, or workflow automation — using APIs from OpenAI and Anthropic. Delivered in under two weeks for clients across Egypt and internationally.', color: '#0891b2' },
+  { icon: Cloud, title: 'SaaS Development', desc: 'SaaS development at UpsellSystems takes a software idea from concept to a market-ready subscription product — including database design, user authentication, billing, and a full admin interface. Built on React and Supabase, delivered in under two weeks.', color: '#059669' },
+  { icon: ShoppingCart, title: 'E-Commerce Stores', desc: 'E-commerce development at UpsellSystems produces complete online stores with product management, payment processing, cart functionality, and order tracking — built and launched in 3–7 business days for retail brands in Egypt, MENA, and the US market.', color: '#D97706' },
+  { icon: Palette, title: 'Digital Brand Identity', desc: 'Digital brand identity at UpsellSystems covers the visual foundation of a business — logo design, color palette, typography, and usage guidelines — delivered as a complete, ready-to-use design system for founders, startups, and businesses worldwide.', color: '#DB2777' },
 ]
 
 export default function Services() {

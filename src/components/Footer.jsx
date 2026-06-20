@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Mail, Phone, MessageCircle } from 'lucide-react'
+import { Mail, Phone, MessageCircle, MapPin } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -44,16 +44,23 @@ export default function Footer() {
               >Upsell<tspan fill="url(#upsellGradFooter)">Systems</tspan></text>
             </svg>
           </div>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.9, maxWidth: '300px' }}>
-            We turn ambitious ideas into digital products that convert. Fast delivery. Stunning design. Unmatched value.
+          {/* GEO: Entity description — identical across homepage, about, and footer */}
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', lineHeight: 1.9, maxWidth: '320px' }}>
+            UpsellSystems is a web and software agency based in Cairo, Egypt, building websites, custom software, and AI integrations for small businesses and startups in MENA and the United States. The agency delivers websites in 2–5 days and custom systems in under two weeks.
           </p>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '14px' }}>
+            <MapPin size={13} color="var(--accent-1)" />
+            <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: 500 }}>Cairo, Egypt — Serving MENA & the US</span>
+          </div>
         </div>
 
         <div>
           <h4 style={{ fontWeight: 700, fontSize: '0.95rem', marginBottom: '20px', color: '#0F172A', letterSpacing: '-0.01em' }}>Navigate</h4>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
             <Link to="/" className="nav-link">Home</Link>
+            <Link to="/about" className="nav-link">About</Link>
             <Link to="/portfolio" className="nav-link">Our Work</Link>
+            <Link to="/faq" className="nav-link">FAQ</Link>
             <Link to="/contact" className="nav-link">Contact</Link>
           </div>
         </div>
@@ -65,7 +72,7 @@ export default function Footer() {
               <Phone size={15} /> Contact Us
             </Link>
             <a href="https://wa.me/201286960710" target="_blank" rel="noopener noreferrer" className="nav-link" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <MessageCircle size={15} /> WhatsApp
+              <MessageCircle size={15} /> +20 128 696 0710
             </a>
             <a href="mailto:mo@upsellsystems.com" className="nav-link" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Mail size={15} /> mo@upsellsystems.com
@@ -86,7 +93,7 @@ export default function Footer() {
           <span style={{ color: 'rgba(109,40,217,0.2)', fontSize: '0.8rem' }}>•</span>
           <Link to="/terms" style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={(e) => e.target.style.color = '#0F172A'} onMouseOut={(e) => e.target.style.color = 'var(--text-muted)'}>Terms of Service</Link>
         </div>
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>Made with ❤️</p>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>Cairo, Egypt · Made with ❤️</p>
       </div>
     </footer>
   )
