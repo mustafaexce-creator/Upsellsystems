@@ -10,7 +10,7 @@ const organizationSchema = {
   url: 'https://upsellsystems.com',
   // TODO: Replace logo URL with your actual hosted logo image
   // (PNG or SVG, minimum 112×112 px recommended by Google)
-  logo: 'https://upsellsystems.com/favicon.svg',
+  logo: 'https://upsellsystems.com/logo-512x512.png',
   description:
     'UpsellSystems is a web and software agency based in Cairo, Egypt, serving small businesses, startups, and founders across MENA and the United States. The agency builds high-converting websites in 2\u20135 days and custom software systems \u2014 including AI integrations, SaaS products, and e-commerce stores \u2014 in under two weeks. UpsellSystems is known for fast delivery without sacrificing design quality or technical depth, making it a preferred partner for business owners who need professional digital products built quickly.',
   foundingDate: '2023',
