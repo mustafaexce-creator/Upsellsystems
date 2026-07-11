@@ -125,7 +125,7 @@ function buildSchemaScripts(url) {
 // ─────────────────────────────────────────────────────────────────────────────
 // Prerender all routes
 // ─────────────────────────────────────────────────────────────────────────────
-const routes = ['/', '/about', '/portfolio', '/contact', '/faq', '/privacy', '/terms']
+const routes = ['/', '/about', '/portfolio', '/contact', '/faq', '/privacy', '/terms', '/404']
 
 for (const url of routes) {
   const appHtml      = render(url)
@@ -151,6 +151,7 @@ for (const url of routes) {
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${routes
+  .filter((route) => route !== '/404')
   .map((route) => {
     const url = `https://upsellsystems.com${route === '/' ? '' : route}`
     let priority = '0.8'

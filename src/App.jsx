@@ -9,6 +9,7 @@ import ContactPage from './pages/ContactPage'
 import FAQPage from './pages/FAQPage'
 import PrivacyPage from './pages/PrivacyPage'
 import TermsPage from './pages/TermsPage'
+import NotFoundPage from './pages/NotFoundPage'
 import ScrollToTop from './components/ScrollToTop'
 import WhatsAppFloat from './components/WhatsAppFloat'
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
       <Footer />
