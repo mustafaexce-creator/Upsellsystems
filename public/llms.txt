@@ -1,0 +1,32 @@
+# UpsellSystems
+
+> Cairo-based web and software agency building high-converting websites in 2–5 days and custom software in under 2 weeks for businesses in MENA and the United States.
+
+## Docs
+
+- [Homepage](https://upsellsystems.com): Landing page summarizing UpsellSystems' services, statistics, core workflow, client testimonials, and agency value proposition.
+- [About](https://upsellsystems.com/about): Outlines the agency's history, core pillars (direct founder access, speed, full-stack capability, transparent pricing), and background on founder Mustafa Essam.
+- [Portfolio](https://upsellsystems.com/portfolio): Gallery of completed projects including custom web apps, nonprofit volunteer logging systems, and high-converting single-page and multi-page websites.
+- [Contact](https://upsellsystems.com/contact): Project inquiry form and direct communication channels to initiate custom website or software development projects.
+- [FAQ](https://upsellsystems.com/faq): Answers frequently asked questions regarding project timelines, agency location, US/international collaboration, and what sets the agency apart.
+
+## Legal
+
+- [Privacy Policy](https://upsellsystems.com/privacy): Outlines data collection practices, user rights, and privacy protections for visitors and clients.
+- [Terms of Service](https://upsellsystems.com/terms): Governs the usage of the site and sets terms for project engagements, payments, and deliverables.
+
+## Key Facts
+
+- Founded: 2023 by Mustafa Essam
+- Headquarters: Cairo, Egypt
+- Areas Served: Egypt, broader MENA region, and the United States
+- Core Focus: High-speed, high-quality static website creation (2–5 days) and bespoke software/SaaS/AI tool builds (under 2 weeks)
+- Key Technologies: React, Vite, Node.js, Supabase, Tailwind CSS, OpenAI and Anthropic APIs, Google Apps Script
+- Work Model: Fully remote, asynchronous collaboration via WhatsApp and email, allowing international payment and engagement.
+
+## Contact
+
+- Website: https://upsellsystems.com
+- Email: mo@upsellsystems.com
+- Phone: +20-128-696-0710
+- WhatsApp: https://wa.me/201286960710
