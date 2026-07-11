@@ -145,5 +145,40 @@ for (const url of routes) {
   console.log('pre-rendered:', filePath)
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Generate sitemap.xml
+// ─────────────────────────────────────────────────────────────────────────────
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${routes
+  .map((route) => {
+    const url = `https://upsellsystems.com${route === '/' ? '' : route}`
+    let priority = '0.8'
+    let changefreq = 'weekly'
+    if (route === '/') {
+      priority = '1.0'
+      changefreq = 'daily'
+    } else if (route === '/contact') {
+      priority = '0.5'
+      changefreq = 'monthly'
+    } else if (route === '/privacy' || route === '/terms') {
+      priority = '0.3'
+      changefreq = 'monthly'
+    }
+    return `  <url>
+    <loc>${url}</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priority}</priority>
+  </url>`
+  })
+  .join('\n')}
+</urlset>
+`
+
+fs.writeFileSync(toAbsolute('dist/sitemap.xml'), sitemap)
+fs.writeFileSync(toAbsolute('public/sitemap.xml'), sitemap)
+console.log('generated: sitemap.xml')
+
 // Clean up server bundle so it's not deployed
 fs.rmSync(toAbsolute('dist/server'), { recursive: true, force: true })
