@@ -129,7 +129,7 @@ export default function PortfolioPage() {
                   <span style={{ color: 'var(--text-muted)', fontSize: '0.78rem', fontWeight: 500 }}>{p.client}</span>
                 </div>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '6px', letterSpacing: '-0.01em', color: '#0F172A' }}>{p.name}</h3>
-                <p style={{ fontFamily: "'Space Grotesk'", color: 'var(--text-muted)', fontSize: '0.82rem', marginBottom: '16px' }}>{p.nameEn}</p>
+                <p style={{ fontFamily: "'Space Grotesk Variable'", color: 'var(--text-muted)', fontSize: '0.82rem', marginBottom: '16px' }}>{p.nameEn}</p>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.8, marginBottom: '20px', flex: 1 }}>{p.summary}</p>
                 
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--accent-3)', fontSize: '0.85rem', fontWeight: 600, marginTop: 'auto' }}>
@@ -207,7 +207,7 @@ export default function PortfolioPage() {
                     }}>{selectedProject.client}</span>
                   </div>
                   <h2 style={{ fontSize: '2rem', fontWeight: 900, color: '#0F172A', marginBottom: '4px', letterSpacing: '-0.02em' }}>{selectedProject.name}</h2>
-                  <p style={{ fontFamily: "'Space Grotesk'", color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{selectedProject.nameEn}</p>
+                  <p style={{ fontFamily: "'Space Grotesk Variable'", color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{selectedProject.nameEn}</p>
                 </div>
 
                 {/* Live Device Frame Preview */}

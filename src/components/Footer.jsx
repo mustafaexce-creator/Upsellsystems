@@ -36,7 +36,7 @@ export default function Footer() {
               <text 
                 x="80" 
                 y="49" 
-                fontFamily="'Space Grotesk', 'Inter', -apple-system, sans-serif" 
+                fontFamily="'Space Grotesk Variable', 'Inter Variable', -apple-system, sans-serif" 
                 fontWeight="800" 
                 fontSize="28" 
                 letterSpacing="-0.03em"

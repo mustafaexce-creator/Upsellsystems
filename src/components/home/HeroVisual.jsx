@@ -64,7 +64,7 @@ export default function HeroVisual() {
         boxShadow: '0 8px 24px rgba(37,99,235,0.2), inset 0 0 10px rgba(37,99,235,0.05)',
         animation: 'float-badge 4s ease-in-out infinite',
       }}>
-        <p style={{ fontSize: '0.7rem', color: '#2563eb', fontWeight: 800, fontFamily: "'Space Grotesk', sans-serif", letterSpacing: '0.02em', display: 'flex', alignItems: 'center', gap: '4px' }}>
+        <p style={{ fontSize: '0.7rem', color: '#2563eb', fontWeight: 800, fontFamily: "'Space Grotesk Variable', sans-serif", letterSpacing: '0.02em', display: 'flex', alignItems: 'center', gap: '4px' }}>
           <Zap size={12} fill="#2563eb" /> 2-5 DAYS LAUNCH
         </p>
         <p style={{ fontSize: '0.6rem', color: '#94A3B8', marginTop: '2px', fontWeight: 600 }}>Unmatched agency speed</p>
@@ -79,7 +79,7 @@ export default function HeroVisual() {
         boxShadow: '0 8px 24px rgba(5,150,105,0.2), inset 0 0 10px rgba(5,150,105,0.05)',
         animation: 'float-badge 4.5s ease-in-out infinite 1s',
       }}>
-        <p style={{ fontSize: '0.7rem', color: '#059669', fontWeight: 800, fontFamily: "'Space Grotesk', sans-serif", display: 'flex', alignItems: 'center', gap: '4px' }}>
+        <p style={{ fontSize: '0.7rem', color: '#059669', fontWeight: 800, fontFamily: "'Space Grotesk Variable', sans-serif", display: 'flex', alignItems: 'center', gap: '4px' }}>
           <TrendingUp size={12} /> +42% CONVERSION
         </p>
         <p style={{ fontSize: '0.6rem', color: '#94A3B8', marginTop: '2px', fontWeight: 600 }}>Engineered to drive sales</p>
@@ -94,7 +94,7 @@ export default function HeroVisual() {
         boxShadow: '0 8px 24px rgba(8,145,178,0.2), inset 0 0 10px rgba(8,145,178,0.05)',
         animation: 'float-badge 5s ease-in-out infinite 2s',
       }}>
-        <p style={{ fontSize: '0.7rem', color: '#0891b2', fontWeight: 800, fontFamily: "'Space Grotesk', sans-serif", display: 'flex', alignItems: 'center', gap: '4px' }}>
+        <p style={{ fontSize: '0.7rem', color: '#0891b2', fontWeight: 800, fontFamily: "'Space Grotesk Variable', sans-serif", display: 'flex', alignItems: 'center', gap: '4px' }}>
           🚀 0.4s PAGE LOAD
         </p>
         <p style={{ fontSize: '0.6rem', color: '#94A3B8', marginTop: '2px', fontWeight: 600 }}>Lighthouse score 100/100</p>
@@ -124,7 +124,7 @@ export default function HeroVisual() {
             <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#F59E0B' }} />
             <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#10B981' }} />
           </div>
-          <span style={{ fontSize: '0.7rem', color: '#94A3B8', marginLeft: '12px', fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, letterSpacing: '0.02em' }}>
+          <span style={{ fontSize: '0.7rem', color: '#94A3B8', marginLeft: '12px', fontFamily: "'Space Grotesk Variable', sans-serif", fontWeight: 700, letterSpacing: '0.02em' }}>
             yourbusiness.com/analytics
           </span>
           <div style={{ marginLeft: 'auto', background: 'rgba(5,150,105,0.1)', color: '#059669', padding: '2px 8px', borderRadius: '100px', fontSize: '0.55rem', fontWeight: 800, letterSpacing: '0.05em' }}>
@@ -145,7 +145,7 @@ export default function HeroVisual() {
                 <Users size={12} color="#6d28d9" />
               </div>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-                <span style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0F172A', fontFamily: "'Space Grotesk'" }}>2,482</span>
+                <span style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0F172A', fontFamily: "'Space Grotesk Variable'" }}>2,482</span>
                 <span style={{ fontSize: '0.62rem', color: '#059669', fontWeight: 700, display: 'flex', alignItems: 'center' }}>
                   <ArrowUpRight size={10} /> +18%
                 </span>
@@ -159,7 +159,7 @@ export default function HeroVisual() {
                 <ShieldCheck size={12} color="#0891b2" />
               </div>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-                <span style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0F172A', fontFamily: "'Space Grotesk'" }}>4.82%</span>
+                <span style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0F172A', fontFamily: "'Space Grotesk Variable'" }}>4.82%</span>
                 <span style={{ fontSize: '0.62rem', color: '#0891b2', fontWeight: 700 }}>Excellent</span>
               </div>
             </div>
@@ -229,7 +229,7 @@ export default function HeroVisual() {
           borderTop: '1px solid rgba(109,40,217,0.1)',
           background: 'rgba(5,150,105,0.04)',
           fontSize: '0.62rem', color: '#059669',
-          fontFamily: "'Space Grotesk', sans-serif",
+          fontFamily: "'Space Grotesk Variable', sans-serif",
           fontWeight: 700
         }}>
           <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>

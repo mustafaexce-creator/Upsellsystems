@@ -32,7 +32,7 @@ export default function Navbar() {
       borderBottom: scrolled ? '1px solid rgba(109,40,217,0.08)' : '1px solid transparent',
     }}>
       <nav style={{ maxWidth: '1200px', margin: '0 auto', padding: '18px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+        <Link to="/" aria-label="UpsellSystems — Home" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" style={{ height: '50px', width: 'auto' }}>
             <defs>
               <linearGradient id="upsellGradNav" x1="0%" y1="100%" x2="100%" y2="0%">
@@ -62,7 +62,7 @@ export default function Navbar() {
             <text 
               x="80" 
               y="49" 
-              fontFamily="'Space Grotesk', 'Inter', -apple-system, sans-serif" 
+              fontFamily="'Space Grotesk Variable', 'Inter Variable', -apple-system, sans-serif" 
               fontWeight="800" 
               fontSize="28" 
               letterSpacing="-0.03em"

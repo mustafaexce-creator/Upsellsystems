@@ -116,7 +116,7 @@ function FAQItem({ item, index, isOpen, onToggle }) {
         <span style={{
           fontSize: '1rem', fontWeight: 600, color: isOpen ? '#6d28d9' : '#0F172A',
           lineHeight: 1.5, transition: 'color 0.3s ease',
-          fontFamily: "'Space Grotesk', 'Inter', sans-serif",
+          fontFamily: "'Space Grotesk Variable', 'Inter Variable', sans-serif",
         }}>
           {item.q}
         </span>
