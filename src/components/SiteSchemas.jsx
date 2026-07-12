@@ -2,9 +2,18 @@ import { Helmet } from 'react-helmet-async'
 
 // ─────────────────────────────────────────────────────────────────────────────
 // BLOCK 1 — Organization + ProfessionalService (site-wide)
+//
+// Single authoritative entity for UpsellSystems. ProfessionalService is the
+// correct type for a remote/WhatsApp-based agency with no walk-in location.
+// LocalBusiness was removed — it implied a physical storefront and created a
+// duplicate, unlinked entity that confused AI parsers.
+//
+// Valuable data from the old LocalBusiness block (priceRange, aggregateRating,
+// hasOfferCatalog) has been merged here so nothing is lost.
 // ─────────────────────────────────────────────────────────────────────────────
 const organizationSchema = {
   '@context': 'https://schema.org',
+  '@id': 'https://upsellsystems.com/#organization',
   '@type': ['Organization', 'ProfessionalService'],
   name: 'UpsellSystems',
   url: 'https://upsellsystems.com',
@@ -20,6 +29,7 @@ const organizationSchema = {
   },
   telephone: '+20-128-696-0710',
   email: 'mo@upsellsystems.com',
+  priceRange: '$$',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Cairo',
@@ -30,31 +40,6 @@ const organizationSchema = {
     { '@type': 'Place',   name: 'MENA Region' },
     { '@type': 'Country', name: 'United States' },
   ],
-  sameAs: [
-    'https://wa.me/201286960710',
-    // TODO: Add your LinkedIn company page URL here, e.g.:
-    // 'https://www.linkedin.com/company/upsellsystems'
-  ],
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// BLOCK 2 — LocalBusiness (site-wide)
-// ─────────────────────────────────────────────────────────────────────────────
-const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'UpsellSystems',
-  description:
-    'UpsellSystems is a web and software agency based in Cairo, Egypt, serving small businesses, startups, and founders across MENA and the United States. The agency builds high-converting websites in 2\u20135 days and custom software systems \u2014 including AI integrations, SaaS products, and e-commerce stores \u2014 in under two weeks.',
-  url: 'https://upsellsystems.com',
-  telephone: '+20-128-696-0710',
-  email: 'mo@upsellsystems.com',
-  priceRange: '$$',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Cairo',
-    addressCountry: 'EG',
-  },
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '5.0',
@@ -103,39 +88,60 @@ const localBusinessSchema = {
       },
     ],
   },
+  knowsAbout: [
+    'Web Design',
+    'Web Development',
+    'React',
+    'Next.js',
+    'Vite',
+    'Node.js',
+    'Supabase',
+    'PostgreSQL',
+    'Custom Software Development',
+    'SaaS Development',
+    'AI Integration',
+    'OpenAI API',
+    'Anthropic API',
+    'E-Commerce Development',
+    'UI/UX Design',
+    'Brand Identity Design',
+    'Search Engine Optimization',
+    'Generative Engine Optimization',
+    'Conversion Rate Optimization',
+    'WhatsApp Business Automation',
+  ],
+  sameAs: [
+    'https://wa.me/201286960710',
+    // TODO: Add your LinkedIn company page URL here, e.g.:
+    // 'https://www.linkedin.com/company/upsellsystems'
+  ],
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// BLOCK 4 — WebSite (site-wide)
+// BLOCK 2 — WebSite (site-wide)
+//
+// Links back to the organization entity via publisher @id so parsers see one
+// connected graph instead of isolated blocks.
 // ─────────────────────────────────────────────────────────────────────────────
 const websiteSchema = {
   '@context': 'https://schema.org',
+  '@id': 'https://upsellsystems.com/#website',
   '@type': 'WebSite',
   name: 'UpsellSystems',
   url: 'https://upsellsystems.com',
   description:
     'UpsellSystems is a Cairo-based web and software agency that builds high-converting websites in 2\u20135 days and custom software in under two weeks for businesses in MENA and the United States.',
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: {
-      '@type': 'EntryPoint',
-      urlTemplate: 'https://upsellsystems.com/?s={search_term_string}',
-    },
-    'query-input': 'required name=search_term_string',
-  },
+  publisher: { '@id': 'https://upsellsystems.com/#organization' },
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Component — rendered once inside App.jsx, injects all three site-wide blocks
+// Component — rendered once inside App.jsx, injects both site-wide blocks
 // ─────────────────────────────────────────────────────────────────────────────
 export default function SiteSchemas() {
   return (
     <Helmet>
       <script type="application/ld+json">
         {JSON.stringify(organizationSchema)}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(localBusinessSchema)}
       </script>
       <script type="application/ld+json">
         {JSON.stringify(websiteSchema)}
