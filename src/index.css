@@ -437,3 +437,47 @@ h1, h2, h3, h4, h5, h6 {
   to { transform: rotate(360deg); }
 }
 
+/* ===== HERO VISUAL ANIMATIONS (moved from inline <style>) ===== */
+@keyframes drawChart {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes float-editor {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes float-badge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ===== HERO RESPONSIVE (moved from inline <style>) ===== */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr !important; }
+  .hero-visual-wrapper { display: none !important; }
+}
+
+/* ===== NAVBAR RESPONSIVE (moved from inline <style>) ===== */
+@media (max-width: 768px) {
+  .desktop-nav { display: none !important; }
+  .mobile-menu-btn { display: block !important; }
+}
+
+/* ===== LAYOUT CONTAINMENT (perf) ===== */
+.glow-orb {
+  will-change: transform;
+  contain: layout style;
+}
+.particle {
+  will-change: transform, opacity;
+  contain: layout style;
+}
+.glass-card {
+  contain: layout style;
+}
+.noise-overlay {
+  contain: strict;
+}

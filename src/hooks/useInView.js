@@ -1,31 +1,48 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useCallback } from 'react'
 
-export default function useInView(options = {}) {
+// Shared IntersectionObserver instance — all useInView hooks share a single
+// observer to avoid creating many separate observers that each trigger
+// independent layout calculations on mount (a major forced-reflow source).
+const callbacks = new Map()
+let sharedObserver = null
+
+function getSharedObserver() {
+  if (sharedObserver) return sharedObserver
+  sharedObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const cb = callbacks.get(entry.target)
+        if (cb && entry.isIntersecting) {
+          cb()
+          sharedObserver.unobserve(entry.target)
+          callbacks.delete(entry.target)
+        }
+      })
+    },
+    { threshold: 0.15 }
+  )
+  return sharedObserver
+}
+
+export default function useInView() {
   const ref = useRef(null)
   const [isVisible, setIsVisible] = useState(false)
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.unobserve(entry.target)
-        }
-      },
-      { threshold: 0.15, ...options }
-    )
+  const handleVisible = useCallback(() => setIsVisible(true), [])
 
+  useEffect(() => {
     const current = ref.current
-    if (current) {
-      observer.observe(current)
-    }
+    if (!current) return
+
+    const observer = getSharedObserver()
+    callbacks.set(current, handleVisible)
+    observer.observe(current)
 
     return () => {
-      if (current) {
-        observer.unobserve(current)
-      }
+      observer.unobserve(current)
+      callbacks.delete(current)
     }
-  }, [])
+  }, [handleVisible])
 
   return [ref, isVisible]
 }

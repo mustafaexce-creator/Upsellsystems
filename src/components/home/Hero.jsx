@@ -95,12 +95,6 @@ export default function Hero() {
         </div>
       </div>
 
-      <style>{`
-        @media (max-width: 900px) {
-          .hero-grid { gridTemplateColumns: 1fr !important; grid-template-columns: 1fr !important; }
-          .hero-visual-wrapper { display: none !important; }
-        }
-      `}</style>
     </section>
   )
 }

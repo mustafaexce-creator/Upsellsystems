@@ -5,7 +5,9 @@ export default function ScrollToTop() {
   const { pathname } = useLocation()
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    // Use instant scroll to avoid triggering forced reflow from
+    // smooth-scroll during route hydration
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
   }, [pathname])
 
   return null
