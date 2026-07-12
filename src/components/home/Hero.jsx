@@ -3,7 +3,7 @@ import { ArrowRight, Play } from 'lucide-react'
 import HeroVisual from './HeroVisual'
 
 export default function Hero() {
-  const particles = Array.from({ length: 20 }, (_, i) => ({
+  const particles = Array.from({ length: 8 }, (_, i) => ({
     id: i,
     left: `${Math.random() * 100}%`,
     delay: `${Math.random() * 12}s`,

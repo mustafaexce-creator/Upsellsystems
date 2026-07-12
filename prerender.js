@@ -5,8 +5,18 @@ import { fileURLToPath } from 'node:url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const toAbsolute = (p) => path.resolve(__dirname, p)
 
-const template = fs.readFileSync(toAbsolute('dist/index.html'), 'utf-8')
+let template = fs.readFileSync(toAbsolute('dist/index.html'), 'utf-8')
 const { render } = await import('./dist/server/entry-server.js')
+
+// Inline the built CSS file to eliminate render-blocking external CSS network request
+const assetsDir = toAbsolute('dist/assets')
+const cssFile = fs.readdirSync(assetsDir).find(file => file.startsWith('index-') && file.endsWith('.css'))
+if (cssFile) {
+  const cssPath = path.join(assetsDir, cssFile)
+  const cssContent = fs.readFileSync(cssPath, 'utf-8')
+  const cssLinkRegex = new RegExp(`<link[^>]*href=["']/assets/${cssFile.replace('.', '\\.')}["'][^>]*>`, 'i')
+  template = template.replace(cssLinkRegex, `<style>${cssContent}</style>`)
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Schema definitions — mirrored from SiteSchemas.jsx and FAQPage.jsx.
