@@ -50,12 +50,12 @@ export default function Footer() {
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '14px' }}>
             <MapPin size={13} color="var(--accent-1)" />
-            <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: 500 }}>Cairo, Egypt — Serving MENA & the US</span>
+            <span style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', fontWeight: 500 }}>Cairo, Egypt — Serving MENA & the US</span>
           </div>
         </div>
 
         <div>
-          <h4 style={{ fontWeight: 700, fontSize: '0.95rem', marginBottom: '20px', color: '#0F172A', letterSpacing: '-0.01em' }}>Navigate</h4>
+          <p style={{ fontWeight: 700, fontSize: '0.95rem', marginBottom: '20px', color: '#0F172A', letterSpacing: '-0.01em' }}>Navigate</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
             <Link to="/" className="nav-link">Home</Link>
             <Link to="/about" className="nav-link">About</Link>
@@ -66,7 +66,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 style={{ fontWeight: 700, fontSize: '0.95rem', marginBottom: '20px', color: '#0F172A', letterSpacing: '-0.01em' }}>Get in Touch</h4>
+          <p style={{ fontWeight: 700, fontSize: '0.95rem', marginBottom: '20px', color: '#0F172A', letterSpacing: '-0.01em' }}>Get in Touch</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
             <Link to="/contact" className="nav-link" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Phone size={15} /> Contact Us
@@ -87,13 +87,13 @@ export default function Footer() {
         display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '12px',
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>© 2026 UpsellSystems. All rights reserved.</p>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.8rem' }}>© 2026 UpsellSystems. All rights reserved.</p>
           <span style={{ color: 'rgba(109,40,217,0.2)', fontSize: '0.8rem' }}>•</span>
-          <Link to="/privacy" style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={(e) => e.target.style.color = '#0F172A'} onMouseOut={(e) => e.target.style.color = 'var(--text-muted)'}>Privacy Policy</Link>
+          <Link to="/privacy" style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={(e) => e.target.style.color = '#0F172A'} onMouseOut={(e) => e.target.style.color = 'var(--text-secondary)'}>Privacy Policy</Link>
           <span style={{ color: 'rgba(109,40,217,0.2)', fontSize: '0.8rem' }}>•</span>
-          <Link to="/terms" style={{ color: 'var(--text-muted)', fontSize: '0.8rem', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={(e) => e.target.style.color = '#0F172A'} onMouseOut={(e) => e.target.style.color = 'var(--text-muted)'}>Terms of Service</Link>
+          <Link to="/terms" style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={(e) => e.target.style.color = '#0F172A'} onMouseOut={(e) => e.target.style.color = 'var(--text-secondary)'}>Terms of Service</Link>
         </div>
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>Cairo, Egypt · Made with ❤️</p>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '0.8rem' }}>Cairo, Egypt · Made with ❤️</p>
       </div>
     </footer>
   )
