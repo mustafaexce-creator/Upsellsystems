@@ -204,9 +204,9 @@ export default function HeroVisual() {
                 <p style={{ fontSize: '0.62rem', color: '#6d28d9', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '2px' }}>
                   🎉 Lead Captured
                 </p>
-                <h5 style={{ fontSize: '0.85rem', fontWeight: 800, color: '#0F172A', marginBottom: '4px' }}>
+                <p style={{ fontSize: '0.85rem', fontWeight: 800, color: '#0F172A', marginBottom: '4px' }}>
                   {currentLead.name} <span style={{ fontSize: '0.75rem', fontWeight: 400, color: 'var(--text-secondary)' }}>interested in {currentLead.project}</span>
-                </h5>
+                </p>
                 <p style={{ fontSize: '0.62rem', color: 'var(--text-muted)' }}>Funnel source: Organic Google Search (SEO)</p>
               </div>
               <div style={{ textAlign: 'right' }}>
