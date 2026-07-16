@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, MapPin, Zap, Users, Code2, Award } from 'lucide-react'
 import useInView from '../hooks/useInView'
+import PageMeta from '../components/PageMeta'
 
 const pillars = [
   { icon: Zap, title: 'Speed Without Compromise', desc: 'Most agencies take 4–8 weeks to deliver a website. UpsellSystems delivers in 2–5 days — with the same level of quality a Fortune 500 brand expects.', color: '#6d28d9' },
@@ -15,7 +16,10 @@ export default function AboutPage() {
 
   return (
     <>
-      {/* Meta — handled via react-helmet or equivalent if added later */}
+      <PageMeta
+        title="About UpsellSystems | Cairo Web & Software Team"
+        description="Meet UpsellSystems: a Cairo-based web and software agency led by Mustafa Essam. Direct founder access, 2–5 day delivery, full-stack depth, and transparent pricing."
+      />
 
       {/* ===== HERO / ENTITY DESCRIPTION ===== */}
       <section style={{

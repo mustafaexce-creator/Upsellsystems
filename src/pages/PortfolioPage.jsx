@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import useInView from '../hooks/useInView'
+import PageMeta from '../components/PageMeta'
 import { ArrowRight, MessageCircle, X, ExternalLink, Laptop, CheckCircle } from 'lucide-react'
 
 const projects = [
@@ -89,6 +90,10 @@ export default function PortfolioPage() {
 
   return (
     <>
+      <PageMeta
+        title="Web Design & Software Portfolio | UpsellSystems Case Studies"
+        description="Browse UpsellSystems' portfolio of websites, custom web apps, and software projects built for startups, agencies, and businesses in MENA and the US."
+      />
       <section style={{
         background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(109,40,217,0.06), transparent), linear-gradient(180deg, #FFFFFF, #F8FAFC)',
         paddingTop: '150px', paddingBottom: '60px', position: 'relative',

@@ -1,4 +1,5 @@
 import useInView from '../hooks/useInView'
+import PageMeta from '../components/PageMeta'
 import { Shield } from 'lucide-react'
 
 export default function PrivacyPage() {
@@ -7,6 +8,10 @@ export default function PrivacyPage() {
 
   return (
     <>
+      <PageMeta
+        title="Privacy Policy | UpsellSystems"
+        description="UpsellSystems privacy policy: how we collect, use, and protect your data. Learn about your rights and our data handling practices."
+      />
       <section style={{
         background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(109,40,217,0.06), transparent), linear-gradient(180deg, #FFFFFF, #F8FAFC)',
         paddingTop: '150px', paddingBottom: '60px', position: 'relative',

@@ -1,4 +1,5 @@
 import { lazy, Suspense } from 'react'
+import PageMeta from '../components/PageMeta'
 import Hero from '../components/home/Hero'
 import StatsBar from '../components/home/StatsBar'
 import Services from '../components/home/Services'
@@ -11,6 +12,10 @@ const CTABanner = import.meta.env.SSR ? (await import('../components/home/CTABan
 export default function HomePage() {
   return (
     <>
+      <PageMeta
+        title="Fast Web Design & Custom Software Agency in Cairo | UpsellSystems"
+        description="UpsellSystems builds websites in 2–5 days and custom software in under 2 weeks. Cairo-based agency serving businesses in MENA and the US."
+      />
       <Hero />
       <StatsBar />
       <Services />

@@ -1,6 +1,14 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path(.*)",
+      "has": [{ "type": "host", "value": "upsellsystems.com" }],
+      "destination": "https://www.upsellsystems.com/:path",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/about",     "destination": "/about.html" },
     { "source": "/portfolio", "destination": "/portfolio.html" },
@@ -11,4 +19,3 @@
     { "source": "/(.*)",      "destination": "/index.html" }
   ]
 }
-

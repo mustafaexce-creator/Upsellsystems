@@ -13,13 +13,13 @@ import { Helmet } from 'react-helmet-async'
 // ─────────────────────────────────────────────────────────────────────────────
 const organizationSchema = {
   '@context': 'https://schema.org',
-  '@id': 'https://upsellsystems.com/#organization',
+  '@id': 'https://www.upsellsystems.com/#organization',
   '@type': ['Organization', 'ProfessionalService'],
   name: 'UpsellSystems',
-  url: 'https://upsellsystems.com',
+  url: 'https://www.upsellsystems.com',
   // TODO: Replace logo URL with your actual hosted logo image
   // (PNG or SVG, minimum 112×112 px recommended by Google)
-  logo: 'https://upsellsystems.com/logo-512x512.png',
+  logo: 'https://www.upsellsystems.com/logo-512x512.png',
   description:
     'UpsellSystems is a web and software agency based in Cairo, Egypt, serving small businesses, startups, and founders across MENA and the United States. The agency builds high-converting websites in 2\u20135 days and custom software systems \u2014 including AI integrations, SaaS products, and e-commerce stores \u2014 in under two weeks. UpsellSystems is known for fast delivery without sacrificing design quality or technical depth, making it a preferred partner for business owners who need professional digital products built quickly.',
   foundingDate: '2023',
@@ -125,13 +125,13 @@ const organizationSchema = {
 // ─────────────────────────────────────────────────────────────────────────────
 const websiteSchema = {
   '@context': 'https://schema.org',
-  '@id': 'https://upsellsystems.com/#website',
+  '@id': 'https://www.upsellsystems.com/#website',
   '@type': 'WebSite',
   name: 'UpsellSystems',
-  url: 'https://upsellsystems.com',
+  url: 'https://www.upsellsystems.com',
   description:
     'UpsellSystems is a Cairo-based web and software agency that builds high-converting websites in 2\u20135 days and custom software in under two weeks for businesses in MENA and the United States.',
-  publisher: { '@id': 'https://upsellsystems.com/#organization' },
+  publisher: { '@id': 'https://www.upsellsystems.com/#organization' },
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

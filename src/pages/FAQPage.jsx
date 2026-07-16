@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronDown, ArrowRight, MessageCircle } from 'lucide-react'
 import useInView from '../hooks/useInView'
+import PageMeta from '../components/PageMeta'
 
 
 const faqs = [
@@ -163,6 +164,10 @@ export default function FAQPage() {
 
   return (
     <>
+      <PageMeta
+        title="Website & Software Project FAQs | UpsellSystems"
+        description="Get answers to frequently asked questions about UpsellSystems: project timelines, pricing, international collaboration, and what makes the agency different."
+      />
       {/* ===== HEADER ===== */}
       <section style={{
         position: 'relative', paddingTop: '160px', paddingBottom: '80px',

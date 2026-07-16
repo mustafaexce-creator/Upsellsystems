@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import useInView from '../hooks/useInView'
+import PageMeta from '../components/PageMeta'
 import { Send, Mail, Zap, Lock, MessageCircle, CheckCircle, Loader2 } from 'lucide-react'
 
 // Replace this with your deployed Google Apps Script Web App URL
@@ -43,6 +44,10 @@ export default function ContactPage() {
 
   return (
     <>
+      <PageMeta
+        title="Contact UpsellSystems | Start Your Website or Software Project"
+        description="Reach out to UpsellSystems for a free project quote. Contact via WhatsApp, email, or the project inquiry form. Cairo-based agency, serving MENA and the US."
+      />
       <section style={{
         background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(109,40,217,0.06), transparent), linear-gradient(180deg, #FFFFFF, #F8FAFC)',
         paddingTop: '150px', paddingBottom: '60px', position: 'relative',

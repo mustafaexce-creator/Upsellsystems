@@ -1,4 +1,5 @@
 import useInView from '../hooks/useInView'
+import PageMeta from '../components/PageMeta'
 import { FileText } from 'lucide-react'
 
 export default function TermsPage() {
@@ -7,6 +8,10 @@ export default function TermsPage() {
 
   return (
     <>
+      <PageMeta
+        title="Terms of Service | UpsellSystems"
+        description="UpsellSystems terms of service: the terms governing use of the site and project engagements, payments, and deliverables."
+      />
       <section style={{
         background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(109,40,217,0.06), transparent), linear-gradient(180deg, #FFFFFF, #F8FAFC)',
         paddingTop: '150px', paddingBottom: '60px', position: 'relative',
