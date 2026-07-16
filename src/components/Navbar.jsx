@@ -18,7 +18,10 @@ export default function Navbar() {
         })
       }
     }
-    handleScroll() // sync initial state without waiting for scroll
+    // Defer the initial check to the next frame to avoid forcing reflow during mounting layout passes
+    requestAnimationFrame(() => {
+      handleScroll()
+    })
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -43,7 +46,7 @@ export default function Navbar() {
     }}>
       <nav style={{ maxWidth: '1200px', margin: '0 auto', padding: '18px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <Link to="/" aria-label="UpsellSystems — Home" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" style={{ height: '50px', width: 'auto' }}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" style={{ height: '50px', width: '200px' }}>
             <defs>
               <linearGradient id="upsellGradNav" x1="0%" y1="100%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#6d28d9" />

@@ -7,7 +7,7 @@ export default function Footer() {
       <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '48px' }}>
         <div>
           <div style={{ marginBottom: '18px' }}>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" style={{ height: '44px', width: 'auto' }}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" style={{ height: '44px', width: '176px' }}>
               <defs>
                 <linearGradient id="upsellGradFooter" x1="0%" y1="100%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="#6d28d9" />
