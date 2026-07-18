@@ -8,6 +8,58 @@ const toAbsolute = (p) => path.resolve(__dirname, p)
 let template = fs.readFileSync(toAbsolute('dist/index.html'), 'utf-8')
 const { render } = await import('./dist/server/entry-server.js')
 
+function stripDefaultSeoTags(html) {
+  return html
+    .replace(/<title>[\s\S]*?<\/title>\s*/i, '')
+    .replace(/<meta\s+name=["']description["'][^>]*>\s*/i, '')
+    .replace(/<meta\s+name=["']keywords["'][^>]*>\s*/i, '')
+    .replace(/<link\s+rel=["']canonical["'][^>]*>\s*/i, '')
+    .replace(/<meta\s+property=["']og:title["'][^>]*>\s*/i, '')
+    .replace(/<meta\s+property=["']og:description["'][^>]*>\s*/i, '')
+    .replace(/<meta\s+property=["']og:url["'][^>]*>\s*/i, '')
+}
+
+function buildHelmetHead(helmet, extraSchemaHtml) {
+  return [
+    helmet?.title?.toString(),
+    helmet?.meta?.toString(),
+    helmet?.link?.toString(),
+    helmet?.script?.toString(),
+    extraSchemaHtml,
+  ]
+    .filter(Boolean)
+    .join('\n    ')
+}
+
+function extractLeadingHeadTags(html) {
+  const tags = []
+  let bodyHtml = html
+  const headTagPattern = /^(<title[\s\S]*?<\/title>|<meta\b[^>]*\/?>|<link\b[^>]*\/?>|<script\b[^>]*>[\s\S]*?<\/script>)/
+
+  while (true) {
+    const match = bodyHtml.match(headTagPattern)
+    if (!match) break
+
+    tags.push(match[0])
+    bodyHtml = bodyHtml.slice(match[0].length)
+  }
+
+  return {
+    headTags: tags.join('\n    '),
+    bodyHtml,
+  }
+}
+
+function injectHelmetHead(html, helmetHead) {
+  if (html.includes('<!--helmet-head-->')) {
+    return html.replace('<!--helmet-head-->', helmetHead)
+  }
+
+  return html.replace(/<\/head>/i, `${helmetHead}\n  </head>`)
+}
+
+template = stripDefaultSeoTags(template)
+
 // Inline the built CSS file to eliminate render-blocking external CSS network request
 const assetsDir = toAbsolute('dist/assets')
 const cssFile = fs.readdirSync(assetsDir).find(file => file.startsWith('index-') && file.endsWith('.css'))
@@ -23,64 +75,6 @@ if (cssFile) {
 // Defined here so prerender.js can bake them into static HTML at build time.
 // react-helmet-async handles the same schemas client-side for SPA navigation.
 // ─────────────────────────────────────────────────────────────────────────────
-
-const organizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': ['Organization', 'ProfessionalService'],
-  name: 'UpsellSystems',
-  url: 'https://www.upsellsystems.com',
-  logo: 'https://www.upsellsystems.com/logo-512x512.png',
-  description: 'UpsellSystems is a web and software agency based in Cairo, Egypt, serving small businesses, startups, and founders across MENA and the United States. The agency builds high-converting websites in 2\u20135 days and custom software systems \u2014 including AI integrations, SaaS products, and e-commerce stores \u2014 in under two weeks.',
-  foundingDate: '2023',
-  founder: { '@type': 'Person', name: 'Mustafa Essam' },
-  telephone: '+20-128-696-0710',
-  email: 'mo@upsellsystems.com',
-  address: { '@type': 'PostalAddress', addressLocality: 'Cairo', addressCountry: 'EG' },
-  areaServed: [
-    { '@type': 'Country', name: 'Egypt' },
-    { '@type': 'Place',   name: 'MENA Region' },
-    { '@type': 'Country', name: 'United States' },
-  ],
-  sameAs: ['https://wa.me/201286960710'],
-}
-
-const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'UpsellSystems',
-  description: 'UpsellSystems is a web and software agency based in Cairo, Egypt, serving small businesses, startups, and founders across MENA and the United States.',
-  url: 'https://www.upsellsystems.com',
-  telephone: '+20-128-696-0710',
-  email: 'mo@upsellsystems.com',
-  priceRange: '$$',
-  address: { '@type': 'PostalAddress', addressLocality: 'Cairo', addressCountry: 'EG' },
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', reviewCount: '10', bestRating: '5' },
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'UpsellSystems Services',
-    itemListElement: [
-      { '@type': 'Offer', name: 'Website Design & Development', description: 'High-converting websites built and launched in 2\u20135 business days.' },
-      { '@type': 'Offer', name: 'Custom Software & Systems',    description: 'Bespoke CRMs, admin dashboards, and management tools built in under 2 weeks using React, Supabase, and Node.js.' },
-      { '@type': 'Offer', name: 'AI Integration',              description: 'Embedding AI chatbots, automation, and workflows using OpenAI and Anthropic APIs.' },
-      { '@type': 'Offer', name: 'SaaS Development',            description: 'Full-stack subscription software products from concept to launch in under 2 weeks.' },
-      { '@type': 'Offer', name: 'E-Commerce Stores',           description: 'Complete online stores with payments, inventory, and analytics in 3\u20137 business days.' },
-      { '@type': 'Offer', name: 'Digital Brand Identity',      description: 'Logos, color systems, and typography delivered as a complete visual design system.' },
-    ],
-  },
-}
-
-const websiteSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'UpsellSystems',
-  url: 'https://www.upsellsystems.com',
-  description: 'Cairo-based web and software agency building websites in 2\u20135 days and custom software in under 2 weeks for businesses in MENA and the United States.',
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: { '@type': 'EntryPoint', urlTemplate: 'https://www.upsellsystems.com/?s={search_term_string}' },
-    'query-input': 'required name=search_term_string',
-  },
-}
 
 const faqPageSchema = {
   '@context': 'https://schema.org',
@@ -117,7 +111,7 @@ const faqPageSchema = {
 // ─────────────────────────────────────────────────────────────────────────────
 // Route → extra schemas map (site-wide schemas are always included)
 // ─────────────────────────────────────────────────────────────────────────────
-// NOTE: site-wide schemas (Organization, LocalBusiness, WebSite) are already
+// NOTE: site-wide schemas (Organization and WebSite) are already
 // baked into dist/index.html by Vite's client build via SiteSchemas.jsx.
 // prerender.js only needs to inject ROUTE-SPECIFIC extras (e.g. FAQPage).
 const extraSchemasByRoute = {
@@ -137,91 +131,22 @@ function buildSchemaScripts(url) {
 // ─────────────────────────────────────────────────────────────────────────────
 const routes = ['/', '/about', '/portfolio', '/contact', '/faq', '/privacy', '/terms', '/404']
 
-const routeMetadata = {
-  '/': {
-    title: 'Fast Web Design & Custom Software Agency in Cairo | UpsellSystems',
-    description: 'UpsellSystems builds websites in 2–5 days and custom software in under 2 weeks. Cairo-based agency serving businesses in MENA and the US.'
-  },
-  '/about': {
-    title: 'About UpsellSystems | Cairo Web & Software Team',
-    description: 'Meet UpsellSystems: a Cairo-based web and software agency led by Mustafa Essam. Direct founder access, 2–5 day delivery, full-stack depth, and transparent pricing.'
-  },
-  '/portfolio': {
-    title: 'Web Design & Software Portfolio | UpsellSystems Case Studies',
-    description: "Browse UpsellSystems' portfolio of websites, custom web apps, and software projects built for startups, agencies, and businesses in MENA and the US."
-  },
-  '/faq': {
-    title: 'Website & Software Project FAQs | UpsellSystems',
-    description: 'Get answers to frequently asked questions about UpsellSystems: project timelines, pricing, international collaboration, and what makes the agency different.'
-  },
-  '/contact': {
-    title: 'Contact UpsellSystems | Start Your Website or Software Project',
-    description: 'Reach out to UpsellSystems for a free project quote. Contact via WhatsApp, email, or the project inquiry form. Cairo-based agency, serving MENA and the US.'
-  },
-  '/privacy': {
-    title: 'Privacy Policy | UpsellSystems',
-    description: 'UpsellSystems privacy policy: how we collect, use, and protect your data. Learn about your rights and our data handling practices.'
-  },
-  '/terms': {
-    title: 'Terms of Service | UpsellSystems',
-    description: 'UpsellSystems terms of service: the terms governing use of the site and project engagements, payments, and deliverables.'
-  },
-  '/404': {
-    title: '404 — Page Not Found | UpsellSystems',
-    description: 'Page not found.'
-  }
-}
-
 for (const url of routes) {
-  const appHtml      = render(url)
-  const schemaHtml   = buildSchemaScripts(url)
-
-  // Build per-route canonical URL
-  const canonicalUrl = `https://www.upsellsystems.com${url === '/' ? '' : url}`
-
-  // Use regex so it matches '</head>' regardless of leading whitespace in built HTML
-  const schemaInject = schemaHtml
-    ? (m) => schemaHtml + '\n' + m
-    : (m) => m
-
-  const meta = routeMetadata[url] || routeMetadata['/']
+  const { html: appHtml, helmet } = render(url)
+  const { headTags, bodyHtml } = extractLeadingHeadTags(appHtml)
+  const helmetHead = [
+    headTags || buildHelmetHead(helmet, ''),
+    buildSchemaScripts(url),
+  ]
+    .filter(Boolean)
+    .join('\n    ')
 
   const html = template
-    .replace('<!--app-html-->', appHtml)
-    // Replace the default title tag in index.html
-    .replace(
-      /<title>[^<]*<\/title>/,
-      `<title>${meta.title}</title>`
-    )
-    // Replace the default og:title in index.html
-    .replace(
-      /<meta property="og:title" content="[^"]*"\s*\/?>/,
-      `<meta property="og:title" content="${meta.title}" />`
-    )
-    // Replace the default description in index.html
-    .replace(
-      /<meta name="description" content="[^"]*"\s*\/?>/,
-      `<meta name="description" content="${meta.description}" />`
-    )
-    // Replace the default og:description in index.html
-    .replace(
-      /<meta property="og:description" content="[^"]*"\s*\/?>/,
-      `<meta property="og:description" content="${meta.description}" />`
-    )
-    // Replace the hardcoded homepage canonical with the per-route canonical
-    .replace(
-      /<link rel="canonical" href="[^"]*"\s*\/?>/,
-      `<link rel="canonical" href="${canonicalUrl}" />`
-    )
-    // Replace the hardcoded og:url with the per-route og:url
-    .replace(
-      /<meta property="og:url" content="[^"]*"\s*\/?>/,
-      `<meta property="og:url" content="${canonicalUrl}" />`
-    )
-    .replace(/<\/head>/, schemaInject)
+    .replace('<!--app-html-->', bodyHtml)
+  const htmlWithHead = injectHelmetHead(html, helmetHead)
 
   const filePath = `dist${url === '/' ? '/index' : url}.html`
-  fs.writeFileSync(toAbsolute(filePath), html)
+  fs.writeFileSync(toAbsolute(filePath), htmlWithHead)
   console.log('pre-rendered:', filePath)
 }
 

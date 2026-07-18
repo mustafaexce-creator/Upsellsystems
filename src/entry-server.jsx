@@ -5,14 +5,19 @@ import { HelmetProvider } from 'react-helmet-async'
 import App from './App'
 
 export function render(url) {
-  return renderToString(
+  const helmetContext = {}
+  const html = renderToString(
     <StrictMode>
-      <HelmetProvider>
+      <HelmetProvider context={helmetContext}>
         <StaticRouter location={url}>
           <App />
         </StaticRouter>
       </HelmetProvider>
     </StrictMode>
   )
-}
 
+  return {
+    html,
+    helmet: helmetContext.helmet,
+  }
+}
