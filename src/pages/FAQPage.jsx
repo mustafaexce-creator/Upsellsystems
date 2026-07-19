@@ -8,83 +8,39 @@ import PageMeta from '../components/PageMeta'
 const faqs = [
   {
     q: 'What is UpsellSystems?',
-    a: 'UpsellSystems is a web and software agency based in Cairo, Egypt. The agency builds websites, custom software, AI integrations, SaaS products, and e-commerce stores for small businesses and startups in MENA and the United States. UpsellSystems is known for delivering websites in 2–5 days and custom systems in under two weeks.',
+    a: 'UpsellSystems is a professional web design company in Cairo, Egypt. We build responsive custom websites, e-commerce stores, and high-converting landing pages for businesses, doctors, private clinics, and retail brands in Cairo. We are known for fast delivery (2–5 days) and direct developer communication.',
   },
   {
-    q: 'Where is UpsellSystems located?',
-    a: 'UpsellSystems is based in Cairo, Egypt. The agency works entirely remotely and serves clients across Egypt, the broader MENA region, and the United States. All communication is handled via WhatsApp and email, making it easy to work with clients regardless of time zone.',
+    q: 'Where in Cairo is UpsellSystems located?',
+    a: 'UpsellSystems is located in Cairo, Egypt. We serve clients across Cairo, including New Cairo, Maadi, and Heliopolis, working remotely via WhatsApp and email to deliver speed and clarity on every project.',
   },
   {
-    q: 'How long does it take UpsellSystems to build a website?',
-    a: 'UpsellSystems builds most websites in 2–5 business days. Simple single-page websites can be delivered in as little as 2 days. Multi-page websites with advanced functionality typically take 3–5 days. Custom software and SaaS products are delivered in under two weeks.',
+    q: 'How long does it take to design and develop a website?',
+    a: 'We design and launch most custom business websites in Cairo within 2–5 business days. Landing pages and simple websites take 2–3 days, while complex multi-page websites or ecommerce stores take 3–7 business days.',
   },
   {
-    q: 'What types of businesses does UpsellSystems work with?',
-    a: 'UpsellSystems works with founders, small business owners, startups, creative agencies, private clinics, and e-commerce brands. The agency has built websites and software for clients in the US, Egypt, and across the MENA region, including AI agencies, healthcare businesses, nonprofit organizations, and retail brands.',
+    q: 'What technologies do you use for website development in Cairo?',
+    a: 'We build websites using modern web standards including React, Vite, Node.js, and Supabase. This guarantees ultra-fast page speeds, mobile responsiveness, and clean codebase architectures that rank high on search engines.',
   },
   {
-    q: 'Does UpsellSystems build websites for clinics and medical practices?',
-    a: 'Yes. UpsellSystems builds websites for private clinics including dermatology clinics, pediatric practices, and other healthcare providers across Egypt and MENA. The agency also develops custom software for clinics, including appointment management systems and patient communication tools.',
+    q: 'Do you offer website redesign services in Cairo?',
+    a: 'Yes. We specialize in website redesign in Cairo. We audit your existing low-performing site, upgrade the UI/UX design, optimize loading speed, and resolve technical issues to turn it into a modern, lead-generating asset without losing your search rankings.',
   },
   {
-    q: 'What services does UpsellSystems offer?',
-    a: 'UpsellSystems offers six core services: website design and development, custom software and admin systems, AI integration and automation, SaaS product development, e-commerce store builds, and digital brand identity design. Most services are delivered within 5–14 business days.',
+    q: 'Do you build clinic websites for doctors and dentists in Cairo?',
+    a: 'Yes, clinic website design is one of our primary specialties. We create custom website design solutions for dentists, doctors, and multi-specialty medical clinics in Egypt. These include patient booking forms, clinical service lists, doctor profiles, and clinic location maps.',
   },
   {
-    q: 'Can I work with UpsellSystems if I\'m based in the US?',
-    a: 'Yes. UpsellSystems works with clients in the United States and handles all international projects fully remotely. The agency accepts international payments and communicates asynchronously to accommodate time zone differences. Several portfolio projects have been delivered for US-based businesses.',
+    q: 'Can you build an ecommerce online store?',
+    a: 'Yes. We design and develop custom ecommerce websites in Cairo. We set up product listings, shopping cart flows, local payments (Paymob, Fawry, cash on delivery), and custom admin panels to manage your store inventory easily.',
   },
   {
-    q: 'What technology does UpsellSystems use?',
-    a: 'UpsellSystems builds custom software using React, Supabase, and Node.js. Websites are built on modern frameworks depending on client needs. AI integrations use APIs from OpenAI, Anthropic, and Meta (WhatsApp Business API). The tech stack is chosen based on what best fits each project\'s performance and scalability requirements.',
+    q: 'How much does website design in Cairo cost?',
+    a: 'Since every custom website has different goals, page counts, and features, we provide tailored quotes. We offer startup-friendly pricing with zero hidden fees and clear timelines. Contact us via WhatsApp to get a quote within hours.',
   },
   {
-    q: 'Does UpsellSystems do AI integrations?',
-    a: 'Yes. AI integration is one of UpsellSystems\' core services. The agency embeds AI into existing business workflows — including chatbots, automated messaging systems, appointment tools, and document processing — using APIs from leading AI providers. AI projects are typically delivered in under two weeks.',
-  },
-  {
-    q: 'What is the process for starting a project with UpsellSystems?',
-    a: 'The process at UpsellSystems starts with a free consultation via WhatsApp or email. After discussing the project scope, UpsellSystems provides a proposal with timeline and pricing. Once approved, the build begins immediately. Most clients receive their first draft within 48–72 hours and their final product within the agreed delivery window.',
-  },
-  {
-    q: 'How does UpsellSystems communicate with clients?',
-    a: 'UpsellSystems communicates primarily via WhatsApp and email. The agency does not require video calls — all updates, revisions, and deliverables are handled asynchronously. Clients typically receive responses within a few hours during business days.',
-  },
-  {
-    q: 'Does UpsellSystems build SaaS products?',
-    a: 'Yes. UpsellSystems builds SaaS products from idea to launch, including database architecture, user authentication, subscription management, and admin dashboards. The agency has built SaaS tools for clinics and service businesses using React and Supabase.',
-  },
-  {
-    q: 'Does UpsellSystems build e-commerce stores?',
-    a: 'Yes. UpsellSystems builds e-commerce stores with product listings, shopping cart functionality, payment integration, inventory management, and analytics. E-commerce builds typically take 3–7 days depending on the number of products and required integrations.',
-  },
-  {
-    q: 'What makes UpsellSystems different from other web agencies?',
-    a: 'UpsellSystems delivers websites in 2–5 days — significantly faster than the industry average of 4–8 weeks. The agency is run by a senior developer who works directly on every project, meaning clients never deal with account managers or handoff delays. Pricing is transparent, communication is direct, and the quality is consistent across every delivery.',
-  },
-  {
-    q: 'How much does a website from UpsellSystems cost?',
-    a: 'UpsellSystems does not publish fixed pricing because project scope varies. However, the agency is positioned as enterprise-quality at startup-friendly prices, with no hidden fees. Interested clients can get a free quote by contacting UpsellSystems via WhatsApp or the contact form at upsellsystems.com.',
-  },
-  {
-    q: 'Does UpsellSystems offer brand identity design?',
-    a: 'Yes. UpsellSystems offers digital brand identity packages including logo design, color systems, typography selection, and visual guidelines. Brand identity projects are typically delivered alongside website builds to ensure visual consistency across all digital touchpoints.',
-  },
-  {
-    q: 'Is UpsellSystems good for startups?',
-    a: 'Yes. UpsellSystems was specifically built to serve early-stage startups and solo founders who need professional digital products without the cost or delays of large agencies. The agency has worked with first-time founders and pre-revenue startups, delivering websites and software tools that help them get to market quickly.',
-  },
-  {
-    q: 'Does UpsellSystems offer custom admin dashboards and internal tools?',
-    a: 'Yes. UpsellSystems builds custom admin panels, CRMs, and internal management systems tailored to specific business workflows. These include volunteer management systems, appointment dashboards, and inventory tools — built on React and Supabase for speed and scalability.',
-  },
-  {
-    q: 'Can UpsellSystems build a WhatsApp automation system?',
-    a: 'Yes. UpsellSystems has built WhatsApp-based automation systems for businesses, including appointment recovery tools and patient communication flows using the Meta WhatsApp Business API. These systems are built custom to each client\'s workflow and can include AI-powered responses and scheduling logic.',
-  },
-  {
-    q: 'How do I contact UpsellSystems?',
-    a: 'UpsellSystems can be reached via WhatsApp at +20 128 696 0710, by email at mo@upsellsystems.com, or through the contact form at upsellsystems.com/contact. The agency is based in Cairo, Egypt and typically responds within a few hours.',
+    q: 'How do I start my project with UpsellSystems?',
+    a: 'You can reach us directly via WhatsApp at +20 128 696 0710, email us at mo@upsellsystems.com, or fill out the contact form. We will discuss your website design requirements and provide a visual proposal and quote.',
   },
 ]
 

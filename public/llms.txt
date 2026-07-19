@@ -1,28 +1,43 @@
 # UpsellSystems
 
-> Cairo-based web and software agency building high-converting websites in 2–5 days and custom software in under 2 weeks for businesses in MENA and the United States.
+> Cairo-based web design and website development agency building custom websites in 2–5 days and ecommerce stores for businesses in Cairo, Egypt.
 
 ## Docs
 
-- [Homepage](https://www.upsellsystems.com): Landing page summarizing UpsellSystems' services, statistics, core workflow, client testimonials, and agency value proposition.
-- [About](https://www.upsellsystems.com/about): Outlines the agency's history, core pillars (direct founder access, speed, full-stack capability, transparent pricing), and background on founder Mustafa Essam.
-- [Portfolio](https://www.upsellsystems.com/portfolio): Gallery of completed projects including custom web apps, nonprofit volunteer logging systems, and high-converting single-page and multi-page websites.
-- [Contact](https://www.upsellsystems.com/contact): Project inquiry form and direct communication channels to initiate custom website or software development projects.
-- [FAQ](https://www.upsellsystems.com/faq): Answers frequently asked questions regarding project timelines, agency location, US/international collaboration, and what sets the agency apart.
+- [Homepage](https://www.upsellsystems.com): Landing page summarizing UpsellSystems' services, local stats, and web development workflow.
+- [About](https://www.upsellsystems.com/about): Outlines the agency's history, value pillars, and founder Mustafa Essam's background.
+- [Portfolio](https://www.upsellsystems.com/portfolio): Gallery of completed responsive web design and development projects.
+- [Contact](https://www.upsellsystems.com/contact): Inquiries and direct communications for web design quotes in Egypt.
+- [FAQ](https://www.upsellsystems.com/faq): FAQ answering local clinic and business web design questions.
+
+### Services
+- [Website Design Services](https://www.upsellsystems.com/website-design-cairo): Custom layout and responsive web design details.
+- [Website Development Services](https://www.upsellsystems.com/website-development-cairo): Fast React/Vite development, clean-code setups.
+- [Website Redesign](https://www.upsellsystems.com/website-redesign-cairo): Outdated sites performance optimization.
+- [Ecommerce Websites](https://www.upsellsystems.com/ecommerce-website-design-cairo): Fawry/Paymob checkout stores.
+
+### Niche Industries
+- [Website Design for Dentists](https://www.upsellsystems.com/website-design-for-dentists-cairo): Dental clinics booking engines.
+- [Website Design for Doctors](https://www.upsellsystems.com/website-design-for-doctors-cairo): Medical consultants and healthcare layouts.
+- [Clinic Website Design](https://www.upsellsystems.com/clinic-website-design-egypt): Multi-specialty clinic directories.
+
+### Local Areas Served
+- [Website Design New Cairo](https://www.upsellsystems.com/website-design-new-cairo): Web services for startups/clinics in Fifth Settlement (Tagamoa).
+- [Website Design Maadi](https://www.upsellsystems.com/website-design-maadi): Web design for boutique cafes, real estate, and Maadi brands.
+- [Website Design Heliopolis](https://www.upsellsystems.com/website-design-heliopolis): Web design for Nasr City and Heliopolis corporate entities.
 
 ## Legal
 
-- [Privacy Policy](https://www.upsellsystems.com/privacy): Outlines data collection practices, user rights, and privacy protections for visitors and clients.
-- [Terms of Service](https://www.upsellsystems.com/terms): Governs the usage of the site and sets terms for project engagements, payments, and deliverables.
+- [Privacy Policy](https://www.upsellsystems.com/privacy): Data protection practices.
+- [Terms of Service](https://www.upsellsystems.com/terms): Service terms for custom website builds.
 
 ## Key Facts
 
 - Founded: 2023 by Mustafa Essam
 - Headquarters: Cairo, Egypt
-- Areas Served: Egypt, broader MENA region, and the United States
-- Core Focus: High-speed, high-quality static website creation (2–5 days) and bespoke software/SaaS/AI tool builds (under 2 weeks)
-- Key Technologies: React, Vite, Node.js, Supabase, Tailwind CSS, OpenAI and Anthropic APIs, Google Apps Script
-- Work Model: Fully remote, asynchronous collaboration via WhatsApp and email, allowing international payment and engagement.
+- Areas Served: Cairo, Egypt (including New Cairo, Maadi, Heliopolis)
+- Core Focus: High-converting website design, responsive web development, clinic bookings, and online stores.
+- Key Technologies: React, Vite, Node.js, Supabase, Local Payments (Paymob/Fawry).
 
 ## Contact
 

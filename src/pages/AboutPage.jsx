@@ -17,8 +17,8 @@ export default function AboutPage() {
   return (
     <>
       <PageMeta
-        title="About UpsellSystems | Cairo Web & Software Team"
-        description="Meet UpsellSystems: a Cairo-based web and software agency led by Mustafa Essam. Direct founder access, 2–5 day delivery, full-stack depth, and transparent pricing."
+        title="About UpsellSystems | Professional Web Design Cairo"
+        description="Meet UpsellSystems: a premier website design and development agency in Cairo, Egypt led by Mustafa Essam. Learn how we build custom websites in 2–5 days."
       />
 
       {/* ===== HERO / ENTITY DESCRIPTION ===== */}
@@ -33,7 +33,7 @@ export default function AboutPage() {
         <div ref={heroRef} style={{ maxWidth: '860px', margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 2 }} className={`fade-in-up ${heroVisible ? 'visible' : ''}`}>
           <div className="section-label" style={{ marginBottom: '28px' }}>
             <MapPin size={12} />
-            Cairo, Egypt — Serving MENA & the United States
+            Cairo, Egypt
           </div>
 
           <h1 style={{ fontSize: 'clamp(2.4rem, 5vw, 3.8rem)', fontWeight: 900, lineHeight: 1.1, marginBottom: '32px', letterSpacing: '-0.04em' }}>
@@ -47,17 +47,17 @@ export default function AboutPage() {
             marginBottom: '36px',
           }}>
             <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.9, fontWeight: 400 }}>
-              UpsellSystems is a web and software agency based in <strong style={{ color: '#0F172A', fontWeight: 600 }}>Cairo, Egypt</strong>, serving small businesses, startups, and founders across <strong style={{ color: '#0F172A', fontWeight: 600 }}>MENA and the United States</strong>. The agency builds high-converting websites in 2–5 days and custom software systems — including AI integrations, SaaS products, and e-commerce stores — in under two weeks. UpsellSystems is known for fast delivery without sacrificing design quality or technical depth, making it a preferred partner for business owners who need professional digital products built quickly.
+              UpsellSystems is a premier <strong style={{ color: '#0F172A', fontWeight: 600 }}>web design company in Cairo</strong>, Egypt. We focus on building fast, modern websites and provide professional <strong style={{ color: '#0F172A', fontWeight: 600 }}>website design and web development in Cairo</strong>. We help business owners, clinic owners, and startups establish a stunning, high-ranking digital presence in 2–5 days.
             </p>
           </div>
 
           {/* GEO: About page warm opening — 2 paragraphs */}
           <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.95, marginBottom: '24px' }}>
-            UpsellSystems is a Cairo-based web and software agency founded by{' '}
-            <strong style={{ color: '#0F172A', fontWeight: 600 }}>Mustafa Essam</strong>, a full-stack developer and AI integration specialist with a portfolio of 10+ delivered projects across Egypt, the US, and the broader MENA region. The agency specializes in building websites in 2–5 days and custom software — dashboards, admin systems, SaaS platforms, and AI-powered tools — in under two weeks.
+            UpsellSystems is a Cairo-based web design and web development agency founded by{' '}
+            <strong style={{ color: '#0F172A', fontWeight: 600 }}>Mustafa Essam</strong>, a front-end expert and custom web developer with a portfolio of 10+ delivered projects in Cairo, Egypt. The agency specializes in building custom responsive websites, website redesigns, and ecommerce stores in under one week.
           </p>
           <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.95, marginBottom: '48px' }}>
-            What sets UpsellSystems apart is its commitment to speed without compromise. Clients work directly with the founder, receive full transparency throughout the build, and launch faster than they would with any traditional agency. UpsellSystems serves founders, clinic owners, creative agencies, startups, and e-commerce businesses who need real digital products built by someone who treats their project like their own.
+            What sets UpsellSystems apart is speed without compromise. By working directly with a senior developer instead of a bloated account team, you get a custom design, search engine optimization (SEO), and conversion-friendly performance in record time. We serve local businesses, medical practices, private clinics, and ecommerce retail brands in Cairo who need professional sites built with absolute dedication.
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px' }}>
@@ -109,7 +109,7 @@ export default function AboutPage() {
       <section style={{ background: 'var(--bg-primary)', padding: '80px 24px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '32px', textAlign: 'center' }}>
           {[
-            { value: '10+', label: 'Projects Delivered', sub: 'Across Egypt, MENA & the US' },
+            { value: '10+', label: 'Projects Delivered', sub: 'For businesses in Cairo' },
             { value: '2–5', label: 'Days to Launch', sub: 'For most website projects' },
             { value: '<2wks', label: 'Software Delivery', sub: 'SaaS, AI tools & dashboards' },
             { value: '100%', label: 'Direct Access', sub: 'Always work with the founder' },

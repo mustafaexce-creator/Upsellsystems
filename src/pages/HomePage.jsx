@@ -14,7 +14,7 @@ export default function HomePage() {
     <>
       <PageMeta
         title="Fast Web Design & Custom Software Agency in Cairo | UpsellSystems"
-        description="UpsellSystems builds websites in 2–5 days and custom software in under 2 weeks. Cairo-based agency serving businesses in MENA and the US."
+        description="UpsellSystems builds websites in 2–5 days and custom software in under 2 weeks. Cairo-based agency serving businesses in Cairo, Egypt."
       />
       <Hero />
       <StatsBar />

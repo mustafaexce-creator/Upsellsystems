@@ -46,7 +46,7 @@ export default function ContactPage() {
     <>
       <PageMeta
         title="Contact UpsellSystems | Start Your Website or Software Project"
-        description="Reach out to UpsellSystems for a free project quote. Contact via WhatsApp, email, or the project inquiry form. Cairo-based agency, serving MENA and the US."
+        description="Reach out to UpsellSystems for a free project quote. Contact via WhatsApp, email, or the project inquiry form. Cairo-based agency serving businesses in Cairo, Egypt."
       />
       <section style={{
         background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(109,40,217,0.06), transparent), linear-gradient(180deg, #FFFFFF, #F8FAFC)',

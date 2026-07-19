@@ -40,17 +40,17 @@ export default function Hero() {
           </div>
 
           <h1 style={{ fontSize: 'clamp(2.6rem, 5vw, 4.2rem)', fontWeight: 900, lineHeight: 1.1, marginBottom: '24px', letterSpacing: '-0.04em' }}>
-            Your idea today.
+            Professional
             <br />
-            <span className="gradient-text">Your website tomorrow.</span>
+            <span className="gradient-text">Website Design in Cairo</span>
           </h1>
 
           {/* GEO: Entity description — above the fold, identical across homepage, about, and footer */}
           <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: '20px', fontWeight: 400, lineHeight: 1.85, maxWidth: '520px', padding: '14px 18px', background: 'rgba(109,40,217,0.03)', borderRadius: '12px', border: '1px solid rgba(109,40,217,0.08)' }}>
-            UpsellSystems is a web and software agency based in <strong style={{ color: '#0F172A', fontWeight: 600 }}>Cairo, Egypt</strong>, serving small businesses, startups, and founders across <strong style={{ color: '#0F172A', fontWeight: 600 }}>MENA and the United States</strong>. The agency builds high-converting websites in 2–5 days and custom software systems — including AI integrations, SaaS products, and e-commerce stores — in under two weeks.
+            UpsellSystems is a premier <strong style={{ color: '#0F172A', fontWeight: 600 }}>web design company in Cairo</strong>. We build fast, high-converting websites and offer professional <strong style={{ color: '#0F172A', fontWeight: 600 }}>website development in Cairo, Egypt</strong>. Launch your responsive website or ecommerce store in 2–5 days.
           </p>
           <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.9, marginBottom: '40px', maxWidth: '480px' }}>
-            Fast delivery without sacrificing design quality or technical depth — the preferred partner for business owners who need professional digital products built quickly.
+            Get custom design and high-performance clean code from a senior developer. The preferred partner for business owners and doctors in Egypt.
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px', alignItems: 'center' }}>
@@ -58,12 +58,12 @@ export default function Hero() {
               <span>Start Your Project <ArrowRight size={17} /></span>
             </Link>
             <Link to="/portfolio" className="cta-secondary">
-              <Play size={16} /> See Our Work
+              See Our Work
             </Link>
           </div>
           <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '12px', display: 'flex', alignItems: 'center', gap: '6px' }}>
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#25D366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            No commitment needed — we reply on WhatsApp within a few hours.
+            We reply on WhatsApp within a few hours.
           </p>
 
           {/* Social proof */}
@@ -82,9 +82,9 @@ export default function Hero() {
             </div>
             <div>
               <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)' }}>
-                Trusted by <strong style={{ color: '#0F172A' }}>10+ clients</strong> worldwide
+                Trusted by <strong style={{ color: '#0F172A' }}>10+ businesses</strong> in Cairo
               </p>
-              <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>★★★★★ 5.0 average rating</p>
+              <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>★★★★★ 5.0 rating on Google</p>
             </div>
           </div>
         </div>

@@ -83,27 +83,22 @@ const faqPageSchema = {
     {
       '@type': 'Question',
       name: 'What is UpsellSystems?',
-      acceptedAnswer: { '@type': 'Answer', text: 'UpsellSystems is a web and software agency based in Cairo, Egypt. The agency builds websites, custom software, AI integrations, SaaS products, and e-commerce stores for small businesses and startups in MENA and the United States. UpsellSystems is known for delivering websites in 2\u20135 days and custom systems in under two weeks.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'UpsellSystems is a professional web design company in Cairo, Egypt. We build responsive custom websites, e-commerce stores, and high-converting landing pages for businesses, doctors, private clinics, and retail brands in Cairo. We are known for fast delivery (2–5 days) and direct developer communication.' },
     },
     {
       '@type': 'Question',
-      name: 'Where is UpsellSystems located?',
-      acceptedAnswer: { '@type': 'Answer', text: 'UpsellSystems is based in Cairo, Egypt. The agency works entirely remotely and serves clients across Egypt, the broader MENA region, and the United States. All communication is handled via WhatsApp and email.' },
+      name: 'Where in Cairo is UpsellSystems located?',
+      acceptedAnswer: { '@type': 'Answer', text: 'UpsellSystems is located in Cairo, Egypt. We serve clients across Cairo, including New Cairo, Maadi, and Heliopolis, working remotely via WhatsApp and email to deliver speed and clarity on every project.' },
     },
     {
       '@type': 'Question',
-      name: 'How long does it take UpsellSystems to build a website?',
-      acceptedAnswer: { '@type': 'Answer', text: 'UpsellSystems builds most websites in 2\u20135 business days. Simple single-page websites can be delivered in as little as 2 days. Custom software and SaaS products are delivered in under two weeks.' },
+      name: 'How long does it take to design and develop a website?',
+      acceptedAnswer: { '@type': 'Answer', text: 'We design and launch most custom business websites in Cairo within 2–5 business days. Landing pages and simple websites take 2–3 days, while complex multi-page websites or ecommerce stores take 3–7 business days.' },
     },
     {
       '@type': 'Question',
-      name: 'Can I work with UpsellSystems if I am based in the US?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Yes. UpsellSystems works with clients in the United States and handles all international projects fully remotely. The agency accepts international payments and communicates asynchronously to accommodate time zone differences.' },
-    },
-    {
-      '@type': 'Question',
-      name: 'What makes UpsellSystems different from other web agencies?',
-      acceptedAnswer: { '@type': 'Answer', text: 'UpsellSystems delivers websites in 2\u20135 days, significantly faster than the industry average of 4\u20138 weeks. The agency is run by a senior developer who works directly on every project, meaning clients never deal with account managers or handoff delays.' },
+      name: 'Does UpsellSystems work with clients outside Cairo?',
+      acceptedAnswer: { '@type': 'Answer', text: 'UpsellSystems primarily serves businesses in Cairo, Egypt. All projects are handled remotely via WhatsApp and email, so communication is seamless.' },
     },
   ],
 }
@@ -129,7 +124,26 @@ function buildSchemaScripts(url) {
 // ─────────────────────────────────────────────────────────────────────────────
 // Prerender all routes
 // ─────────────────────────────────────────────────────────────────────────────
-const routes = ['/', '/about', '/portfolio', '/contact', '/faq', '/privacy', '/terms', '/404']
+const routes = [
+  '/', 
+  '/about', 
+  '/portfolio', 
+  '/contact', 
+  '/faq', 
+  '/privacy', 
+  '/terms', 
+  '/website-design-cairo',
+  '/website-development-cairo',
+  '/website-redesign-cairo',
+  '/ecommerce-website-design-cairo',
+  '/website-design-for-dentists-cairo',
+  '/website-design-for-doctors-cairo',
+  '/clinic-website-design-egypt',
+  '/website-design-new-cairo',
+  '/website-design-maadi',
+  '/website-design-heliopolis',
+  '/404'
+]
 
 for (const url of routes) {
   const { html: appHtml, helmet } = render(url)

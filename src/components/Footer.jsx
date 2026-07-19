@@ -45,38 +45,48 @@ export default function Footer() {
             </svg>
           </div>
           {/* GEO: Entity description — identical across homepage, about, and footer */}
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', lineHeight: 1.9, maxWidth: '320px' }}>
-            UpsellSystems is a web and software agency based in Cairo, Egypt, building websites, custom software, and AI integrations for small businesses and startups in MENA and the United States. The agency delivers websites in 2–5 days and custom systems in under two weeks.
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', lineHeight: 1.8, maxWidth: '320px', marginBottom: '18px' }}>
+            UpsellSystems is a web design and website development agency in Cairo, Egypt. We build fast, high-converting websites and ecommerce online stores in 2–5 days for businesses and clinics.
           </p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '14px' }}>
-            <MapPin size={13} color="var(--accent-1)" />
-            <span style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', fontWeight: 500 }}>Cairo, Egypt — Serving MENA & the US</span>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <MapPin size={14} color="var(--accent-1)" />
+              <span style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', fontWeight: 500 }}>Cairo, Egypt</span>
+            </div>
+            <a href="https://wa.me/201286960710" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.82rem', color: 'var(--text-secondary)', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color = 'var(--accent-1)'} onMouseOut={e => e.target.style.color = 'var(--text-secondary)'}>
+              <MessageCircle size={14} /> +20 128 696 0710
+            </a>
+            <a href="mailto:mo@upsellsystems.com" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.82rem', color: 'var(--text-secondary)', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color = 'var(--accent-1)'} onMouseOut={e => e.target.style.color = 'var(--text-secondary)'}>
+              <Mail size={14} /> mo@upsellsystems.com
+            </a>
           </div>
         </div>
 
         <div>
-          <p style={{ fontWeight: 700, fontSize: '0.95rem', marginBottom: '20px', color: '#0F172A', letterSpacing: '-0.01em' }}>Navigate</p>
+          <p style={{ fontWeight: 700, fontSize: '0.95rem', marginBottom: '20px', color: '#0F172A', letterSpacing: '-0.01em' }}>Services</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-            <Link to="/" className="nav-link">Home</Link>
-            <Link to="/about" className="nav-link">About</Link>
-            <Link to="/portfolio" className="nav-link">Our Work</Link>
-            <Link to="/faq" className="nav-link">FAQ</Link>
-            <Link to="/contact" className="nav-link">Contact</Link>
+            <Link to="/website-design-cairo" className="nav-link">Website Design</Link>
+            <Link to="/website-development-cairo" className="nav-link">Website Development</Link>
+            <Link to="/website-redesign-cairo" className="nav-link">Website Redesign</Link>
+            <Link to="/ecommerce-website-design-cairo" className="nav-link">Ecommerce Websites</Link>
           </div>
         </div>
 
         <div>
-          <p style={{ fontWeight: 700, fontSize: '0.95rem', marginBottom: '20px', color: '#0F172A', letterSpacing: '-0.01em' }}>Get in Touch</p>
+          <p style={{ fontWeight: 700, fontSize: '0.95rem', marginBottom: '20px', color: '#0F172A', letterSpacing: '-0.01em' }}>Industries</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-            <Link to="/contact" className="nav-link" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Phone size={15} /> Contact Us
-            </Link>
-            <a href="https://wa.me/201286960710" target="_blank" rel="noopener noreferrer" className="nav-link" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <MessageCircle size={15} /> +20 128 696 0710
-            </a>
-            <a href="mailto:mo@upsellsystems.com" className="nav-link" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Mail size={15} /> mo@upsellsystems.com
-            </a>
+            <Link to="/website-design-for-dentists-cairo" className="nav-link">Web Design for Dentists</Link>
+            <Link to="/website-design-for-doctors-cairo" className="nav-link">Web Design for Doctors</Link>
+            <Link to="/clinic-website-design-egypt" className="nav-link">Clinic Website Design</Link>
+          </div>
+        </div>
+
+        <div>
+          <p style={{ fontWeight: 700, fontSize: '0.95rem', marginBottom: '20px', color: '#0F172A', letterSpacing: '-0.01em' }}>Areas Served</p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+            <Link to="/website-design-new-cairo" className="nav-link">Web Design New Cairo</Link>
+            <Link to="/website-design-maadi" className="nav-link">Web Design Maadi</Link>
+            <Link to="/website-design-heliopolis" className="nav-link">Web Design Heliopolis</Link>
           </div>
         </div>
       </div>
@@ -84,16 +94,22 @@ export default function Footer() {
       <div style={{
         maxWidth: '1200px', margin: '48px auto 0', paddingTop: '24px',
         borderTop: '1px solid rgba(109,40,217,0.06)',
-        display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '12px',
+        display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '16px',
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.8rem' }}>© 2026 UpsellSystems. All rights reserved.</p>
           <span style={{ color: 'rgba(109,40,217,0.2)', fontSize: '0.8rem' }}>•</span>
+          <Link to="/" style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={(e) => e.target.style.color = '#0F172A'} onMouseOut={(e) => e.target.style.color = 'var(--text-secondary)'}>Home</Link>
+          <Link to="/about" style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={(e) => e.target.style.color = '#0F172A'} onMouseOut={(e) => e.target.style.color = 'var(--text-secondary)'}>About</Link>
+          <Link to="/portfolio" style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={(e) => e.target.style.color = '#0F172A'} onMouseOut={(e) => e.target.style.color = 'var(--text-secondary)'}>Work</Link>
+          <Link to="/faq" style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={(e) => e.target.style.color = '#0F172A'} onMouseOut={(e) => e.target.style.color = 'var(--text-secondary)'}>FAQ</Link>
+          <Link to="/contact" style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={(e) => e.target.style.color = '#0F172A'} onMouseOut={(e) => e.target.style.color = 'var(--text-secondary)'}>Contact</Link>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
           <Link to="/privacy" style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={(e) => e.target.style.color = '#0F172A'} onMouseOut={(e) => e.target.style.color = 'var(--text-secondary)'}>Privacy Policy</Link>
           <span style={{ color: 'rgba(109,40,217,0.2)', fontSize: '0.8rem' }}>•</span>
           <Link to="/terms" style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', textDecoration: 'none', transition: 'color 0.3s ease' }} onMouseOver={(e) => e.target.style.color = '#0F172A'} onMouseOut={(e) => e.target.style.color = 'var(--text-secondary)'}>Terms of Service</Link>
         </div>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '0.8rem' }}>Cairo, Egypt · Made with ❤️</p>
       </div>
     </footer>
   )

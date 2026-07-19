@@ -92,7 +92,7 @@ export default function PortfolioPage() {
     <>
       <PageMeta
         title="Web Design & Software Portfolio | UpsellSystems Case Studies"
-        description="Browse UpsellSystems' portfolio of websites, custom web apps, and software projects built for startups, agencies, and businesses in MENA and the US."
+        description="Browse UpsellSystems' portfolio of websites, custom web apps, and software projects built for startups, agencies, and businesses in Cairo, Egypt."
       />
       <section style={{
         background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(109,40,217,0.06), transparent), linear-gradient(180deg, #FFFFFF, #F8FAFC)',

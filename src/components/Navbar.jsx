@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, ArrowRight } from 'lucide-react'
+import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState(null)
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
@@ -18,7 +21,6 @@ export default function Navbar() {
         })
       }
     }
-    // Defer the initial check to the next frame to avoid forcing reflow during mounting layout passes
     requestAnimationFrame(() => {
       handleScroll()
     })
@@ -26,11 +28,27 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  useEffect(() => setMobileOpen(false), [location])
+  useEffect(() => {
+    setMobileOpen(false)
+    setMobileServicesOpen(false)
+    setMobileIndustriesOpen(false)
+    setActiveDropdown(null)
+  }, [location])
 
-  const links = [
-    { path: '/', label: 'Home' },
-    { path: '/about', label: 'About' },
+  const services = [
+    { path: '/website-design-cairo', label: 'Website Design' },
+    { path: '/website-development-cairo', label: 'Website Development' },
+    { path: '/website-redesign-cairo', label: 'Website Redesign' },
+    { path: '/ecommerce-website-design-cairo', label: 'Ecommerce Websites' },
+  ]
+
+  const industries = [
+    { path: '/website-design-for-dentists-cairo', label: 'Website Design for Dentists' },
+    { path: '/website-design-for-doctors-cairo', label: 'Website Design for Doctors' },
+    { path: '/clinic-website-design-egypt', label: 'Clinic Website Design' },
+  ]
+
+  const normalLinks = [
     { path: '/portfolio', label: 'Work' },
     { path: '/faq', label: 'FAQ' },
     { path: '/contact', label: 'Contact' },
@@ -84,8 +102,137 @@ export default function Navbar() {
           </svg>
         </Link>
 
-        <div className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '40px' }}>
-          {links.map(link => (
+        {/* Desktop Nav */}
+        <div className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '30px' }}>
+          <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>
+            Home
+          </Link>
+
+          {/* Services Dropdown */}
+          <div 
+            style={{ position: 'relative' }}
+            onMouseEnter={() => setActiveDropdown('services')}
+            onMouseLeave={() => setActiveDropdown(null)}
+          >
+            <button 
+              className={`nav-link`}
+              style={{ 
+                background: 'none', 
+                border: 'none', 
+                cursor: 'pointer', 
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: '4px',
+                padding: '8px 0',
+                fontFamily: 'inherit',
+                fontSize: 'inherit',
+                fontWeight: 'inherit'
+              }}
+            >
+              Services <ChevronDown size={14} style={{ transition: 'transform 0.2s', transform: activeDropdown === 'services' ? 'rotate(180deg)' : 'rotate(0)' }} />
+            </button>
+            {activeDropdown === 'services' && (
+              <div style={{
+                position: 'absolute',
+                top: '100%',
+                left: '-20px',
+                width: '240px',
+                background: 'rgba(255, 255, 255, 0.95)',
+                backdropFilter: 'blur(20px)',
+                border: '1px solid rgba(109, 40, 217, 0.1)',
+                borderRadius: '12px',
+                padding: '12px',
+                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '4px',
+                animation: 'navFadeIn 0.2s ease forwards'
+              }}>
+                {services.map(s => (
+                  <Link 
+                    key={s.path} 
+                    to={s.path} 
+                    className={`nav-dropdown-item ${location.pathname === s.path ? 'active' : ''}`}
+                    style={{
+                      padding: '10px 12px',
+                      borderRadius: '8px',
+                      textDecoration: 'none',
+                      color: 'var(--text-secondary)',
+                      fontSize: '0.9rem',
+                      fontWeight: 500,
+                      transition: 'all 0.2s'
+                    }}
+                  >
+                    {s.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Industries Dropdown */}
+          <div 
+            style={{ position: 'relative' }}
+            onMouseEnter={() => setActiveDropdown('industries')}
+            onMouseLeave={() => setActiveDropdown(null)}
+          >
+            <button 
+              className={`nav-link`}
+              style={{ 
+                background: 'none', 
+                border: 'none', 
+                cursor: 'pointer', 
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: '4px',
+                padding: '8px 0',
+                fontFamily: 'inherit',
+                fontSize: 'inherit',
+                fontWeight: 'inherit'
+              }}
+            >
+              Industries <ChevronDown size={14} style={{ transition: 'transform 0.2s', transform: activeDropdown === 'industries' ? 'rotate(180deg)' : 'rotate(0)' }} />
+            </button>
+            {activeDropdown === 'industries' && (
+              <div style={{
+                position: 'absolute',
+                top: '100%',
+                left: '-20px',
+                width: '260px',
+                background: 'rgba(255, 255, 255, 0.95)',
+                backdropFilter: 'blur(20px)',
+                border: '1px solid rgba(109, 40, 217, 0.1)',
+                borderRadius: '12px',
+                padding: '12px',
+                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.08)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '4px',
+                animation: 'navFadeIn 0.2s ease forwards'
+              }}>
+                {industries.map(ind => (
+                  <Link 
+                    key={ind.path} 
+                    to={ind.path} 
+                    className={`nav-dropdown-item ${location.pathname === ind.path ? 'active' : ''}`}
+                    style={{
+                      padding: '10px 12px',
+                      borderRadius: '8px',
+                      textDecoration: 'none',
+                      color: 'var(--text-secondary)',
+                      fontSize: '0.9rem',
+                      fontWeight: 500,
+                      transition: 'all 0.2s'
+                    }}
+                  >
+                    {ind.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {normalLinks.map(link => (
             <Link key={link.path} to={link.path} className={`nav-link ${location.pathname === link.path ? 'active' : ''}`}>
               {link.label}
             </Link>
@@ -102,23 +249,122 @@ export default function Navbar() {
         </button>
       </nav>
 
+      {/* Mobile Drawer Nav */}
       {mobileOpen && (
         <div style={{
-          display: 'flex', flexDirection: 'column', padding: '20px 24px 30px', gap: '20px',
+          display: 'flex', flexDirection: 'column', padding: '20px 24px 30px', gap: '16px',
           background: 'rgba(255, 255, 255, 0.98)', backdropFilter: 'blur(24px)',
           borderBottom: '1px solid rgba(109,40,217,0.1)',
+          maxHeight: 'calc(100vh - 80px)',
+          overflowY: 'auto'
         }}>
-          {links.map(link => (
+          <Link key="mobile-home" to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} style={{ fontSize: '1.1rem' }}>
+            Home
+          </Link>
+
+          {/* Mobile Services Accordion */}
+          <div>
+            <button 
+              onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+              style={{
+                width: '100%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'between',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                textAlign: 'left',
+                padding: '6px 0',
+                fontFamily: 'inherit',
+                fontSize: '1.1rem',
+                color: 'var(--text-primary)',
+                fontWeight: 600
+              }}
+            >
+              <span style={{ flex: 1 }}>Services</span>
+              <ChevronDown size={18} style={{ transition: 'transform 0.2s', transform: mobileServicesOpen ? 'rotate(180deg)' : 'rotate(0)' }} />
+            </button>
+            {mobileServicesOpen && (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', paddingLeft: '16px', marginTop: '8px', borderLeft: '1px solid var(--border)' }}>
+                {services.map(s => (
+                  <Link 
+                    key={s.path} 
+                    to={s.path} 
+                    style={{ textDecoration: 'none', color: location.pathname === s.path ? 'var(--accent-1)' : 'var(--text-secondary)', fontSize: '0.95rem', padding: '4px 0' }}
+                  >
+                    {s.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Mobile Industries Accordion */}
+          <div>
+            <button 
+              onClick={() => setMobileIndustriesOpen(!mobileIndustriesOpen)}
+              style={{
+                width: '100%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'between',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                textAlign: 'left',
+                padding: '6px 0',
+                fontFamily: 'inherit',
+                fontSize: '1.1rem',
+                color: 'var(--text-primary)',
+                fontWeight: 600
+              }}
+            >
+              <span style={{ flex: 1 }}>Industries</span>
+              <ChevronDown size={18} style={{ transition: 'transform 0.2s', transform: mobileIndustriesOpen ? 'rotate(180deg)' : 'rotate(0)' }} />
+            </button>
+            {mobileIndustriesOpen && (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', paddingLeft: '16px', marginTop: '8px', borderLeft: '1px solid var(--border)' }}>
+                {industries.map(ind => (
+                  <Link 
+                    key={ind.path} 
+                    to={ind.path} 
+                    style={{ textDecoration: 'none', color: location.pathname === ind.path ? 'var(--accent-1)' : 'var(--text-secondary)', fontSize: '0.95rem', padding: '4px 0' }}
+                  >
+                    {ind.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {normalLinks.map(link => (
             <Link key={link.path} to={link.path}
               className={`nav-link ${location.pathname === link.path ? 'active' : ''}`}
               style={{ fontSize: '1.1rem' }}>{link.label}</Link>
           ))}
-          <Link to="/contact" className="cta-button" style={{ textAlign: 'center', justifyContent: 'center' }}>
+          <Link to="/contact" className="cta-button" style={{ textAlign: 'center', justifyContent: 'center', marginTop: '8px' }}>
             <span>Start a Project</span>
           </Link>
         </div>
       )}
 
+      <style>{`
+        @keyframes navFadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .nav-dropdown-item:hover {
+          background: rgba(109, 40, 217, 0.05);
+          color: var(--accent-1) !important;
+          padding-left: 16px !important;
+        }
+        .nav-dropdown-item.active {
+          background: rgba(109, 40, 217, 0.08);
+          color: var(--accent-1) !important;
+        }
+      `}</style>
     </header>
   )
 }
+
