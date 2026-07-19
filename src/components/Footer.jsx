@@ -77,7 +77,7 @@ export default function Footer() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
             <Link to="/website-design-for-dentists-cairo" className="nav-link">Web Design for Dentists</Link>
             <Link to="/website-design-for-doctors-cairo" className="nav-link">Web Design for Doctors</Link>
-            <Link to="/clinic-website-design-egypt" className="nav-link">Clinic Website Design</Link>
+            <Link to="/clinic-website-design-cairo" className="nav-link">Clinic Website Design</Link>
           </div>
         </div>
 

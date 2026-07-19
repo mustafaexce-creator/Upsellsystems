@@ -45,7 +45,7 @@ export default function Navbar() {
   const industries = [
     { path: '/website-design-for-dentists-cairo', label: 'Website Design for Dentists' },
     { path: '/website-design-for-doctors-cairo', label: 'Website Design for Doctors' },
-    { path: '/clinic-website-design-egypt', label: 'Clinic Website Design' },
+    { path: '/clinic-website-design-cairo', label: 'Clinic Website Design' },
   ]
 
   const normalLinks = [

@@ -59,7 +59,7 @@ function App() {
             {/* SEO Industry pages */}
             <Route path="/website-design-for-dentists-cairo" element={<DentistsPage />} />
             <Route path="/website-design-for-doctors-cairo" element={<DoctorsPage />} />
-            <Route path="/clinic-website-design-egypt" element={<ClinicsPage />} />
+            <Route path="/clinic-website-design-cairo" element={<ClinicsPage />} />
 
             {/* SEO Local pages */}
             <Route path="/website-design-new-cairo" element={<NewCairoPage />} />

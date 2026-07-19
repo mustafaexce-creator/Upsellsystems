@@ -138,7 +138,7 @@ const routes = [
   '/ecommerce-website-design-cairo',
   '/website-design-for-dentists-cairo',
   '/website-design-for-doctors-cairo',
-  '/clinic-website-design-egypt',
+  '/clinic-website-design-cairo',
   '/website-design-new-cairo',
   '/website-design-maadi',
   '/website-design-heliopolis',

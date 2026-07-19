@@ -10,8 +10,8 @@ export default function ClinicsPage() {
   return (
     <>
       <PageMeta
-        title="Clinic Website Design Egypt | Healthcare Web Design"
-        description="Premium clinic website design in Egypt. We design responsive and modern healthcare websites for medical clinics, featuring multi-specialty lists and booking options."
+        title="Clinic Website Design Cairo | Healthcare Web Design"
+        description="Premium clinic website design in Cairo, Egypt. We design responsive and modern healthcare websites for medical clinics, featuring multi-specialty lists and booking options."
       />
 
       <section style={{
@@ -25,7 +25,7 @@ export default function ClinicsPage() {
         <div ref={heroRef} style={{ maxWidth: '900px', margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 2, textAlign: 'center' }} className={`fade-in-up ${heroVisible ? 'visible' : ''}`}>
           <div className="section-label" style={{ margin: '0 auto 20px' }}>Clinic Website</div>
           <h1 style={{ fontSize: 'clamp(2.4rem, 5vw, 3.8rem)', fontWeight: 900, lineHeight: 1.1, marginBottom: '24px', letterSpacing: '-0.04em' }}>
-            Clinic Website <span className="gradient-text">Design in Egypt</span>
+            Clinic Website <span className="gradient-text">Design in Cairo</span>
           </h1>
           <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: '32px', maxWidth: '640px', margin: '0 auto 32px' }}>
             We design high-performance healthcare websites and medical clinic websites in Cairo. Connect with patients through clear doctor lists, operating schedules, and direct appointments.
