@@ -3,13 +3,16 @@ import { ArrowRight, Play } from 'lucide-react'
 import HeroVisual from './HeroVisual'
 
 export default function Hero() {
-  const particles = Array.from({ length: 8 }, (_, i) => ({
-    id: i,
-    left: `${Math.random() * 100}%`,
-    delay: `${Math.random() * 12}s`,
-    duration: `${10 + Math.random() * 15}s`,
-    size: `${1.5 + Math.random() * 2.5}px`,
-  }))
+  const particles = [
+    { id: 0, left: '12%', delay: '2s', duration: '14s', size: '2.5px' },
+    { id: 1, left: '28%', delay: '4s', duration: '18s', size: '3px' },
+    { id: 2, left: '42%', delay: '0s', duration: '12s', size: '1.8px' },
+    { id: 3, left: '55%', delay: '7s', duration: '22s', size: '3.5px' },
+    { id: 4, left: '68%', delay: '3s', duration: '15s', size: '2px' },
+    { id: 5, left: '80%', delay: '9s', duration: '25s', size: '4px' },
+    { id: 6, left: '92%', delay: '1s', duration: '13s', size: '2.2px' },
+    { id: 7, left: '5%', delay: '6s', duration: '20s', size: '2.8px' },
+  ]
 
   return (
     <section id="hero" style={{

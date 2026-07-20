@@ -12,6 +12,17 @@ export default defineConfig({
             return 'assets/[name].[ext]'
           }
           return 'assets/[name]-[hash].[ext]'
+        },
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('lucide-react')) {
+              return 'icons'
+            }
+            if (id.includes('react-router-dom') || id.includes('react-router') || id.includes('react-helmet-async')) {
+              return 'routing'
+            }
+            return 'vendor'
+          }
         }
       }
     }
