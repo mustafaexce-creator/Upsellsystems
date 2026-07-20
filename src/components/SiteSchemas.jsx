@@ -120,8 +120,6 @@ const websiteSchema = {
 // navigation without a full page reload.
 // ─────────────────────────────────────────────────────────────────────────────
 export default function SiteSchemas() {
-  if (import.meta.env.SSR) return null
-
   return (
     <Helmet>
       <script type="application/ld+json">

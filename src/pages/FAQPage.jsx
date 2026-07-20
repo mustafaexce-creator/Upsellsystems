@@ -1,8 +1,36 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronDown, ArrowRight, MessageCircle } from 'lucide-react'
+import { Helmet } from 'react-helmet-async'
 import useInView from '../hooks/useInView'
 import PageMeta from '../components/PageMeta'
+
+const faqPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is UpsellSystems?',
+      acceptedAnswer: { '@type': 'Answer', text: 'UpsellSystems is a professional web design company in Cairo, Egypt. We build responsive custom websites, e-commerce stores, and high-converting landing pages for businesses, doctors, private clinics, and retail brands in Cairo. We are known for fast delivery (2–5 days) and direct developer communication.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Where in Cairo is UpsellSystems located?',
+      acceptedAnswer: { '@type': 'Answer', text: 'UpsellSystems is located in Cairo, Egypt. We serve clients across Cairo, including New Cairo, Maadi, and Heliopolis, working remotely via WhatsApp and email to deliver speed and clarity on every project.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does it take to design and develop a website?',
+      acceptedAnswer: { '@type': 'Answer', text: 'We design and launch most custom business websites in Cairo within 2–5 business days. Landing pages and simple websites take 2–3 days, while complex multi-page websites or ecommerce stores take 3–7 business days.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does UpsellSystems work with clients outside Cairo?',
+      acceptedAnswer: { '@type': 'Answer', text: 'UpsellSystems primarily serves businesses in Cairo, Egypt. All projects are handled remotely via WhatsApp and email, so communication is seamless.' },
+    },
+  ],
+}
 
 
 const faqs = [
@@ -124,6 +152,11 @@ export default function FAQPage() {
         title="Website & Software Project FAQs | UpsellSystems"
         description="Get answers to frequently asked questions about UpsellSystems: project timelines, pricing, international collaboration, and what makes the agency different."
       />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(faqPageSchema)}
+        </script>
+      </Helmet>
       {/* ===== HEADER ===== */}
       <section style={{
         position: 'relative', paddingTop: '160px', paddingBottom: '80px',
