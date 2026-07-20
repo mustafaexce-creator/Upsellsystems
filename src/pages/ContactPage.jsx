@@ -4,7 +4,7 @@ import PageMeta from '../components/PageMeta'
 import { Send, Mail, Zap, Lock, MessageCircle, CheckCircle, Loader2 } from 'lucide-react'
 
 // Replace this with your deployed Google Apps Script Web App URL
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxxM4BT9N4qUzoVROe1YkcgvCS-55_hXt1fBaqdYXG7c9gYmQDvh_Z_Az2VhDS9f4L7Tg/exec'
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxPH9yNa2-UIfx-Y9qjjfcDgTWef0GQgFd8xBKNMdqnlAbky-Sctpc0avjgXi1qYozqzA/exec'
 
 export default function ContactPage() {
   const [heroRef, heroVisible] = useInView()

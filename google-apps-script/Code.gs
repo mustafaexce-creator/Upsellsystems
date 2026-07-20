@@ -81,7 +81,7 @@ function doPost(e) {
       </div>
     `;
     
-    MailApp.sendEmail({
+    GmailApp.sendEmail({
       to: YOUR_EMAIL,
       subject: subject,
       htmlBody: htmlBody,
