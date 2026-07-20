@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Mail, Phone, MessageCircle, MapPin } from 'lucide-react'
+import { Mail, MessageCircle, MapPin } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -56,8 +56,8 @@ export default function Footer() {
             <a href="https://wa.me/201286960710" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.82rem', color: 'var(--text-secondary)', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color = 'var(--accent-1)'} onMouseOut={e => e.target.style.color = 'var(--text-secondary)'}>
               <MessageCircle size={14} /> +20 128 696 0710
             </a>
-            <a href="mailto:mo@upsellsystems.com" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.82rem', color: 'var(--text-secondary)', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color = 'var(--accent-1)'} onMouseOut={e => e.target.style.color = 'var(--text-secondary)'}>
-              <Mail size={14} /> mo@upsellsystems.com
+            <a href="mailto:upsellsystems@gmail.com" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.82rem', color: 'var(--text-secondary)', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color = 'var(--accent-1)'} onMouseOut={e => e.target.style.color = 'var(--text-secondary)'}>
+              <Mail size={14} /> upsellsystems@gmail.com
             </a>
           </div>
         </div>

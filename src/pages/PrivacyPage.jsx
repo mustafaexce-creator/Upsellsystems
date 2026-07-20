@@ -77,7 +77,7 @@ export default function PrivacyPage() {
                 <p>If there are any questions regarding this privacy policy, you may contact us using the information below:</p>
                 <div style={{ marginTop: '16px', padding: '20px', background: 'rgba(109,40,217,0.04)', borderRadius: '12px', border: '1px solid rgba(109,40,217,0.1)' }}>
                   <p style={{ fontWeight: 600, color: '#0F172A', marginBottom: '4px' }}>UpsellSystems</p>
-                  <p>Email: <a href="mailto:mo@upsellsystems.com" style={{ color: 'var(--accent-2)', textDecoration: 'none' }}>mo@upsellsystems.com</a></p>
+                  <p>Email: <a href="mailto:upsellsystems@gmail.com" style={{ color: 'var(--accent-2)', textDecoration: 'none' }}>upsellsystems@gmail.com</a></p>
                 </div>
               </div>
 

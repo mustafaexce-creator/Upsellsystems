@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import PageMeta from '../components/PageMeta'
 import useInView from '../hooks/useInView'
-import { ArrowRight, ShoppingBag, CreditCard, Shield, Truck, Check } from 'lucide-react'
+import { ArrowRight, ShoppingBag, CreditCard, Shield, Check } from 'lucide-react'
 
 export default function EcommercePage() {
   const [heroRef, heroVisible] = useInView()

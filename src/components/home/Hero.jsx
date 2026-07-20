@@ -1,34 +1,16 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, Play } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import HeroVisual from './HeroVisual'
 
-export default function Hero() {
-  const particles = [
-    { id: 0, left: '12%', delay: '2s', duration: '14s', size: '2.5px' },
-    { id: 1, left: '28%', delay: '4s', duration: '18s', size: '3px' },
-    { id: 2, left: '42%', delay: '0s', duration: '12s', size: '1.8px' },
-    { id: 3, left: '55%', delay: '7s', duration: '22s', size: '3.5px' },
-    { id: 4, left: '68%', delay: '3s', duration: '15s', size: '2px' },
-    { id: 5, left: '80%', delay: '9s', duration: '25s', size: '4px' },
-    { id: 6, left: '92%', delay: '1s', duration: '13s', size: '2.2px' },
-    { id: 7, left: '5%', delay: '6s', duration: '20s', size: '2.8px' },
-  ]
+const heroHighlights = ['2-5 day launch', 'SEO-ready structure', 'Mobile-first design']
 
+export default function Hero() {
   return (
     <section id="hero" style={{
       position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden',
-      background: 'radial-gradient(ellipse 80% 60% at 50% -10%, rgba(109,40,217,0.08), transparent), linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%)',
+      background: 'linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%)',
     }}>
       <div className="bg-grid" />
-
-      {/* Orbs */}
-      <div className="glow-orb" style={{ width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(109,40,217,0.1), transparent)', top: '-200px', right: '-100px' }} />
-      <div className="glow-orb" style={{ width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(37,99,235,0.08), transparent)', bottom: '-150px', left: '-100px', animationDelay: '4s' }} />
-      <div className="glow-orb" style={{ width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(8,145,178,0.06), transparent)', top: '240px', left: '60%', animationDelay: '8s' }} />
-
-      {particles.map(p => (
-        <div key={p.id} className="particle" style={{ left: p.left, bottom: '-10px', animationDelay: p.delay, animationDuration: p.duration, width: p.size, height: p.size }} />
-      ))}
 
       <div style={{
         maxWidth: '1200px', margin: '0 auto', padding: '160px 24px 120px',
@@ -36,25 +18,45 @@ export default function Hero() {
         display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'center', gap: '48px',
       }} className="hero-grid">
         {/* Left — Copy */}
-        <div>
+        <div style={{ maxWidth: '560px' }}>
           <div className="section-label" style={{ marginBottom: '28px' }}>
             <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#059669', display: 'inline-block', animation: 'pulse-wa 2s infinite' }} />
             Available for new projects
           </div>
 
-          <h1 style={{ fontSize: 'clamp(2.6rem, 5vw, 4.2rem)', fontWeight: 900, lineHeight: 1.1, marginBottom: '24px', letterSpacing: '-0.04em' }}>
+          <h1 style={{ fontSize: 'clamp(2.6rem, 5vw, 4.2rem)', fontWeight: 900, lineHeight: 1.06, marginBottom: '22px', letterSpacing: '-0.035em' }}>
             Professional
             <br />
             <span className="gradient-text">Website Design in Cairo</span>
           </h1>
 
           {/* GEO: Entity description — above the fold, identical across homepage, about, and footer */}
-          <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: '20px', fontWeight: 400, lineHeight: 1.85, maxWidth: '520px', padding: '14px 18px', background: 'rgba(109,40,217,0.03)', borderRadius: '12px', border: '1px solid rgba(109,40,217,0.08)' }}>
-            UpsellSystems is a premier <strong style={{ color: '#0F172A', fontWeight: 600 }}>web design company in Cairo</strong>. We build fast, high-converting websites and offer professional <strong style={{ color: '#0F172A', fontWeight: 600 }}>website development in Cairo, Egypt</strong>. Launch your responsive website or ecommerce store in 2–5 days.
+          <p style={{ fontSize: '1.02rem', color: '#334155', marginBottom: '16px', fontWeight: 450, lineHeight: 1.8, maxWidth: '540px' }}>
+            We design and build clean, SEO-ready websites for Cairo businesses, clinics, and ecommerce brands that need to look credible and get more inquiries.
           </p>
-          <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.9, marginBottom: '40px', maxWidth: '480px' }}>
-            Get custom design and high-performance clean code from a senior developer. The preferred partner for business owners and doctors in Egypt.
+          <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', lineHeight: 1.85, marginBottom: '22px', maxWidth: '500px' }}>
+            Launch your website or online store in 2-5 days with strategy, design, code, and support handled by our senior-led team.
           </p>
+
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '34px' }}>
+            {heroHighlights.map(item => (
+              <span key={item} style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '7px',
+                padding: '7px 12px',
+                borderRadius: '999px',
+                background: 'rgba(109,40,217,0.055)',
+                border: '1px solid rgba(109,40,217,0.1)',
+                color: '#475569',
+                fontSize: '0.78rem',
+                fontWeight: 650,
+              }}>
+                <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#059669', display: 'inline-block' }} />
+                {item}
+              </span>
+            ))}
+          </div>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px', alignItems: 'center' }}>
             <Link to="/contact" className="cta-button">
@@ -87,7 +89,7 @@ export default function Hero() {
               <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)' }}>
                 Trusted by <strong style={{ color: '#0F172A' }}>10+ businesses</strong> in Cairo
               </p>
-              <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>★★★★★ 5.0 rating on Google</p>
+              <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>5.0 early client rating</p>
             </div>
           </div>
         </div>

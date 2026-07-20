@@ -19,7 +19,7 @@ export default function ContactPage() {
     setStatus('sending')
 
     try {
-      const response = await fetch(GOOGLE_SCRIPT_URL, {
+      await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
@@ -93,41 +93,41 @@ export default function ContactPage() {
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
                     <div>
                       <label style={{ display: 'block', marginBottom: '7px', fontWeight: 500, fontSize: '0.88rem', color: 'var(--text-secondary)' }}>Your Name *</label>
-                      <input name="name" required className="form-input" placeholder="John Doe" value={formData.name} onChange={handleChange} />
+                      <input name="name" required className="form-input" placeholder="Ahmed Hassan" value={formData.name} onChange={handleChange} />
                     </div>
                     <div>
                       <label style={{ display: 'block', marginBottom: '7px', fontWeight: 500, fontSize: '0.88rem', color: 'var(--text-secondary)' }}>Email Address *</label>
-                      <input name="email" type="email" required className="form-input" placeholder="you@example.com" value={formData.email} onChange={handleChange} />
+                      <input name="email" type="email" required className="form-input" placeholder="you@business.com" value={formData.email} onChange={handleChange} />
                     </div>
                     <div>
                       <label style={{ display: 'block', marginBottom: '7px', fontWeight: 500, fontSize: '0.88rem', color: 'var(--text-secondary)' }}>Phone Number</label>
-                      <input name="phone" type="tel" className="form-input" placeholder="+1 234 567 8900" value={formData.phone} onChange={handleChange} />
+                      <input name="phone" type="tel" className="form-input" placeholder="+20 100 123 4567" value={formData.phone} onChange={handleChange} />
                     </div>
                     <div>
                       <label style={{ display: 'block', marginBottom: '7px', fontWeight: 500, fontSize: '0.88rem', color: 'var(--text-secondary)' }}>Project Type</label>
                       <select name="type" className="form-input" value={formData.type} onChange={handleChange} style={{ cursor: 'pointer' }}>
-                        <option value="">Select a type...</option>
-                        <option value="Website">Website</option>
-                        <option value="Custom Software">Custom Software</option>
-                        <option value="E-Commerce Store">E-Commerce Store</option>
-                        <option value="AI Integration">AI Integration</option>
-                        <option value="SaaS Product">SaaS Product</option>
+                        <option value="">Select a project type...</option>
+                        <option value="Business Website">Business Website</option>
+                        <option value="Clinic or Doctor Website">Clinic or Doctor Website</option>
+                        <option value="Ecommerce Store">Ecommerce Store</option>
+                        <option value="Landing Page">Landing Page</option>
+                        <option value="Website Redesign">Website Redesign</option>
                         <option value="Other">Other</option>
                       </select>
                     </div>
                     <div>
                       <label style={{ display: 'block', marginBottom: '7px', fontWeight: 500, fontSize: '0.88rem', color: 'var(--text-secondary)' }}>Estimated Budget</label>
                       <select name="budget" className="form-input" value={formData.budget} onChange={handleChange} style={{ cursor: 'pointer' }}>
-                        <option value="">Select a range...</option>
-                        <option value="Under $500">Under $500</option>
-                        <option value="$500 - $1,000">$500 – $1,000</option>
-                        <option value="$1,000 - $3,000">$1,000 – $3,000</option>
-                        <option value="$3,000+">$3,000+</option>
+                        <option value="">Select a budget range...</option>
+                        <option value="Under EGP 10,000">Under EGP 10,000</option>
+                        <option value="EGP 10,000 - 20,000">EGP 10,000 - 20,000</option>
+                        <option value="EGP 20,000 - 40,000">EGP 20,000 - 40,000</option>
+                        <option value="EGP 40,000+">EGP 40,000+</option>
                       </select>
                     </div>
                     <div>
                       <label style={{ display: 'block', marginBottom: '7px', fontWeight: 500, fontSize: '0.88rem', color: 'var(--text-secondary)' }}>Tell us about your project *</label>
-                      <textarea name="message" required className="form-input" rows="5" placeholder="Describe your idea, goals, and timeline..." value={formData.message} onChange={handleChange} style={{ resize: 'vertical', minHeight: '120px' }} />
+                      <textarea name="message" required className="form-input" rows="5" placeholder="Tell us about your business, the pages you need, and when you want to launch..." value={formData.message} onChange={handleChange} style={{ resize: 'vertical', minHeight: '120px' }} />
                     </div>
                     <button type="submit" disabled={status === 'sending'} className="cta-button"
                       style={{ justifyContent: 'center', width: '100%', padding: '16px', fontSize: '1rem', marginTop: '6px', opacity: status === 'sending' ? 0.7 : 1 }}>
@@ -164,7 +164,7 @@ export default function ContactPage() {
                   <p style={{ fontWeight: 600, fontSize: '0.92rem' }}>+20 128 696 0710</p>
                 </div>
               </a>
-              <a href="mailto:mo@upsellsystems.com" className="glass-card"
+              <a href="mailto:upsellsystems@gmail.com" className="glass-card"
                 style={{ padding: '22px 24px', display: 'flex', alignItems: 'center', gap: '18px', textDecoration: 'none', color: '#0F172A' }}>
                 <div style={{
                   width: '46px', height: '46px', borderRadius: '12px',
@@ -175,7 +175,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '2px' }}>Email</p>
-                  <p style={{ fontWeight: 600, fontSize: '0.92rem' }}>mo@upsellsystems.com</p>
+                  <p style={{ fontWeight: 600, fontSize: '0.92rem' }}>upsellsystems@gmail.com</p>
                 </div>
               </a>
               <div className="glass-card" style={{ padding: '22px 24px', marginTop: '4px' }}>

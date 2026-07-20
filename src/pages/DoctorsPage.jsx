@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import PageMeta from '../components/PageMeta'
 import useInView from '../hooks/useInView'
-import { ArrowRight, UserPlus, Clipboard, ShieldCheck, Heart, Check } from 'lucide-react'
+import { ArrowRight, UserPlus, Clipboard, ShieldCheck, Check } from 'lucide-react'
 
 export default function DoctorsPage() {
   const [heroRef, heroVisible] = useInView()

@@ -28,13 +28,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  useEffect(() => {
-    setMobileOpen(false)
-    setMobileServicesOpen(false)
-    setMobileIndustriesOpen(false)
-    setActiveDropdown(null)
-  }, [location])
-
   const services = [
     { path: '/website-design-cairo', label: 'Website Design' },
     { path: '/website-development-cairo', label: 'Website Development' },
@@ -53,6 +46,12 @@ export default function Navbar() {
     { path: '/faq', label: 'FAQ' },
     { path: '/contact', label: 'Contact' },
   ]
+
+  const closeMobileMenu = () => {
+    setMobileOpen(false)
+    setMobileServicesOpen(false)
+    setMobileIndustriesOpen(false)
+  }
 
   return (
     <header style={{
@@ -114,20 +113,8 @@ export default function Navbar() {
             onMouseEnter={() => setActiveDropdown('services')}
             onMouseLeave={() => setActiveDropdown(null)}
           >
-            <button 
-              className={`nav-link`}
-              style={{ 
-                background: 'none', 
-                border: 'none', 
-                cursor: 'pointer', 
-                display: 'flex', 
-                alignItems: 'center', 
-                gap: '4px',
-                padding: '8px 0',
-                fontFamily: 'inherit',
-                fontSize: 'inherit',
-                fontWeight: 'inherit'
-              }}
+            <button
+              className="nav-link nav-link-button"
             >
               Services <ChevronDown size={14} style={{ transition: 'transform 0.2s', transform: activeDropdown === 'services' ? 'rotate(180deg)' : 'rotate(0)' }} />
             </button>
@@ -176,20 +163,8 @@ export default function Navbar() {
             onMouseEnter={() => setActiveDropdown('industries')}
             onMouseLeave={() => setActiveDropdown(null)}
           >
-            <button 
-              className={`nav-link`}
-              style={{ 
-                background: 'none', 
-                border: 'none', 
-                cursor: 'pointer', 
-                display: 'flex', 
-                alignItems: 'center', 
-                gap: '4px',
-                padding: '8px 0',
-                fontFamily: 'inherit',
-                fontSize: 'inherit',
-                fontWeight: 'inherit'
-              }}
+            <button
+              className="nav-link nav-link-button"
             >
               Industries <ChevronDown size={14} style={{ transition: 'transform 0.2s', transform: activeDropdown === 'industries' ? 'rotate(180deg)' : 'rotate(0)' }} />
             </button>
@@ -258,7 +233,7 @@ export default function Navbar() {
           maxHeight: 'calc(100vh - 80px)',
           overflowY: 'auto'
         }}>
-          <Link key="mobile-home" to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} style={{ fontSize: '1.1rem' }}>
+          <Link key="mobile-home" to="/" onClick={closeMobileMenu} className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} style={{ fontSize: '1.1rem' }}>
             Home
           </Link>
 
@@ -290,7 +265,8 @@ export default function Navbar() {
                 {services.map(s => (
                   <Link 
                     key={s.path} 
-                    to={s.path} 
+                    to={s.path}
+                    onClick={closeMobileMenu}
                     style={{ textDecoration: 'none', color: location.pathname === s.path ? 'var(--accent-1)' : 'var(--text-secondary)', fontSize: '0.95rem', padding: '4px 0' }}
                   >
                     {s.label}
@@ -328,7 +304,8 @@ export default function Navbar() {
                 {industries.map(ind => (
                   <Link 
                     key={ind.path} 
-                    to={ind.path} 
+                    to={ind.path}
+                    onClick={closeMobileMenu}
                     style={{ textDecoration: 'none', color: location.pathname === ind.path ? 'var(--accent-1)' : 'var(--text-secondary)', fontSize: '0.95rem', padding: '4px 0' }}
                   >
                     {ind.label}
@@ -340,10 +317,11 @@ export default function Navbar() {
 
           {normalLinks.map(link => (
             <Link key={link.path} to={link.path}
+              onClick={closeMobileMenu}
               className={`nav-link ${location.pathname === link.path ? 'active' : ''}`}
               style={{ fontSize: '1.1rem' }}>{link.label}</Link>
           ))}
-          <Link to="/contact" className="cta-button" style={{ textAlign: 'center', justifyContent: 'center', marginTop: '8px' }}>
+          <Link to="/contact" onClick={closeMobileMenu} className="cta-button" style={{ textAlign: 'center', justifyContent: 'center', marginTop: '8px' }}>
             <span>Start a Project</span>
           </Link>
         </div>
@@ -367,4 +345,3 @@ export default function Navbar() {
     </header>
   )
 }
-

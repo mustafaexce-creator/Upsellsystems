@@ -6,7 +6,7 @@
  * 2. Add these headers in Row 1: Timestamp | Name | Email | Phone | Project Type | Budget | Message
  * 3. Go to Extensions → Apps Script
  * 4. Paste this entire code into Code.gs
- * 5. Update YOUR_EMAIL below with your actual email (mo@upsellsystems.com)
+ * 5. Update YOUR_EMAIL below with your actual email (upsellsystems@gmail.com)
  * 6. Update SHEET_ID below with your Google Sheet ID (from the URL)
  * 7. Click Deploy → New Deployment → Web App
  *    - Execute as: Me
@@ -15,7 +15,7 @@
  * 9. Paste it into ContactPage.jsx where it says YOUR_GOOGLE_SCRIPT_URL_HERE
  */
 
-const YOUR_EMAIL = 'mo@upsellsystems.com';
+const YOUR_EMAIL = 'upsellsystems@gmail.com';
 const SHEET_ID = 'YOUR_GOOGLE_SHEET_ID_HERE'; // Get this from your sheet URL
 
 function doPost(e) {

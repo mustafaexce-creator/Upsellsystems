@@ -68,7 +68,7 @@ const faqs = [
   },
   {
     q: 'How do I start my project with UpsellSystems?',
-    a: 'You can reach us directly via WhatsApp at +20 128 696 0710, email us at mo@upsellsystems.com, or fill out the contact form. We will discuss your website design requirements and provide a visual proposal and quote.',
+    a: 'You can reach us directly via WhatsApp at +20 128 696 0710, email us at upsellsystems@gmail.com, or fill out the contact form. We will discuss your website design requirements and provide a visual proposal and quote.',
   },
 ]
 

@@ -28,7 +28,7 @@ const organizationSchema = {
     name: 'Mustafa Essam',
   },
   telephone: '+20-128-696-0710',
-  email: 'mo@upsellsystems.com',
+  email: 'upsellsystems@gmail.com',
   priceRange: '$$',
   address: {
     '@type': 'PostalAddress',

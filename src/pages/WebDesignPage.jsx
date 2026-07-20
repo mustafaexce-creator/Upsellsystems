@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import PageMeta from '../components/PageMeta'
 import useInView from '../hooks/useInView'
-import { ArrowRight, Monitor, Palette, Sparkles, Smartphone, Check } from 'lucide-react'
+import { ArrowRight, Monitor, Palette, Smartphone, Check } from 'lucide-react'
 
 export default function WebDesignPage() {
   const [heroRef, heroVisible] = useInView()

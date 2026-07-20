@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import PageMeta from '../components/PageMeta'
 import useInView from '../hooks/useInView'
-import { ArrowRight, MapPin, Landmark, HeartPulse, Sparkles, Check } from 'lucide-react'
+import { ArrowRight, Landmark, HeartPulse, Sparkles, Check } from 'lucide-react'
 
 export default function HeliopolisPage() {
   const [heroRef, heroVisible] = useInView()

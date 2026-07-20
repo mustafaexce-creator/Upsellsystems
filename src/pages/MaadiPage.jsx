@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import PageMeta from '../components/PageMeta'
 import useInView from '../hooks/useInView'
-import { ArrowRight, MapPin, Coffee, Compass, Anchor, Check } from 'lucide-react'
+import { ArrowRight, Coffee, Compass, Anchor, Check } from 'lucide-react'
 
 export default function MaadiPage() {
   const [heroRef, heroVisible] = useInView()
