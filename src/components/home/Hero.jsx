@@ -24,7 +24,7 @@ export default function Hero() {
       {/* Orbs */}
       <div className="glow-orb" style={{ width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(109,40,217,0.1), transparent)', top: '-200px', right: '-100px' }} />
       <div className="glow-orb" style={{ width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(37,99,235,0.08), transparent)', bottom: '-150px', left: '-100px', animationDelay: '4s' }} />
-      <div className="glow-orb" style={{ width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(8,145,178,0.06), transparent)', top: '30%', left: '60%', animationDelay: '8s' }} />
+      <div className="glow-orb" style={{ width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(8,145,178,0.06), transparent)', top: '240px', left: '60%', animationDelay: '8s' }} />
 
       {particles.map(p => (
         <div key={p.id} className="particle" style={{ left: p.left, bottom: '-10px', animationDelay: p.delay, animationDuration: p.duration, width: p.size, height: p.size }} />
