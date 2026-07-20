@@ -112,9 +112,16 @@ const websiteSchema = {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Component — rendered once inside App.jsx, injects both site-wide blocks
+// Component — rendered once inside App.jsx, injects both site-wide blocks.
+//
+// During SSR / prerender this returns null because prerender.js already bakes
+// the schemas into every static page (and is the single source of truth).
+// On the client this renders normally so schemas stay present during SPA
+// navigation without a full page reload.
 // ─────────────────────────────────────────────────────────────────────────────
 export default function SiteSchemas() {
+  if (import.meta.env.SSR) return null
+
   return (
     <Helmet>
       <script type="application/ld+json">
