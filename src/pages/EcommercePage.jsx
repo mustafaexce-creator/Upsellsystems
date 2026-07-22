@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import PageMeta from '../components/PageMeta'
+import ServiceSchema from '../components/ServiceSchema'
 import useInView from '../hooks/useInView'
 import { ArrowRight, ShoppingBag, CreditCard, Shield, Check } from 'lucide-react'
 
@@ -12,6 +13,11 @@ export default function EcommercePage() {
       <PageMeta
         title="Ecommerce Website Design Cairo | Online Store Development Egypt"
         description="Professional ecommerce website design in Cairo, Egypt. We develop responsive online stores with shopping carts, checkout optimization, and local payment integration."
+      />
+      <ServiceSchema
+        serviceName="Ecommerce Website Design Cairo"
+        description="Custom online store development with checkout optimization, inventory admin panels, and Fawry/Paymob payment gateway integration."
+        urlPath="/ecommerce-website-design-cairo"
       />
 
       <section style={{

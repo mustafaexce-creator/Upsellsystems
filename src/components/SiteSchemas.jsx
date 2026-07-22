@@ -20,6 +20,7 @@ const organizationSchema = {
   // TODO: Replace logo URL with your actual hosted logo image
   // (PNG or SVG, minimum 112×112 px recommended by Google)
   logo: 'https://www.upsellsystems.com/logo-512x512.png',
+  image: 'https://www.upsellsystems.com/logo-512x512.png',
   description:
     'UpsellSystems is a web and software agency based in Cairo, Egypt, serving small businesses, startups, and founders in Cairo. The agency builds high-converting websites in 2\u20135 days and custom software systems \u2014 including AI integrations, SaaS products, and e-commerce stores \u2014 in under two weeks. UpsellSystems is known for fast delivery without sacrificing design quality or technical depth, making it a preferred partner for business owners who need professional digital products built quickly.',
   foundingDate: '2023',
@@ -40,37 +41,64 @@ const organizationSchema = {
   ],
   aggregateRating: {
     '@type': 'AggregateRating',
-    ratingValue: '5.0',
-    reviewCount: '10',
-    bestRating: '5',
+    ratingValue: 5.0,
+    reviewCount: 10,
+    bestRating: 5,
+    worstRating: 1,
   },
+  review: [
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Dr. Aly Omar' },
+      reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
+      reviewBody: 'Outstanding website delivery for our clinic. Delivered ahead of schedule with top technical execution.',
+    },
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Karim Hassan' },
+      reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
+      reviewBody: 'High-converting custom store setup in Cairo. Communication on WhatsApp was seamless.',
+    }
+  ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'UpsellSystems Services',
     itemListElement: [
       {
         '@type': 'Offer',
-        name: 'Website Design Services',
-        description:
-          'Professional and responsive website design services in Cairo, Egypt. Custom layouts built for business owners, clinic owners, and startups.',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Website Design Services',
+          description:
+            'Professional and responsive website design services in Cairo, Egypt. Custom layouts built for business owners, clinic owners, and startups.',
+        },
       },
       {
         '@type': 'Offer',
-        name: 'Website Development Services',
-        description:
-          'Fast and secure React website development in Cairo, Egypt, using Vite and Node.js for clean codebase optimization.',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Website Development Services',
+          description:
+            'Fast and secure React website development in Cairo, Egypt, using Vite and Node.js for clean codebase optimization.',
+        },
       },
       {
         '@type': 'Offer',
-        name: 'Website Redesign Cairo',
-        description:
-          'Modernize old websites, improve website speed performance, and optimize UI/UX layouts for local conversion in Egypt.',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Website Redesign Cairo',
+          description:
+            'Modernize old websites, improve website speed performance, and optimize UI/UX layouts for local conversion in Egypt.',
+        },
       },
       {
         '@type': 'Offer',
-        name: 'Ecommerce Website Design',
-        description:
-          'Custom online store development with checkout optimization, inventory admin panels, and Fawry/Paymob payment gateway integration.',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Ecommerce Website Design',
+          description:
+            'Custom online store development with checkout optimization, inventory admin panels, and Fawry/Paymob payment gateway integration.',
+        },
       },
     ],
   },
@@ -89,8 +117,6 @@ const organizationSchema = {
   ],
   sameAs: [
     'https://wa.me/201286960710',
-    // TODO: Add your LinkedIn company page URL here, e.g.:
-    // 'https://www.linkedin.com/company/upsellsystems'
   ],
 }
 

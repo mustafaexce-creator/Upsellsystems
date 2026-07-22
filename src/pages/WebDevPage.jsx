@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import PageMeta from '../components/PageMeta'
+import ServiceSchema from '../components/ServiceSchema'
 import useInView from '../hooks/useInView'
 import { ArrowRight, Code, Server, Zap, Check } from 'lucide-react'
 
@@ -12,6 +13,11 @@ export default function WebDevPage() {
       <PageMeta
         title="Website Development Services Cairo | Custom Web Development"
         description="Get fast and professional website development services in Cairo, Egypt. Custom web development, clean React codebases, and optimized layouts to rank on Google."
+      />
+      <ServiceSchema
+        serviceName="Website Development Services Cairo"
+        description="Fast and secure React website development in Cairo, Egypt, built for speed and performance."
+        urlPath="/website-development-cairo"
       />
 
       <section style={{
