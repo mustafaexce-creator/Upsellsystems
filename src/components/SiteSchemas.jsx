@@ -8,7 +8,7 @@ import { Helmet } from 'react-helmet-async'
 // LocalBusiness was removed — it implied a physical storefront and created a
 // duplicate, unlinked entity that confused AI parsers.
 //
-// Valuable data from the old LocalBusiness block (priceRange, aggregateRating,
+// Valuable data from the old LocalBusiness block (priceRange,
 // hasOfferCatalog) has been merged here so nothing is lost.
 // ─────────────────────────────────────────────────────────────────────────────
 const organizationSchema = {
@@ -38,27 +38,6 @@ const organizationSchema = {
   },
   areaServed: [
     { '@type': 'City', name: 'Cairo' },
-  ],
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: 5.0,
-    reviewCount: 10,
-    bestRating: 5,
-    worstRating: 1,
-  },
-  review: [
-    {
-      '@type': 'Review',
-      author: { '@type': 'Person', name: 'Dr. Aly Omar' },
-      reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
-      reviewBody: 'Outstanding website delivery for our clinic. Delivered ahead of schedule with top technical execution.',
-    },
-    {
-      '@type': 'Review',
-      author: { '@type': 'Person', name: 'Karim Hassan' },
-      reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
-      reviewBody: 'High-converting custom store setup in Cairo. Communication on WhatsApp was seamless.',
-    }
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
